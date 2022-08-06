@@ -30,7 +30,7 @@ return require('packer').startup(function()
     }
 
     -- nvim-lualine
-    -- todo 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
+    -- TODO 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
     -- use {
     --   'nvim-lualine/lualine.nvim',
     --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -113,4 +113,17 @@ return require('packer').startup(function()
         -- require("scrollbar.handlers.search").setup()
       end
     })
+
+    -- nvim-todo-comments
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
 end)
