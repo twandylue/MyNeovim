@@ -16,6 +16,7 @@ return require('packer').startup(function()
     }
 
     -- nvim-telescope
+    -- watch dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
@@ -136,6 +137,7 @@ return require('packer').startup(function()
     })
 
     -- nvim-treesitter
+    -- First time installation
     -- use {
     --     'nvim-treesitter/nvim-treesitter',
     --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
