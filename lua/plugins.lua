@@ -134,4 +134,14 @@ return require('packer').startup(function()
       setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
       ft = { "markdown" }, 
     })
+
+    -- nvim-treesitter
+    -- use {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    -- }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 end)
