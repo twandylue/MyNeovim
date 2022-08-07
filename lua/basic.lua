@@ -1,11 +1,3 @@
--- 高亮所在行
--- todo 未解決 搜索會被遮蔽
-vim.wo.cursorline = true
--- 搜索不要高亮
-vim.o.hlsearch = true
--- 边输入边搜索
-vim.o.incsearch = true
-
 -- 右侧参考线，超过表示代码太长了，考虑换行
 vim.wo.colorcolumn = "140"
 -- utf8
@@ -17,6 +9,12 @@ vim.o.sidescrolloff = 8
 -- 使用相对行号
 vim.wo.number = true
 vim.wo.relativenumber = true
+-- 高亮所在行
+vim.wo.cursorline = true
+-- 搜索不要高亮
+vim.o.hlsearch = true
+-- 边输入边搜索
+vim.o.incsearch = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 缩进2个空格等于一个Tab

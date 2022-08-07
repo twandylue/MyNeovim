@@ -67,7 +67,7 @@ map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>', opts)
 map('n', '<leader>hD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
 map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
--- TODO dont work
+-- TODO: dont work
 -- require('gitsigns').setup{
 --   ...
 --   on_attach = function(bufnr)
