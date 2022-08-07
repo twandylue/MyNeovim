@@ -4,14 +4,12 @@ if not status_ok then
 end
 
 local vi_mode_utils = require 'feline.providers.vi_mode'
-local separator = '|'
-
--- Set colorscheme (from plugin-config/colors.lua/colorscheme_name)
+local icons = require('plugin-config/icons')
 local colors = require('plugin-config/colors').onedark_dark
+local separator = '|'
 
 local vi_mode_colors = {
   NORMAL = colors.cyan,
-  -- INSERT = colors.red,
   INSERT = '#d1133f',
   LINES = colors.green,
   VISUAL = colors.yellow,
@@ -67,13 +65,12 @@ local comps = {
     -- File words counter
     counter = {
       provider = function()
-        -- "⚡☢︎ "
         if vim.fn.wordcount().visual_words == 1 then
-          return ' '.. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return ' '.. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
         else
-          return  ' '.. tostring(vim.fn.wordcount().words) .. " words"
+          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
         end
       end,
       hl = { fg = colors.fg },
