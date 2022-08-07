@@ -33,6 +33,10 @@ map("n", "<S-l>", "g_", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
 map("n", "<C-h>", "<C-W>h", { noremap = false })
 map("n", "<C-l>", "<C-W>l", { noremap = false })
+
+-- In my Mac, option + j => ∆ 
+-- map("n", "∆", ":tabnew<CR>", { noremap = false })
+
 -- used by move lines
 -- map("n", "<C-j>", "<C-W>j", { noremap = false })
 -- map("n", "<C-k>", "<C-W>k", { noremap = false })
@@ -112,7 +116,8 @@ require'hop'.setup{
 }
 
 require('telescope').setup{
-  map('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files({cwd = "%:h"})<CR>', opts)
+  map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  map('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
 }
 
 require('bufferline').setup{
