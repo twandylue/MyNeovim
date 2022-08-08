@@ -106,14 +106,8 @@ return require('packer').startup(function()
       requires = 'kyazdani42/nvim-web-devicons'
     }
 
-    -- nvim-scrollbar
-    -- use({
-    --   "petertriho/nvim-scrollbar",
-    --   config = function()
-    --     require("scrollbar").setup()
-    --     -- require("scrollbar.handlers.search").setup()
-    --   end
-    -- })
+    -- nvim-scrollview
+    use 'dstein64/nvim-scrollview'
 
     -- nvim-todo-comments
     use {
