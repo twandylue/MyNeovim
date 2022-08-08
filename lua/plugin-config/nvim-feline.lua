@@ -66,11 +66,11 @@ local comps = {
     counter = {
       provider = function()
         if vim.fn.wordcount().visual_words == 1 then
-          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
         else
-          return icons.kind.Calculator.. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
+          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
         end
       end,
       hl = { fg = colors.fg },
