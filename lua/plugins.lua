@@ -16,7 +16,7 @@ return require('packer').startup(function()
     }
 
     -- nvim-telescope
-    -- watch dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
+    -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }

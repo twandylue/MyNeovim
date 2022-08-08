@@ -130,6 +130,12 @@ require('bufferline').setup{
   map('n', 'gK', '<cmd>BufferLineMoveNext<CR>', opts),
   map('n', 'gJ', '<cmd>BufferLineMovePrev<CR>', opts),
 
+  map('n', 'gP', '<cmd>BufferLineTogglePin<CR>', opts),
+  map('n', 'gp', '<cmd>BufferLinePick<CR>', opts),
+
+  -- close buffer tab
+  map('n', '<leader>w', '<cmd>bdelete<CR>', opts),
+
   -- These commands will sort buffers by directory, language, or a custom criteria
   -- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
   -- map('n', 'be', '<cmd>BufferLineSortByExtension<CR>', opts),
