@@ -1,5 +1,5 @@
 -- Set barbar's options
-require'bufferline'.setup {
+require 'bufferline'.setup {
   -- Enable/disable animations
   animation = true,
 
@@ -18,8 +18,8 @@ require'bufferline'.setup {
   clickable = true,
 
   -- Excludes buffers from the tabline
-  exclude_ft = {'javascript'},
-  exclude_name = {'package.json'},
+  exclude_ft = { 'javascript' },
+  exclude_name = { 'package.json' },
 
   -- Enable/disable icons
   -- if set to 'numbers', will show buffer index in the tabline
@@ -70,7 +70,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   callback = function()
     if vim.bo.filetype == 'NvimTree' then
-      require'bufferline.state'.set_offset(31, 'FileTree')
+      require 'bufferline.state'.set_offset(31, 'FileTree')
     end
   end
 })
@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
   pattern = '*',
   callback = function()
     if vim.fn.expand('<afile>'):match('NvimTree') then
-      require'bufferline.state'.set_offset(0)
+      require 'bufferline.state'.set_offset(0)
     end
   end
 })

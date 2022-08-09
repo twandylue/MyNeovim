@@ -1,0 +1,17 @@
+print('init.lua loaded')
+require('basic')
+require('keybindings')
+require('plugins')
+-- require('after.color')
+
+-- 插件配置
+require('plugin-config/nvim-tree')
+require('plugin-config/nvim-gitsigns')
+require('plugin-config/nvim-feline')
+require('plugin-config/nvim-hop')
+require('plugin-config/nvim-comment')
+require('plugin-config/nvim-telescope')
+require('plugin-config/nvim-bufferline')
+require('plugin-config/nvim-treesitter')
+require('plugin-config/lsp/init')
+require('plugin-config/nvim-cmp')

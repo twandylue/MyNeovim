@@ -34,6 +34,12 @@ map("n", "<S-l>", "g_", { noremap = false })
 map("n", "<C-h>", "<C-W>h", { noremap = false })
 map("n", "<C-l>", "<C-W>l", { noremap = false })
 
+map("", "zh", "<C-W>h", { noremap = false })
+map("", "zj", "<C-W>j", { noremap = false })
+map("", "zk", "<C-W>k", { noremap = false })
+map("", "zl", "<C-W>l", { noremap = false })
+map("", "z<space>", "<C-W>w", { noremap = false })
+
 -- In my Mac, option + j => ∆ 
 -- map("n", "∆", ":tabnew<CR>", { noremap = false })
 

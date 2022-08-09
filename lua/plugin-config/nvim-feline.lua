@@ -32,7 +32,7 @@ local comps = {
   vi_mode = {
     left = {
       provider = function()
-        local label = ' '..vi_mode_utils.get_vim_mode()..' '
+        local label = ' ' .. vi_mode_utils.get_vim_mode() .. ' '
         return label
       end,
       hl = function()
@@ -66,11 +66,11 @@ local comps = {
     counter = {
       provider = function()
         if vim.fn.wordcount().visual_words == 1 then
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
         else
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
+          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
         end
       end,
       hl = { fg = colors.fg },
@@ -162,7 +162,7 @@ local comps = {
     },
     warn = {
       provider = 'diagnostic_warnings',
-      icon = ' ' ,
+      icon = ' ',
       hl = { fg = colors.yellow },
       left_sep = ' ',
     },

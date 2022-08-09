@@ -1,143 +1,161 @@
-return require('packer').startup(function()
+local status, packer = pcall(require, 'packer')
+if (not status) then
+  print("Packer is not installed")
+  return
+end
 
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+vim.cmd [[packadd packer.nvim]]
 
-    -- gruvbox theme 
-    use { 
-        "ellisonleao/gruvbox.nvim", 
-        requires = {"rktjmp/lush.nvim"} 
-    }
+return require('packer').startup(function(use)
 
-    -- nvim-tree
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    -- nvim-telescope
-    -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
-    use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
+  -- gruvbox theme
+  use {
+    "ellisonleao/gruvbox.nvim",
+    requires = { "rktjmp/lush.nvim" }
+  }
 
-    -- nvim-gitsigns
-    use {
-      'lewis6991/gitsigns.nvim',
-      config = function()
-        require('gitsigns').setup()
-      end
-    }
+  -- nvim-tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
 
-    -- nvim-lualine
-    -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
-    -- use {
-    --   'nvim-lualine/lualine.nvim',
-    --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    -- }
+  -- nvim-telescope
+  -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
-    -- nvim-feline
-    use {
-      'feline-nvim/feline.nvim', branch = '0.5-compat' 
-    }
+  -- nvim-gitsigns
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
-    -- nvim-hop
-    use {
-      'phaazon/hop.nvim',
-      branch = 'v2',
-      config = function()
-        require('hop').setup()
-      end
-    }
+  -- nvim-lualine
+  -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
+  -- use {
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  -- }
 
-    -- nvim-comment
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-          require('Comment').setup()
-        end
-    }
+  -- nvim-feline
+  use {
+    'feline-nvim/feline.nvim', branch = '0.5-compat'
+  }
 
-    -- nvim-autopairs
-    use {
-        "windwp/nvim-autopairs",
-        config = function()
-          require("nvim-autopairs").setup {} 
-        end
-    }
+  -- nvim-hop
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require('hop').setup()
+    end
+  }
 
-    -- nvim-indent
-    use {
-      "lukas-reineke/indent-blankline.nvim"
-    }
+  -- nvim-comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 
-    -- nvim-surround
-    use({
-        "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
-    })
+  -- nvim-autopairs
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
 
-    -- nvim-exchange
-    use({
-      "gbprod/substitute.nvim",
-      config = function()
-        require("substitute").setup({
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        })
-      end
-    })
+  -- nvim-indent
+  use {
+    "lukas-reineke/indent-blankline.nvim"
+  }
 
-    -- nvim-barbar
-    -- use {
-    --   'romgrk/barbar.nvim',
-    --   requires = {'kyazdani42/nvim-web-devicons'}
-    -- }
+  -- nvim-surround
+  use({
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 
-    -- nvim-bufferline
-    use {
-      'akinsho/bufferline.nvim', tag = "v2.*", 
-      requires = 'kyazdani42/nvim-web-devicons'
-    }
+  -- nvim-exchange
+  use({
+    "gbprod/substitute.nvim",
+    config = function()
+      require("substitute").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end
+  })
 
-    -- nvim-scrollview
-    use 'dstein64/nvim-scrollview'
+  -- nvim-barbar
+  -- use {
+  --   'romgrk/barbar.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons'}
+  -- }
 
-    -- nvim-todo-comments
-    use {
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    }
+  -- nvim-bufferline
+  use {
+    'akinsho/bufferline.nvim', tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
 
-    -- nvim-markdown
-    use({
-      "iamcco/markdown-preview.nvim", 
-      run = "cd app && npm install", 
-      setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
-      ft = { "markdown" }, 
-    })
+  -- nvim-scrollview
+  use 'dstein64/nvim-scrollview'
 
-    -- nvim-treesitter
-    -- First time installation
-    -- use {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    -- }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+  -- nvim-todo-comments
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- nvim-markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  })
+
+  -- nvim-treesitter
+  -- First time installation
+  -- use {
+  --     'nvim-treesitter/nvim-treesitter',
+  --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  -- }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  -- nvim-lspconfig
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+
+  -- autocomplete
+  use 'onsails/lspkind-nvim' -- vscode-like pictograms
+  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp' -- completion
+  use 'L3MON4D3/LuaSnip' -- Snippet
 end)

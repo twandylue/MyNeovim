@@ -1,4 +1,4 @@
-require("substitute").setup{
+require("substitute").setup {
   on_substitute = nil,
   yank_substituted_text = false,
   range = {
