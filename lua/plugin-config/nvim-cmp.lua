@@ -14,7 +14,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({
-      -- behavior = cmp.ComfirmBehavior.Replace,
+      behavior = cmp.ConfirmBehavior.Replace,
       select = true
     }),
   }),
@@ -22,8 +22,11 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' }
   }),
-  formattinf = {
-    format = lspkind.cmp_format({ writh_text = false, maxwidth = 50 })
+  formatting = {
+    format = lspkind.cmp_format({
+      writh_text = false,
+      maxwidth = 50,
+    })
   }
 })
 

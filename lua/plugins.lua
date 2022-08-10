@@ -149,13 +149,12 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
-  -- nvim-lspconfig
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-
-  -- autocomplete
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- completion
+  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' -- Snippet
+  use 'kyazdani42/nvim-web-devicons' -- File icons
 end)
