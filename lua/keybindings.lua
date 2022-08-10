@@ -40,7 +40,7 @@ map("", "zk", "<C-W>k", { noremap = false })
 map("", "zl", "<C-W>l", { noremap = false })
 map("", "z<space>", "<C-W>w", { noremap = false })
 
--- In my Mac, option + j => ∆ 
+-- In my Mac, option + j => ∆
 -- map("n", "∆", ":tabnew<CR>", { noremap = false })
 
 -- used by move lines
@@ -116,17 +116,24 @@ map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 --   end
 -- }
 
-require'hop'.setup{
+require 'hop'.setup {
   vim.api.nvim_set_keymap("n", "<leader>/", "<Cmd>HopPattern<CR>", { silent = true }),
   vim.api.nvim_set_keymap("n", "s", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
-require('telescope').setup{
-  map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
-  map('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
+require('telescope').setup {
+  map('n', ';f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  map('n', ';g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
+  map('n', '\\\\', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
+  map('n', ';t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
+  map('n', ';;', '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
+  map('n', ';e', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
+  map('n', 'sf',
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
+    , opts),
 }
 
-require('bufferline').setup{
+require('bufferline').setup {
   -- These commands will navigate through buffers in order regardless of which mode you are using
   -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
   map('n', 'gk', '<cmd>BufferLineCycleNext<CR>', opts),

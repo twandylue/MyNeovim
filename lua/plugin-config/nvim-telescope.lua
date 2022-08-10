@@ -1,17 +1,20 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+local status, telescope = pcall(require, "telescope")
+if not status then return end
+
+telescope.load_extension('file_browser')
+local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 local actions = require "telescope.actions"
--- telescope.load_extension "media_files"
-local icons = require "plugin-config.icons"
+local icons_t = require "plugin-config.icons"
 
-require('telescope').setup {
+function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+telescope.setup {
   defaults = {
-    prompt_prefix = icons.ui.Telescope .. " ",
+    prompt_prefix = icons_t.ui.Telescope .. " ",
     selection_caret = " ",
-
     path_display = { "smart" },
     file_ignore_patterns = {
       ".git/",
@@ -66,7 +69,6 @@ require('telescope').setup {
       "%.flac",
       "%.tar.gz",
     },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -145,7 +147,6 @@ require('telescope').setup {
       },
     }
   },
-
   pickers = {
     live_grep = {
       theme = "dropdown",
@@ -184,35 +185,23 @@ require('telescope').setup {
       theme = "dropdown",
       initial_mode = "normal",
     },
-
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-  }
-}
-
-local transform_mod = require('telescope.actions.mt').transform_mod
-local actions = require("telescope.actions")
-require("telescope").setup {
-  defaults = {
-    mappings = {
-      i = {
-        -- ["<esc>"] = actions.close
-      },
-      n = {
-        -- ["<leader>ff"] = builtin.find_files
+    file_browser = {
+      theme = 'dropdown',
+      hijack_netrw = true,
+      mappings = {
+        ['i'] = {
+          ['<C-w>'] = function() vim.cmd('normal vbd') end,
+        },
+        ['n'] = {
+          ['N'] = fb_actions.create,
+          ['h'] = fb_actions.goto_parent_dir,
+          ['/'] = function()
+            vim.cmd('startinsert')
+          end
+        }
       }
-    },
+    }
   }
 }

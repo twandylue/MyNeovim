@@ -29,14 +29,10 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use 'nvim-telescope/telescope-file-browser.nvim'
 
   -- nvim-gitsigns
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
+  use { 'lewis6991/gitsigns.nvim' }
 
   -- nvim-lualine
   -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
@@ -46,34 +42,17 @@ return require('packer').startup(function(use)
   -- }
 
   -- nvim-feline
-  use {
-    'feline-nvim/feline.nvim', branch = '0.5-compat'
-  }
+  use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 
   -- nvim-hop
-  use {
-    'phaazon/hop.nvim',
-    branch = 'v2',
-    config = function()
-      require('hop').setup()
-    end
-  }
+  use { 'phaazon/hop.nvim', branch = 'v2', }
 
   -- nvim-comment
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
+  use { 'numToStr/Comment.nvim', }
 
   -- nvim-autopairs
-  use {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup {}
-    end
-  }
+  use "windwp/nvim-autopairs"
+  use 'windwp/nvim-ts-autotag'
 
   -- nvim-indent
   use {
@@ -81,26 +60,10 @@ return require('packer').startup(function(use)
   }
 
   -- nvim-surround
-  use({
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  })
+  use { "kylechui/nvim-surround", }
 
   -- nvim-exchange
-  use({
-    "gbprod/substitute.nvim",
-    config = function()
-      require("substitute").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end
-  })
+  use { "gbprod/substitute.nvim", }
 
   -- nvim-barbar
   -- use {
@@ -113,6 +76,7 @@ return require('packer').startup(function(use)
     'akinsho/bufferline.nvim', tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'
   }
+  use 'lilydjwg/colorizer'
 
   -- nvim-scrollview
   use 'dstein64/nvim-scrollview'
@@ -121,13 +85,6 @@ return require('packer').startup(function(use)
   use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
   }
 
   -- nvim-markdown

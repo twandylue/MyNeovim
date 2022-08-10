@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local vi_mode_utils = require 'feline.providers.vi_mode'
-local icons = require('plugin-config/icons')
+local icons_f = require('plugin-config/icons')
 local colors = require('plugin-config/colors').onedark_dark
 local separator = '|'
 
@@ -66,11 +66,11 @@ local comps = {
     counter = {
       provider = function()
         if vim.fn.wordcount().visual_words == 1 then
-          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
         else
-          return icons.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
         end
       end,
       hl = { fg = colors.fg },
@@ -238,11 +238,11 @@ table.insert(components.active[1], comps.git.remove)
 table.insert(components.inactive[1], comps.file.info)
 
 -- Left Section
--- table.insert(components.active[2], comps.diagnos.err)
--- table.insert(components.active[2], comps.diagnos.warn)
--- table.insert(components.active[2], comps.diagnos.hint)
--- table.insert(components.active[2], comps.diagnos.info)
--- table.insert(components.active[2], comps.lsp.name)
+table.insert(components.active[2], comps.diagnos.err)
+table.insert(components.active[2], comps.diagnos.warn)
+table.insert(components.active[2], comps.diagnos.hint)
+table.insert(components.active[2], comps.diagnos.info)
+table.insert(components.active[2], comps.lsp.name)
 table.insert(components.active[2], comps.file.type)
 table.insert(components.active[2], comps.file.counter)
 table.insert(components.active[2], comps.file.os)
