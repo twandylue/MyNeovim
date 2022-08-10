@@ -20,6 +20,31 @@ require 'lspconfig'.rust_analyzer.setup {
   cmd = { "rust-analyzer" },
 }
 
+require 'lspconfig'.bashls.setup {
+  on_attach = on_attach,
+  filetypes = { "sh" },
+  cmd = { "bash-language-server", "start" },
+}
+
+require 'lspconfig'.yamlls.setup {
+  on_attach = on_attach,
+  filetypes = { "yaml", "yaml.docker-compose" },
+  cmd = { "yaml-language-server", "--stdio" },
+  settings = {
+    redhat = {
+      telemetry = {
+        enabled = false
+      }
+    }
+  }
+}
+
+require 'lspconfig'.jsonls.setup {
+  on_attach = on_attach,
+  filetypes = { "json", "jsonc" },
+  cmd = { "vscode-json-language-server", "--stdio" },
+}
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
