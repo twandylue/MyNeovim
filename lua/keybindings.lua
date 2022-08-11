@@ -22,6 +22,12 @@ local opts = {
 -- local variable
 local map = vim.api.nvim_set_keymap
 
+-- remove trailing white space
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
 map("n", "<leader>s", ":w<CR>", { noremap = false })
 map("n", "<leader>q", ":q<CR>", { noremap = false })
@@ -85,19 +91,6 @@ map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 --       vim.keymap.set(mode, l, r, opts)
 --     end
 --
---     -- Navigation
---     map('n', ']c', function()
---       if vim.wo.diff then return ']c' end
---       vim.schedule(function() gs.next_hunk() end)
---       return '<Ignore>'
---     end, {expr=true})
---
---     map('n', '[c', function()
---       if vim.wo.diff then return '[c' end
---       vim.schedule(function() gs.prev_hunk() end)
---       return '<Ignore>'
---     end, {expr=true})
---
 --     -- Actions
 --     map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
 --     map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
@@ -122,13 +115,13 @@ require 'hop'.setup {
 }
 
 require('telescope').setup {
-  map('n', ';f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
-  map('n', ';g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
+  map('n', '[f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  map('n', '[g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
   map('n', '\\\\', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
-  map('n', ';t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
-  map('n', ';;', '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
-  map('n', ';e', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
-  map('n', 'sf',
+  map('n', '[t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
+  map('n', '[r', '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
+  map('n', '[d', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
+  map('n', 'tf',
     '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
     , opts),
 }

@@ -114,4 +114,7 @@ return require('packer').startup(function(use)
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip' -- Snippet
   use 'kyazdani42/nvim-web-devicons' -- File icons
+  use 'xiyaowong/nvim-transparent' -- Transparent background
+  use 'williamboman/mason.nvim' -- Mason lsp server installer
+  use 'williamboman/mason.lspconfig.nvim'
 end)
