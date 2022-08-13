@@ -22,11 +22,11 @@ local opts = {
 -- local variable
 local map = vim.api.nvim_set_keymap
 
--- remove trailing white space
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-})
+-- TODO: remove trailing white space
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--   pattern = { "*" },
+--   command = [[%s/\s\+$//e]],
+-- })
 
 map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
 map("n", "<leader>s", ":w<CR>", { noremap = false })

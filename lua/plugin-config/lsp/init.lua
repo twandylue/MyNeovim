@@ -13,20 +13,19 @@ local on_attach = function(client, bufnr)
   end
 end
 
-require 'lspconfig'.rust_analyzer.setup {
+nvim_lsp.rust_analyzer.setup {
   on_attach = on_attach,
-
   filetypes = { "rust" },
   -- cmd = { "rust-analyzer" },
 }
 
-require 'lspconfig'.bashls.setup {
+nvim_lsp.bashls.setup {
   on_attach = on_attach,
   filetypes = { "sh" },
   -- cmd = { "bash-language-server", "start" },
 }
 
-require 'lspconfig'.yamlls.setup {
+nvim_lsp.yamlls.setup {
   on_attach = on_attach,
   filetypes = { "yaml", "yaml.docker-compose" },
   -- cmd = { "yaml-language-server", "--stdio" },
@@ -39,15 +38,21 @@ require 'lspconfig'.yamlls.setup {
   }
 }
 
-require 'lspconfig'.jsonls.setup {
+nvim_lsp.jsonls.setup {
   on_attach = on_attach,
   filetypes = { "json", "jsonc" },
   -- cmd = { "vscode-json-language-server", "--stdio" },
 }
 
+nvim_lsp.dockerls.setup {
+  on_attach = on_attach,
+  filetype = { "dockerfile" },
+  -- cmd = { "docker-langserver", "--stdio" }
+}
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
   -- cmd = { "typescript-language-server", "--stdio" },
 }
 
@@ -67,7 +72,7 @@ nvim_lsp.sumneko_lua.setup {
   }
 }
 
-require 'lspconfig'.csharp_ls.setup {
+nvim_lsp.csharp_ls.setup {
   on_attach = on_attach,
   filetypes = { "cs" },
   -- cmd = { "csharp-ls" },
