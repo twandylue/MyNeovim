@@ -1,5 +1,8 @@
 local status, transparent = pcall(require, 'transparent')
-if (not status) then return end
+if (not status) then
+  print("transparent is not installed")
+  return
+end
 
 transparent.setup({
   enable = true, -- boolean: enable transparent

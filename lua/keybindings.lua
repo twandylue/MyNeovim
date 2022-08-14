@@ -147,3 +147,14 @@ require('bufferline').setup {
   -- map('n', 'be', '<cmd>BufferLineSortByExtension<CR>', opts),
   -- map('n', 'bd', '<cmd>BufferLineSortByDirectory<CR>', opts),
 }
+
+-- lspsaga
+map('n', '[l', '<Cmd>Lspsaga show_line_diagnostics<cr>', opts)
+map('n', '[c', '<Cmd>Lspsaga show_cursor_diagnostics<cr>', opts)
+map('n', ']e', '<Cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+map('n', '[e', '<Cmd>Lspsaga diagnostic_jump_prev<cr>', opts)
+map('n', ']h', '<Cmd>Lspsaga hover_doc<cr>', opts)
+map('n', 'gf', '<Cmd>Lspsaga lsp_finder<cr>', opts)
+map('n', 'gp', '<Cmd>Lspsaga preview_definition<cr>', opts)
+map('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
+-- map('n', ',s', '<Cmd>Lspsaga signature_help<cr>', opts)

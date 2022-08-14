@@ -1,7 +1,9 @@
--- local status, ts = pcall(require, 'nvim=treesitter.configs')
 local status, ts = pcall(require, 'nvim-treesitter.configs')
-local indent     = require('nvim-treesitter.indent')
-if (not status) then return end
+local indent = require('nvim-treesitter.indent')
+if (not status) then
+  print("nvim-treesitter.configs is not installed")
+  return
+end
 
 ts.setup {
   ensure_installed = {

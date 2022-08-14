@@ -1,5 +1,8 @@
-local status, telescope = pcall(require, "telescope")
-if not status then return end
+local status, telescope = pcall(require, 'telescope')
+if not status then
+  print("telescope is not installed")
+  return
+end
 
 telescope.load_extension('file_browser')
 local fb_actions = require 'telescope'.extensions.file_browser.actions

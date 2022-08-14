@@ -1,5 +1,6 @@
 local status_ok, feline = pcall(require, 'feline')
 if not status_ok then
+  print("feline is not installed")
   return
 end
 

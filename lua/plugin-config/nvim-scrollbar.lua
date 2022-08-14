@@ -1,6 +1,10 @@
--- local colors = require("tokyonight.colors").setup()
+local status, sidebar = pcall(require, 'scrollbar')
+if (not status) then
+  print("scrollbar is not installed")
+  return
+end
 
-require("scrollbar").setup({
+sidebar.setup {
   handle = {
     color = '#d19a66',
   },
@@ -12,4 +16,4 @@ require("scrollbar").setup({
   --     Hint = { color = colors.hint },
   --     Misc = { color = colors.purple },
   -- }
-})
+}

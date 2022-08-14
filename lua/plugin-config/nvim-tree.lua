@@ -1,4 +1,10 @@
-require 'nvim-tree'.setup {
+local status, nvimtree = pcall(require, 'nvim-tree')
+if (not status) then
+  print("nvim-tree is not installed")
+  return
+end
+
+nvimtree.setup {
   git = {
     enable = true
   },
