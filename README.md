@@ -1,2 +1,2 @@
 # MyNeoVim
-My neovim settings in MacOS
+My neovim settings in Window
