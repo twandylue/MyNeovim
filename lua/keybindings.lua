@@ -37,8 +37,6 @@ map("n", "<S-l>", "g_", { noremap = false })
 -- used by bufferline
 -- map("n", "gj", "gT", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
-map("n", "<C-h>", "<C-W>h", { noremap = false })
-map("n", "<C-l>", "<C-W>l", { noremap = false })
 
 map("", "zh", "<C-W>h", { noremap = false })
 map("", "zj", "<C-W>j", { noremap = false })
@@ -46,16 +44,11 @@ map("", "zk", "<C-W>k", { noremap = false })
 map("", "zl", "<C-W>l", { noremap = false })
 map("", "z<space>", "<C-W>w", { noremap = false })
 
--- In my Mac, option + j => ∆
--- map("n", "∆", ":tabnew<CR>", { noremap = false })
-
 -- used by move lines
--- map("n", "<C-j>", "<C-W>j", { noremap = false })
--- map("n", "<C-k>", "<C-W>k", { noremap = false })
-map("n", "<C-j>", ":m .+1<CR>", { noremap = false })
-map("n", "<C-k>", ":m .-2<CR>", { noremap = false })
-map("v", "<C-j>", ":m '>+1<CR>gv", { noremap = false })
-map("v", "<C-k>", ":m '<-2<CR>gv", { noremap = false })
+map("n", "<A-j>", ":m .+1<CR>", { noremap = false })
+map("n", "<A-k>", ":m .-2<CR>", { noremap = false })
+map("v", "<A-j>", ":m '>+1<CR>gv", { noremap = false })
+map("v", "<A-k>", ":m '<-2<CR>gv", { noremap = false })
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree

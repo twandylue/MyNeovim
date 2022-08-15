@@ -119,7 +119,7 @@ else
   --   פּ ﯟ   蘒練 some other good icons
   return {
     kind = {
-      Text = " ",
+      Text = "",
       Method = " ",
       Function = " ",
       Constructor = " ",
