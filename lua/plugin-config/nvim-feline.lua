@@ -255,8 +255,8 @@ table.insert(components.active[2], comps.file.type)
 table.insert(components.active[2], comps.file.counter)
 table.insert(components.active[2], comps.file.os)
 table.insert(components.active[2], comps.file.position)
--- table.insert(components.active[2], comps.file.line_percentage)
-table.insert(components.active[2], comps.file.scroll_bar)
+table.insert(components.active[2], comps.file.line_percentage)
+-- table.insert(components.active[2], comps.file.scroll_bar)
 
 -- Call feline
 feline.setup {
