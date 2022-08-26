@@ -116,5 +116,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'xiyaowong/nvim-transparent' -- Transparent background
   use 'williamboman/mason.nvim' -- Mason lsp server installer
-  use 'williamboman/mason.lspconfig.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  -- use 'voldikss/vim-floaterm' -- floating terminal
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*', } -- terminal
 end)

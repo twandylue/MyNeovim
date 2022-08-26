@@ -52,7 +52,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv", { noremap = false })
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
