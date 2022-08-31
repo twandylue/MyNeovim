@@ -25,7 +25,7 @@ lspconfig.setup {
     "bashls",
     "csharp-language-server",
     "csharpier",
-    -- "omnisharp",
+    "omnisharp",
     "rust_analyzer",
   }
 }
