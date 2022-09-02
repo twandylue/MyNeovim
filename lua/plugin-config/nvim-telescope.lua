@@ -159,6 +159,7 @@ telescope.setup {
     },
     find_files = {
       previewe = true,
+      theme = "ivy",
     },
     buffers = {
       theme = "dropdown",
