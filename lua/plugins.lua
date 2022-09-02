@@ -105,6 +105,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'nvim-treesitter/nvim-treesitter-context' -- sticky header
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
