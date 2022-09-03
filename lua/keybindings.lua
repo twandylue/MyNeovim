@@ -158,3 +158,6 @@ map('n', 'gf', '<Cmd>Lspsaga lsp_finder<cr>', opts)
 map('n', 'gp', '<Cmd>Lspsaga preview_definition<cr>', opts)
 map('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
 -- map('n', ',s', '<Cmd>Lspsaga signature_help<cr>', opts)
+
+-- toggleterm
+map('n', '<leader>tt', '<Cmd>ToggleTerm<cr>', opts)
