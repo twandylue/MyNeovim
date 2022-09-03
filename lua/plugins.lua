@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-context' -- sticky header
 
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words

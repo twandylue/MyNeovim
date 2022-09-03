@@ -5,8 +5,7 @@ vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
--- 使用相对行号
+vim.o.sidescrolloff = 8 -- 使用相对行号
 vim.wo.number = true
 vim.wo.relativenumber = true
 -- 高亮所在行
@@ -105,3 +104,13 @@ api.nvim_create_autocmd("TextYankPost", {
   command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
   group = yankGrp,
 })
+
+-- 看起來是 default 所以先不設置
+-- Document highlight in neovim
+-- vim.cmd [[
+--   augroup document_highlight
+--     autocmd! * <buffer>
+--     autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+--     autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+--   augroup END
+-- ]]
