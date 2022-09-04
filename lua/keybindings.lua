@@ -37,8 +37,10 @@ map("n", "<S-l>", "g_", { noremap = false })
 -- used by bufferline
 -- map("n", "gj", "gT", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
-map("n", "<C-h>", "<C-W>h", { noremap = false })
-map("n", "<C-l>", "<C-W>l", { noremap = false })
+
+-- 已經用 zh and zj
+-- map("n", "<C-h>", "<C-W>h", { noremap = false })
+-- map("n", "<C-l>", "<C-W>l", { noremap = false })
 
 map("", "zh", "<C-W>h", { noremap = false })
 map("", "zj", "<C-W>j", { noremap = false })
