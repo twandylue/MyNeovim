@@ -162,9 +162,8 @@ telescope.setup {
       theme = "ivy",
     },
     buffers = {
-      theme = "dropdown",
+      theme = "cursor",
       previewer = false,
-      initial_mode = "normal",
     },
     planets = {
       show_pluto = true,
