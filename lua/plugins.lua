@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
   -- nvim-gitsigns
   use { 'lewis6991/gitsigns.nvim' }
 
+  -- nvim-neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
   -- nvim-lualine
   -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
   -- use {
