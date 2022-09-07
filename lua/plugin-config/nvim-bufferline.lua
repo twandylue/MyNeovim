@@ -7,7 +7,7 @@ end
 bufferline.setup {
   options = {
     -- mode = 'tabs',
-    separator_style = 'slant',
+    separator_style = 'thin',
     always_show_bufferline = false,
     show_buffer_close_icons = true,
     show_close_icon = true,
