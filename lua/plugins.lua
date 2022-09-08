@@ -110,6 +110,9 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-context' -- sticky header
 
+  -- vim-visual-multi
+  use 'mg979/vim-visual-multi'
+
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
