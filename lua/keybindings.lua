@@ -160,3 +160,6 @@ map('n', 'gf', '<Cmd>Lspsaga lsp_finder<cr>', opts)
 map('n', 'gp', '<Cmd>Lspsaga preview_definition<cr>', opts)
 map('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
 -- map('n', ',s', '<Cmd>Lspsaga signature_help<cr>', opts)
+
+-- neogit
+map('n', '<c-g>', '<Cmd>Neogit<cr>', opts)
