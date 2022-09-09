@@ -5,6 +5,7 @@ if not status then
 end
 
 telescope.load_extension('file_browser')
+telescope.load_extension('fzf')
 local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 local actions = require "telescope.actions"
@@ -161,6 +162,10 @@ telescope.setup {
       previewe = true,
       theme = "ivy",
     },
+    git_files = {
+      previewe = true,
+      theme = "ivy",
+    },
     buffers = {
       theme = "cursor",
       previewer = false,
@@ -190,6 +195,12 @@ telescope.setup {
     },
   },
   extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
     file_browser = {
       theme = 'dropdown',
       hijack_netrw = true,

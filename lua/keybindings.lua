@@ -121,7 +121,9 @@ require 'hop'.setup {
 }
 
 require('telescope').setup {
-  map('n', '[f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  -- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts),
+  map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  map('n', '<leader>g.', "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts),
   map('n', '[g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
   map('n', '<leader>,', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
   map('n', '[t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
