@@ -29,7 +29,7 @@ local map = vim.api.nvim_set_keymap
 -- })
 
 map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
-map("n", "<leader>s", ":w<CR>", { noremap = false })
+map("n", "<leader>fs", ":w<CR>", { noremap = false })
 map("n", "<leader>q", ":q<CR>", { noremap = false })
 map("n", "<leader>m", "`", { noremap = false })
 map("n", "<S-h>", "^", { noremap = false })
@@ -42,11 +42,11 @@ map("n", "<S-l>", "g_", { noremap = false })
 -- map("n", "<C-h>", "<C-W>h", { noremap = false })
 -- map("n", "<C-l>", "<C-W>l", { noremap = false })
 
-map("", "zh", "<C-W>h", { noremap = false })
-map("", "zj", "<C-W>j", { noremap = false })
-map("", "zk", "<C-W>k", { noremap = false })
-map("", "zl", "<C-W>l", { noremap = false })
-map("", "z<space>", "<C-W>w", { noremap = false })
+map("", "<leader>wh", "<C-W>h", { noremap = false })
+map("", "<leader>wj", "<C-W>j", { noremap = false })
+map("", "<leader>wk", "<C-W>k", { noremap = false })
+map("", "<leader>wl", "<C-W>l", { noremap = false })
+map("", "<leader>ww", "<C-W>w", { noremap = false })
 
 -- In my Mac, option + j => ∆
 -- map("n", "∆", ":tabnew<CR>", { noremap = false })
@@ -58,6 +58,10 @@ map("n", "<C-j>", ":m .+1<CR>", { noremap = false })
 map("n", "<C-k>", ":m .-2<CR>", { noremap = false })
 map("v", "<C-j>", ":m '>+1<CR>gv", { noremap = false })
 map("v", "<C-k>", ":m '<-2<CR>gv", { noremap = false })
+-- resize window
+map("n", "<M-=>", ":vertical res +3<Enter>", { noremap = false })
+map("n", "<M-->", ":vertical res -3<Enter>", { noremap = false })
+
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
@@ -65,21 +69,21 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
-map('n', '<leader>hj', '<cmd>Gitsigns next_hunk<CR>', opts)
-map('n', '<leader>hk', '<cmd>Gitsigns prev_hunk<CR>', opts)
-map('n', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', opts)
-map('v', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', opts)
-map('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>', opts)
-map('v', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>', opts)
-map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>', opts)
-map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>', opts)
-map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>', opts)
-map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>', opts)
-map('n', '<leader>hb', '<cmd>Gitsigns blame_line<CR>', opts)
+map('n', '<leader>gj', '<cmd>Gitsigns next_hunk<CR>', opts)
+map('n', '<leader>gk', '<cmd>Gitsigns prev_hunk<CR>', opts)
+map('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
+map('v', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
+map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', opts)
+map('v', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', opts)
+map('n', '<leader>gS', '<cmd>Gitsigns stage_buffer<CR>', opts)
+map('n', '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', opts)
+map('n', '<leader>gR', '<cmd>Gitsigns reset_buffer<CR>', opts)
+map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', opts)
+map('n', '<leader>gb', '<cmd>Gitsigns blame_line<CR>', opts)
 map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>', opts)
-map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>', opts)
-map('n', '<leader>hD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
-map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
+map('n', '<leader>gd', '<cmd>Gitsigns diffthis<CR>', opts)
+map('n', '<leader>gD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
+-- map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
 -- TODO: dont work
 -- require('gitsigns').setup{
@@ -113,13 +117,13 @@ map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
 require 'hop'.setup {
   vim.api.nvim_set_keymap("n", "<leader>/", "<Cmd>HopPattern<CR>", { silent = true }),
-  vim.api.nvim_set_keymap("n", "s", "<Cmd>HopChar2<CR>", { silent = true }),
+  vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
 require('telescope').setup {
   map('n', '[f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
   map('n', '[g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
-  map('n', '\\\\', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
+  map('n', '<leader>,', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
   map('n', '[t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
   map('n', '[r', '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
   map('n', '[d', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
@@ -139,10 +143,10 @@ require('bufferline').setup {
   map('n', 'gJ', '<cmd>BufferLineMovePrev<CR>', opts),
 
   map('n', 'gP', '<cmd>BufferLineTogglePin<CR>', opts),
-  map('n', 'gp', '<cmd>BufferLinePick<CR>', opts),
+  -- map('n', 'gl', '<cmd>BufferLinePick<CR>', opts),
 
   -- close buffer tab
-  map('n', '<leader>w', '<cmd>bdelete<CR>', opts),
+  map('n', '<leader>bk', '<cmd>bdelete<CR>', opts),
 
   -- These commands will sort buffers by directory, language, or a custom criteria
   -- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
@@ -162,4 +166,4 @@ map('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
 -- map('n', ',s', '<Cmd>Lspsaga signature_help<cr>', opts)
 
 -- neogit
-map('n', '<c-g>', '<Cmd>Neogit<cr>', opts)
+map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
