@@ -116,6 +116,7 @@ return require('packer').startup(function(use)
 
   -- vim-easy-align
   use 'kg8m/vim-simple-align'
+  use 'glepnir/dashboard-nvim'
 
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP

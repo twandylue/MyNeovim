@@ -30,6 +30,7 @@ local map = vim.api.nvim_set_keymap
 
 map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
 map("n", "<leader>fs", ":w<CR>", { noremap = false })
+map("n", "<leader>s", ":w<CR>", { noremap = false })
 map("n", "<leader>q", ":q<CR>", { noremap = false })
 map("n", "<leader>m", "`", { noremap = false })
 map("n", "<S-h>", "^", { noremap = false })
