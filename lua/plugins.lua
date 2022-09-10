@@ -114,6 +114,9 @@ return require('packer').startup(function(use)
   -- vim-visual-multi
   use 'mg979/vim-visual-multi'
 
+  -- vim-easy-align
+  use 'kg8m/vim-simple-align'
+
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
