@@ -38,26 +38,13 @@ map("n", "<S-l>", "g_", { noremap = false })
 -- map("n", "gj", "gT", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
 
--- 已經用 zh and zj
--- map("n", "<C-h>", "<C-W>h", { noremap = false })
--- map("n", "<C-l>", "<C-W>l", { noremap = false })
-
-map("", "<leader>wh", "<C-W>h", { noremap = false })
-map("", "<leader>wj", "<C-W>j", { noremap = false })
-map("", "<leader>wk", "<C-W>k", { noremap = false })
-map("", "<leader>wl", "<C-W>l", { noremap = false })
-map("", "<leader>ww", "<C-W>w", { noremap = false })
-
--- In my Mac, option + j => ∆
--- map("n", "∆", ":tabnew<CR>", { noremap = false })
+map("", "<leader>w", "<C-W>", { noremap = false })
 
 -- used by move lines
--- map("n", "<C-j>", "<C-W>j", { noremap = false })
--- map("n", "<C-k>", "<C-W>k", { noremap = false })
-map("n", "<C-j>", ":m .+1<CR>", { noremap = false })
-map("n", "<C-k>", ":m .-2<CR>", { noremap = false })
-map("v", "<C-j>", ":m '>+1<CR>gv", { noremap = false })
-map("v", "<C-k>", ":m '<-2<CR>gv", { noremap = false })
+map("n", "<M-j>", ":m .+1<CR>", { noremap = false })
+map("n", "<M-k>", ":m .-2<CR>", { noremap = false })
+map("v", "<M-j>", ":m '>+1<CR>gv", { noremap = false })
+map("v", "<M-k>", ":m '<-2<CR>gv", { noremap = false })
 -- resize window
 map("n", "<M-=>", ":vertical res +3<Enter>", { noremap = false })
 map("n", "<M-->", ":vertical res -3<Enter>", { noremap = false })
