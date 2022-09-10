@@ -10,7 +10,8 @@ db.custom_footer = {
 
 db.preview_file_height = 11
 db.preview_file_width = 70
-
+db.header_pad = 3
+db.center_pad = 3
 db.custom_center = {
   -- {
   --   icon = "  ",
@@ -20,18 +21,32 @@ db.custom_center = {
   {
     icon = "  ",
     desc = "Recently files                      ",
-    -- shortcut = 'SPC s l',
+    shortcut = "     ",
     action = "Telescope oldfiles",
   },
   {
     icon = "  ",
     desc = "Find file                           ",
-    action = "Telescope find_files",
+    shortcut = "SPC . ",
+    action = 'Telescope find_files find_command=rg,--hidden,--files',
   },
   {
     icon = "  ",
     desc = "Find text                           ",
+    shortcut = "     ",
     action = "Telescope live_grep",
+  },
+  {
+    icon = "  ",
+    desc = "Neogit                              ",
+    shortcut = "SPC g g",
+    action = ":Neogit",
+  },
+  {
+    icon = "  ",
+    desc = "New File                            ",
+    shortcut = ":enew  ",
+    action = "enew",
   },
   -- {
   --   icon = "  ",
@@ -45,5 +60,5 @@ db.custom_header = {
   [[   |  \/  |_  _| \| |___ _____ _(_)_ __   ]],
   [[   | |\/| | || | .` / -_) _ \ V / | '  \  ]],
   [[   |_|  |_|\_, |_|\_\___\___/\_/|_|_|_|_| ]],
-  [[          |__/                            ]],
+  [[           |__/                           ]],
 }
