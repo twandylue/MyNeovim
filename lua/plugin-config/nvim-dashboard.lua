@@ -12,6 +12,8 @@ db.preview_file_height = 11
 db.preview_file_width = 70
 db.header_pad = 3
 db.center_pad = 3
+db.footer_pad = 2
+
 db.custom_center = {
   -- {
   --   icon = "  ",
