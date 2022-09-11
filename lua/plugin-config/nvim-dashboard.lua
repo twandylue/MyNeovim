@@ -23,19 +23,19 @@ db.custom_center = {
   {
     icon = "  ",
     desc = "Recently files                      ",
-    shortcut = "     ",
+    shortcut = "      ",
     action = "Telescope oldfiles",
   },
   {
     icon = "  ",
     desc = "Find file                           ",
-    shortcut = "SPC . ",
+    shortcut = "SPC .  ",
     action = 'Telescope find_files find_command=rg,--hidden,--files',
   },
   {
     icon = "  ",
     desc = "Find text                           ",
-    shortcut = "     ",
+    shortcut = "      ",
     action = "Telescope live_grep",
   },
   {

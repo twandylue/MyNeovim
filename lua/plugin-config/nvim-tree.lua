@@ -28,7 +28,7 @@ nvimtree.setup {
     group_empty = false,
     highlight_git = true,
     full_name = false,
-    highlight_opened_files = "all",
+    highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_width = 2,
     indent_markers = {
