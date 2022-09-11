@@ -57,8 +57,8 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
-map('n', '<leader>gj', '<cmd>Gitsigns next_hunk<CR>', opts)
-map('n', '<leader>gk', '<cmd>Gitsigns prev_hunk<CR>', opts)
+map('n', '<leader>g]', '<cmd>Gitsigns next_hunk<CR>', opts)
+map('n', '<leader>g[', '<cmd>Gitsigns prev_hunk<CR>', opts)
 map('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
 map('v', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
 map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', opts)
