@@ -10,17 +10,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local opts = {
-  noremap = true,
-  silent = true,
-}
-
 -- indent mark
 -- vim.opts.list = true
 -- vim.opts.listchars:append "eol:↴"
-
--- local variable
-local map = vim.api.nvim_set_keymap
 
 -- TODO: remove trailing white space
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -28,27 +20,36 @@ local map = vim.api.nvim_set_keymap
 --   command = [[%s/\s\+$//e]],
 -- })
 
-map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
-map("n", "<leader>fs", ":w<CR>", { noremap = false })
-map("n", "<leader>s", ":w<CR>", { noremap = false })
-map("n", "<leader>q", ":q<CR>", { noremap = false })
-map("n", "<leader>m", "`", { noremap = false })
-map("n", "<S-h>", "^", { noremap = false })
-map("n", "<S-l>", "g_", { noremap = false })
+local map = vim.api.nvim_set_keymap
+local opts = {
+  noremap = true,
+  silent = true,
+}
+
+map("n", ",<space>", ":nohlsearch<CR>", opts)
+map("n", "<leader>fs", ":w<CR>", opts)
+map("n", "<leader>s", ":w<CR>", opts)
+map("n", "<leader>q", ":q<CR>", opts)
+map("n", "<leader>m", "`", opts)
+map("n", "<S-h>", "^", opts)
+map("n", "<S-l>", "g_", opts)
+-- keep copy text object in register
+map("x", "<leader>p", "\"_dP", opts)
 -- used by bufferline
 -- map("n", "gj", "gT", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
 
-map("", "<leader>w", "<C-W>", { noremap = false })
-
--- used by move lines
-map("n", "<M-j>", ":m .+1<CR>", { noremap = false })
-map("n", "<M-k>", ":m .-2<CR>", { noremap = false })
-map("v", "<M-j>", ":m '>+1<CR>gv", { noremap = false })
-map("v", "<M-k>", ":m '<-2<CR>gv", { noremap = false })
+map("", "<leader>w", "<C-W>", opts)
+-- move entire lines
+map("n", "<M-j>", ":m .+1<CR>", opts)
+map("n", "<M-k>", ":m .-2<CR>", opts)
+map("v", "<M-j>", ":m '>+1<CR>gv", opts)
+map("v", "<M-k>", ":m '<-2<CR>gv", opts)
 -- resize window
-map("n", "<M-=>", ":vertical res +3<Enter>", { noremap = false })
-map("n", "<M-->", ":vertical res -3<Enter>", { noremap = false })
+map("n", "<M-->", ":vertical res -3<Enter>", opts)
+map("n", "<M-left>", ":vertical res +3<Enter>", opts)
+map("n", "<M-=>", ":vertical res +3<Enter>", opts)
+map("n", "<M-right>", ":vertical res -3<Enter>", opts)
 
 map("i", "jj", "<Esc>", { noremap = false })
 
