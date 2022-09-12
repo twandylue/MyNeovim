@@ -6,8 +6,8 @@ end
 
 bufferline.setup {
   options = {
-    -- mode = 'tabs',
-    separator_style = 'slant',
+    mode = 'tabs',
+    separator_style = 'thin',
     always_show_bufferline = false,
     show_buffer_close_icons = true,
     show_close_icon = true,
@@ -27,7 +27,9 @@ bufferline.setup {
     },
     buffer_selected = {
       fg = '#fdf6e3',
-      underline = true
+      undercurl = true
+      -- underline = true,
+      -- italic = true
     },
     fill = {
       bg = '#073642'

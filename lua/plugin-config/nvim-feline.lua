@@ -60,18 +60,25 @@ local comps = {
           file_modified_icon = '',
         }
       },
+      short_provider = {
+        name = 'file_info',
+        opts = {
+          type = 'unique',
+          file_modified_icon = '',
+        }
+      },
       hl = { fg = colors.cyan },
       icon = '',
     },
-    -- File words counter
+    -- words calculator
     counter = {
       provider = function()
         if vim.fn.wordcount().visual_words == 1 then
-          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. ' ' .. separator
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. ' ' .. separator
         else
-          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. ' ' .. separator
         end
       end,
       hl = { fg = colors.fg },
@@ -230,7 +237,7 @@ table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
 -- Right section
-table.insert(components.active[1], comps.vi_mode.left)
+-- table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
 table.insert(components.active[1], comps.git.branch)
 table.insert(components.active[1], comps.git.add)
@@ -246,9 +253,10 @@ table.insert(components.active[2], comps.diagnos.info)
 table.insert(components.active[2], comps.lsp.name)
 table.insert(components.active[2], comps.file.type)
 table.insert(components.active[2], comps.file.counter)
-table.insert(components.active[2], comps.file.os)
+-- table.insert(components.active[2], comps.file.os)
 table.insert(components.active[2], comps.file.position)
 table.insert(components.active[2], comps.file.line_percentage)
+-- table.insert(components.active[2], comps.file.scroll_bar)
 
 -- Call feline
 feline.setup {

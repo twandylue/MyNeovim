@@ -6,7 +6,7 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+packer.startup(function(use)
 
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -30,9 +30,13 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- nvim-gitsigns
   use { 'lewis6991/gitsigns.nvim' }
+
+  -- nvim-neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- nvim-lualine
   -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
@@ -98,14 +102,23 @@ return require('packer').startup(function(use)
   -- nvim-treesitter
   -- First time installation
   -- use {
-  --     'nvim-treesitter/nvim-treesitter',
-  --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   -- }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'nvim-treesitter/nvim-treesitter-context' -- sticky header
 
+  -- vim-visual-multi
+  use 'mg979/vim-visual-multi'
+
+  -- vim-easy-align
+  use 'kg8m/vim-simple-align'
+  use 'glepnir/dashboard-nvim'
+
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
@@ -116,7 +129,5 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'xiyaowong/nvim-transparent' -- Transparent background
   use 'williamboman/mason.nvim' -- Mason lsp server installer
-  use 'williamboman/mason-lspconfig.nvim'
-  -- use 'voldikss/vim-floaterm' -- floating terminal
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*', } -- terminal
+  use 'williamboman/mason.lspconfig.nvim'
 end)

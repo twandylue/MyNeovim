@@ -10,17 +10,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local opts = {
-  noremap = true,
-  silent = true,
-}
-
 -- indent mark
 -- vim.opts.list = true
 -- vim.opts.listchars:append "eol:↴"
-
--- local variable
-local map = vim.api.nvim_set_keymap
 
 -- TODO: remove trailing white space
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -28,49 +20,59 @@ local map = vim.api.nvim_set_keymap
 --   command = [[%s/\s\+$//e]],
 -- })
 
-map("n", ",<space>", ":nohlsearch<CR>", { noremap = false })
-map("n", "<leader>s", ":w<CR>", { noremap = false })
-map("n", "<leader>q", ":q<CR>", { noremap = false })
-map("n", "<leader>m", "`", { noremap = false })
-map("n", "<S-h>", "^", { noremap = false })
-map("n", "<S-l>", "g_", { noremap = false })
+local map = vim.api.nvim_set_keymap
+local opts = {
+  noremap = true,
+  silent = true,
+}
+
+map("n", ",<space>", ":nohlsearch<CR>", opts)
+map("n", "<leader>fs", ":w<CR>", opts)
+map("n", "<leader>s", ":w<CR>", opts)
+map("n", "<leader>q", ":q<CR>", opts)
+map("n", "<leader>m", "`", opts)
+map("n", "<S-h>", "^", opts)
+map("n", "<S-l>", "g_", opts)
+-- keep copy text object in register
+map("x", "<leader>p", "\"_dP", opts)
 -- used by bufferline
 -- map("n", "gj", "gT", { noremap = false })
 -- map("n", "gk", "gt", { noremap = false })
 
-map("", "zh", "<C-W>h", { noremap = false })
-map("", "zj", "<C-W>j", { noremap = false })
-map("", "zk", "<C-W>k", { noremap = false })
-map("", "zl", "<C-W>l", { noremap = false })
-map("", "z<space>", "<C-W>w", { noremap = false })
-
--- used by move lines
+map("", "<leader>w", "<C-W>", opts)
+-- move entire lines
 map("n", "<A-j>", ":m .+1<CR>", { noremap = false })
 map("n", "<A-k>", ":m .-2<CR>", { noremap = false })
 map("v", "<A-j>", ":m '>+1<CR>gv", { noremap = false })
 map("v", "<A-k>", ":m '<-2<CR>gv", { noremap = false })
+-- resize window
+map("n", "<A-->", ":vertical res -3<Enter>", opts)
+map("n", "<A-left>", ":vertical res +3<Enter>", opts)
+map("n", "<A-=>", ":vertical res +3<Enter>", opts)
+map("n", "<A-right>", ":vertical res -3<Enter>", opts)
+
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
-map('n', '<leader>hj', '<cmd>Gitsigns next_hunk<CR>', opts)
-map('n', '<leader>hk', '<cmd>Gitsigns prev_hunk<CR>', opts)
-map('n', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', opts)
-map('v', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>', opts)
-map('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>', opts)
-map('v', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>', opts)
-map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>', opts)
-map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>', opts)
-map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>', opts)
-map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>', opts)
-map('n', '<leader>hb', '<cmd>Gitsigns blame_line<CR>', opts)
+map('n', '<leader>g]', '<cmd>Gitsigns next_hunk<CR>', opts)
+map('n', '<leader>g[', '<cmd>Gitsigns prev_hunk<CR>', opts)
+map('n', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
+map('v', '<leader>gs', '<cmd>Gitsigns stage_hunk<CR>', opts)
+map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', opts)
+map('v', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>', opts)
+map('n', '<leader>gS', '<cmd>Gitsigns stage_buffer<CR>', opts)
+map('n', '<leader>gu', '<cmd>Gitsigns undo_stage_hunk<CR>', opts)
+map('n', '<leader>gR', '<cmd>Gitsigns reset_buffer<CR>', opts)
+map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<CR>', opts)
+map('n', '<leader>gb', '<cmd>Gitsigns blame_line<CR>', opts)
 map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>', opts)
-map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>', opts)
-map('n', '<leader>hD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
-map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
+map('n', '<leader>gd', '<cmd>Gitsigns diffthis<CR>', opts)
+map('n', '<leader>gD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
+-- map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
 -- TODO: dont work
 -- require('gitsigns').setup{
@@ -104,13 +106,15 @@ map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
 require 'hop'.setup {
   vim.api.nvim_set_keymap("n", "<leader>/", "<Cmd>HopPattern<CR>", { silent = true }),
-  vim.api.nvim_set_keymap("n", "s", "<Cmd>HopChar2<CR>", { silent = true }),
+  vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
 require('telescope').setup {
-  map('n', '[f', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  -- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts),
+  map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
+  map('n', '<leader>g.', "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts),
   map('n', '[g', '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
-  map('n', '\\\\', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
+  map('n', '<leader>,', '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
   map('n', '[t', '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
   map('n', '[r', '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
   map('n', '[d', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
@@ -130,10 +134,10 @@ require('bufferline').setup {
   map('n', 'gJ', '<cmd>BufferLineMovePrev<CR>', opts),
 
   map('n', 'gP', '<cmd>BufferLineTogglePin<CR>', opts),
-  map('n', 'gp', '<cmd>BufferLinePick<CR>', opts),
+  -- map('n', 'gl', '<cmd>BufferLinePick<CR>', opts),
 
   -- close buffer tab
-  map('n', '<leader>w', '<cmd>bdelete<CR>', opts),
+  map('n', '<leader>bk', '<cmd>bdelete<CR>', opts),
 
   -- These commands will sort buffers by directory, language, or a custom criteria
   -- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
@@ -146,8 +150,11 @@ map('n', '[l', '<Cmd>Lspsaga show_line_diagnostics<cr>', opts)
 map('n', '[c', '<Cmd>Lspsaga show_cursor_diagnostics<cr>', opts)
 map('n', ']e', '<Cmd>Lspsaga diagnostic_jump_next<cr>', opts)
 map('n', '[e', '<Cmd>Lspsaga diagnostic_jump_prev<cr>', opts)
-map('n', ']h', '<Cmd>Lspsaga hover_doc<cr>', opts)
-map('n', 'gf', '<Cmd>Lspsaga lsp_finder<cr>', opts)
-map('n', 'gp', '<Cmd>Lspsaga preview_definition<cr>', opts)
-map('n', 'gr', '<Cmd>Lspsaga rename<cr>', opts)
--- map('n', ',s', '<Cmd>Lspsaga signature_help<cr>', opts)
+map('n', '<tab>h', '<Cmd>Lspsaga hover_doc<cr>', opts)
+map('n', '<tab>f', '<Cmd>Lspsaga lsp_finder<cr>', opts)
+map('n', '<tab>p', '<Cmd>Lspsaga peek_definition<cr>', opts)
+map('n', '<tab>r', '<Cmd>Lspsaga rename<cr>', opts)
+map('n', '<tab>.', '<Cmd>Lspsaga code_action<cr>', opts)
+
+-- neogit
+map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
