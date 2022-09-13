@@ -26,7 +26,7 @@ local opts = {
   silent = true,
 }
 
-map("n", ",<space>", ":nohlsearch<CR>", opts)
+map("n", "<Esc>", ":nohlsearch<CR>", opts)
 map("n", "<leader>fs", ":w<CR>", opts)
 map("n", "<leader>s", ":w<CR>", opts)
 map("n", "<leader>q", ":q<CR>", opts)
