@@ -150,7 +150,7 @@ map('n', '<tab>h', '<Cmd>Lspsaga hover_doc<cr>', opts)
 map('n', '<tab>f', '<Cmd>Lspsaga lsp_finder<cr>', opts)
 map('n', '<tab>p', '<Cmd>Lspsaga peek_definition<cr>', opts)
 map('n', '<tab>r', '<Cmd>Lspsaga rename<cr>', opts)
-map('n', '<tab>.', '<Cmd>Lspsaga code_action<cr>', opts)
+map('n', '<A-.>', '<Cmd>Lspsaga code_action<cr>', opts)
 
 -- neogit
 map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
