@@ -1,3 +1,9 @@
+local statusUtil, util = pcall(require, "Utils/util")
+if (not statusUtil) then
+  print("Util is not found")
+  return
+end
+
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then
   print("lspconfig is not installed")
@@ -79,4 +85,5 @@ nvim_lsp.csharp_ls.setup {
   on_attach = on_attach,
   filetypes = { "cs" },
   -- cmd = { "csharp-ls" },
+  root_dir = util.root_pattern(".git", "*.sln")
 }
