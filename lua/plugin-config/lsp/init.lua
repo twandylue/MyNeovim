@@ -1,4 +1,4 @@
-local statusUtil, util = pcall(require, "Utils/util")
+local statusUtil, util = pcall(require, "lspconfig.util")
 if (not statusUtil) then
   print("Util is not found")
   return
