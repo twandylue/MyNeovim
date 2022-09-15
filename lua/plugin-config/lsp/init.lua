@@ -1,4 +1,4 @@
-local statusUtil, util = pcall(require, "Util/util")
+local statusUtil, util = pcall(require, "Utils/util")
 if (not statusUtil) then
   print("Util is not found")
   return
