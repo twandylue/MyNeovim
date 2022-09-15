@@ -61,7 +61,9 @@ nvim_lsp.dockerls.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+  init_options = { hostInfo = "neovim" },
   -- cmd = { "typescript-language-server", "--stdio" },
 }
 
