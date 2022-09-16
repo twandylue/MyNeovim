@@ -83,7 +83,7 @@ vim.opt.clipboard = "unnamedplus"
 -- keep block cursor
 vim.o.guicursor = "i:block"
 -- reset pwd to local directory file path when open nvim
-vim.o.autochdir = true
+-- vim.o.autochdir = true
 
 -- set color scheme
 vim.cmd('colorscheme gruvbox')
