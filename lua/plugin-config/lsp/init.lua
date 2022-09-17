@@ -81,6 +81,36 @@ nvim_lsp.sumneko_lua.setup {
   }
 }
 
+nvim_lsp.clangd.setup {
+  on_attach = on_attach,
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_dir = util.root_pattern(
+    '.clangd',
+    '.clang-tidy',
+    '.clang-format',
+    'compile_commands.json',
+    'compile_flags.txt',
+    'configure.ac',
+    '.git'
+  ),
+  single_file_support = true
+}
+
+nvim_lsp.pyright.setup {
+  filetypes = { "python" },
+  root_dir = util.root_pattern(".git"),
+  single_file_support = true,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
+}
+
 nvim_lsp.csharp_ls.setup {
   on_attach = on_attach,
   filetypes = { "cs" },
