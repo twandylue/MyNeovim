@@ -142,6 +142,7 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippet
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'xiyaowong/nvim-transparent' -- Transparent background
+  use 'ray-x/lsp_signature.nvim' -- lsp signature
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
 end)
