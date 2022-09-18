@@ -2,7 +2,6 @@ print('init.lua loaded')
 require('basic')
 require('keybindings')
 require('plugins')
--- require('after.color')
 
 -- 插件配置
 require('plugin-config/nvim-tree')
