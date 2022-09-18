@@ -118,6 +118,10 @@ packer.startup(function(use)
   use 'kg8m/vim-simple-align'
   use 'glepnir/dashboard-nvim'
 
+  -- goyo-vim
+  use 'junegunn/goyo.vim'
+  use 'junegunn/limelight.vim'
+
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
