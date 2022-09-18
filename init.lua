@@ -7,6 +7,7 @@ require('plugins')
 -- 插件配置
 require('plugin-config/nvim-tree')
 require('plugin-config/nvim-gitsigns')
+require('plugin-config/nvim-git-blame')
 require('plugin-config/nvim-neogit')
 require('plugin-config/nvim-feline')
 require('plugin-config/nvim-hop')

@@ -38,6 +38,8 @@ packer.startup(function(use)
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  use { 'f-person/git-blame.nvim' }
+
   -- nvim-lualine
   -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
   -- use {
