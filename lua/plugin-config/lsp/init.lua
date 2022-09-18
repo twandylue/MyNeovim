@@ -96,6 +96,13 @@ nvim_lsp.clangd.setup {
   single_file_support = true
 }
 
+nvim_lsp.bashls.setup {
+  cmd_env = { GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)" },
+  filetypes = { "sh" },
+  root_dir = util.find_git_ancestor,
+  single_file_support = true,
+}
+
 nvim_lsp.pyright.setup {
   filetypes = { "python" },
   root_dir = util.root_pattern(".git"),

@@ -4,7 +4,7 @@ if (not status) then
   return
 end
 
-local status2, lspconfig = pcall(require, 'mason-lspconfig')
+local status2, masonLspconfig = pcall(require, 'mason-lspconfig')
 if (not status2) then
   print("mason-lspconfig is not installed")
   return
@@ -12,7 +12,7 @@ end
 
 mason.setup {}
 
-lspconfig.setup {
+masonLspconfig.setup {
   ensure_installed = {
     "cssls",
     "cssmodules_ls",
@@ -27,5 +27,6 @@ lspconfig.setup {
     "csharpier",
     "omnisharp",
     "rust_analyzer",
+    "clangd"
   }
 }
