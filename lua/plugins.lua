@@ -129,6 +129,9 @@ packer.startup(function(use)
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
 
+  -- nvim-notify
+  use 'rcarriga/nvim-notify'
+
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
