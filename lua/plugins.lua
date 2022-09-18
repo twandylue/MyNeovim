@@ -38,14 +38,8 @@ packer.startup(function(use)
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  -- git-blame
   use { 'f-person/git-blame.nvim' }
-
-  -- nvim-lualine
-  -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
-  -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  -- }
 
   -- nvim-feline
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
@@ -75,12 +69,6 @@ packer.startup(function(use)
 
   -- nvim-exchange
   use { "gbprod/substitute.nvim", }
-
-  -- nvim-barbar
-  -- use {
-  --   'romgrk/barbar.nvim',
-  --   requires = {'kyazdani42/nvim-web-devicons'}
-  -- }
 
   -- nvim-bufferline
   use {
@@ -123,6 +111,8 @@ packer.startup(function(use)
 
   -- vim-easy-align
   use 'kg8m/vim-simple-align'
+
+  -- nvim-dashboard
   use 'glepnir/dashboard-nvim'
 
   -- goyo-vim
@@ -132,7 +122,7 @@ packer.startup(function(use)
   -- nvim-notify
   use 'rcarriga/nvim-notify'
 
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' } -- nvim-toggleterm
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
