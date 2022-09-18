@@ -56,7 +56,12 @@ packer.startup(function(use)
 
   -- nvim-autopairs
   use "windwp/nvim-autopairs"
+
+  -- vim-autotag
   use 'windwp/nvim-ts-autotag'
+
+  -- vim-illuminate
+  use 'RRethy/vim-illuminate'
 
   -- nvim-indent
   use {
