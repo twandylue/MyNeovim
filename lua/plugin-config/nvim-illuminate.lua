@@ -19,7 +19,7 @@ illuminate.configure({
   -- supports the same keys passed to .configure except for filetypes_denylist and filetypes_allowlist
   filetype_overrides = {},
   -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
-  filetypes_denylist = { "NvimTree", "alpha", "packer", "qf", "Outline", "fugitive", "NeogitStatus" },
+  filetypes_denylist = { "NvimTree", "packer", "Outline", "NeogitStatus", "toggleterm", "dashboard" },
   -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
   filetypes_allowlist = {},
   -- modes_denylist: modes to not illuminate, this overrides modes_allowlist
