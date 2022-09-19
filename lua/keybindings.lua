@@ -128,3 +128,17 @@ map('n', '<M-.>', '<Cmd>Lspsaga code_action<cr>', opts)
 
 -- neogit
 map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
+
+-- toggleterm
+function _G.set_terminal_keymaps()
+  local termOpts = { buffer = 0 }
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], termOpts)
+  vim.keymap.set('t', '<C-[>', [[<Esc>]], termOpts)
+  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], termOpts)
+  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], termOpts)
+  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], termOpts)
+  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termOpts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
