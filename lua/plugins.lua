@@ -130,4 +130,19 @@ packer.startup(function(use)
   use 'xiyaowong/nvim-transparent' -- Transparent background
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
+
+  -- git-blame
+  use { 'f-person/git-blame.nvim' }
+
+  use 'ray-x/lsp_signature.nvim' -- lsp signature
+
+  -- vim-illuminate
+  use 'RRethy/vim-illuminate'
+
+  -- nvim-notify
+  use 'rcarriga/nvim-notify'
+
+  -- goyo-vim
+  use 'junegunn/goyo.vim'
+  use 'junegunn/limelight.vim'
 end)
