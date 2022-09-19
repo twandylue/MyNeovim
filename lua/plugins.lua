@@ -27,19 +27,19 @@ packer.startup(function(use)
   -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { 'nvim-lua/plenary.nvim' }
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- nvim-gitsigns
-  use { 'lewis6991/gitsigns.nvim' }
+  use 'lewis6991/gitsigns.nvim'
 
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   -- git-blame
-  use { 'f-person/git-blame.nvim' }
+  use 'f-person/git-blame.nvim'
 
   -- nvim-feline
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
@@ -48,7 +48,7 @@ packer.startup(function(use)
   use { 'phaazon/hop.nvim', branch = 'v2', }
 
   -- nvim-comment
-  use { 'numToStr/Comment.nvim', }
+  use 'numToStr/Comment.nvim'
 
   -- nvim-autopairs
   use "windwp/nvim-autopairs"
@@ -60,15 +60,13 @@ packer.startup(function(use)
   use 'RRethy/vim-illuminate'
 
   -- nvim-indent
-  use {
-    "lukas-reineke/indent-blankline.nvim"
-  }
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- nvim-surround
-  use { "kylechui/nvim-surround", }
+  use "kylechui/nvim-surround"
 
   -- nvim-exchange
-  use { "gbprod/substitute.nvim", }
+  use "gbprod/substitute.nvim"
 
   -- nvim-bufferline
   use {
