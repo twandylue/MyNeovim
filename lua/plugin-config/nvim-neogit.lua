@@ -5,6 +5,9 @@ if (not status) then
 end
 
 neogit.setup {
+  integrations = {
+    diffview = true
+  },
   -- override/add mappings
   mappings = {
     -- modify status buffer mappings
@@ -17,5 +20,5 @@ neogit.setup {
       -- ["<enter>"] = "Toggle",
       ["o"] = "GoToFile",
     }
-  }
+  },
 }

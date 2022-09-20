@@ -38,6 +38,9 @@ packer.startup(function(use)
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  -- git-diffview
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
   -- git-blame
   use 'f-person/git-blame.nvim'
 
