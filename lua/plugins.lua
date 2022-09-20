@@ -38,12 +38,8 @@ packer.startup(function(use)
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
-  -- nvim-lualine
-  -- TODO: 暫時不用 有議題未解決 搜索會被遮蔽 e.g. vim.wo.cursorline = true
-  -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  -- }
+  -- diffview
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- nvim-feline
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
