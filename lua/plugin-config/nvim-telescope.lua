@@ -23,7 +23,7 @@ telescope.setup {
     file_ignore_patterns = {
       ".git/",
       "target/",
-      "docs/",
+      -- "docs/",
       "vendor/*",
       "%.lock",
       "__pycache__/*",
@@ -45,7 +45,7 @@ telescope.setup {
       ".vscode/",
       "__pycache__/",
       "build/",
-      "env/",
+      -- "env/",
       "gradle/",
       "node_modules/",
       "%.pdb",
