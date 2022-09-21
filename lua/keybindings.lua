@@ -101,7 +101,7 @@ map('n', '<leader>gD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
 -- }
 
 require 'hop'.setup {
-  vim.api.nvim_set_keymap("n", "<leader>/", "<Cmd>HopPattern<CR>", { silent = true }),
+  vim.api.nvim_set_keymap("n", "gs/", "<Cmd>HopPattern<CR>", { silent = true }),
   vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
