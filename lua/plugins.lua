@@ -135,6 +135,7 @@ packer.startup(function(use)
   use 'xiyaowong/nvim-transparent' -- Transparent background
   use 'ray-x/lsp_signature.nvim' -- lsp signature
   use 'simrat39/symbols-outline.nvim' -- symbols-outline
+  use 'j-hui/fidget.nvim' -- fidget
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
 end)
