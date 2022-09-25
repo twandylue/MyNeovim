@@ -140,5 +140,8 @@ function _G.set_terminal_keymaps()
   vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termOpts)
 end
 
+vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
+vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts)
+
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
