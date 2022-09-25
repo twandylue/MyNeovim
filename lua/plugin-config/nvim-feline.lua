@@ -68,7 +68,7 @@ local comps = {
         }
       },
       hl = { fg = colors.cyan },
-      icon = ' ',
+      icon = ' ',
     },
     -- words calculator
     counter = {
