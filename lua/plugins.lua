@@ -38,6 +38,9 @@ packer.startup(function(use)
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  -- git-fugitive
+  use 'tpope/vim-fugitive'
+
   -- git-diffview
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
@@ -136,7 +139,6 @@ packer.startup(function(use)
   use 'ray-x/lsp_signature.nvim' -- lsp signature
   use 'simrat39/symbols-outline.nvim' -- symbols-outline
   use 'j-hui/fidget.nvim' -- fidget
-  use 'tpope/vim-fugitive' -- git-fugitive
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
 end)
