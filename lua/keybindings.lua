@@ -154,3 +154,7 @@ map('n', '<A-.>', '<Cmd>Lspsaga code_action<cr>', opts)
 
 -- neogit
 map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
+
+-- toggleterm
+vim.keymap.set('n', '<A-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
+vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts)

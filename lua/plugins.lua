@@ -141,4 +141,6 @@ packer.startup(function(use)
   -- goyo-vim
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
+
+  use 'j-hui/fidget.nvim' -- fidget
 end)

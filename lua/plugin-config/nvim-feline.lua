@@ -68,7 +68,7 @@ local comps = {
         }
       },
       hl = { fg = colors.cyan },
-      icon = '',
+      icon = ' ',
     },
     -- words calculator
     counter = {
@@ -236,7 +236,7 @@ table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
--- Right section
+-- Left section
 -- table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
 table.insert(components.active[1], comps.git.branch)
@@ -245,7 +245,7 @@ table.insert(components.active[1], comps.git.change)
 table.insert(components.active[1], comps.git.remove)
 table.insert(components.inactive[1], comps.file.info)
 
--- Left Section
+-- Right Section
 table.insert(components.active[2], comps.diagnos.err)
 table.insert(components.active[2], comps.diagnos.warn)
 table.insert(components.active[2], comps.diagnos.hint)
