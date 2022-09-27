@@ -19,6 +19,6 @@ neogit.setup {
       -- ["s"] = "",
       -- ["<enter>"] = "Toggle",
       ["o"] = "GoToFile",
-    },
-  }
+    }
+  },
 }

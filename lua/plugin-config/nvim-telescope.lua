@@ -5,7 +5,9 @@ if not status then
 end
 
 telescope.load_extension('file_browser')
+-- TODO: Mac
 -- telescope.load_extension('fzf')
+telescope.load_extension('project')
 local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 local actions = require "telescope.actions"
@@ -45,7 +47,7 @@ telescope.setup {
       ".vscode/",
       "__pycache__/",
       "build/",
-      "env/",
+      -- "env/",
       "gradle/",
       "node_modules/",
       "%.pdb",
@@ -195,12 +197,13 @@ telescope.setup {
     },
   },
   extensions = {
-    -- fzf = {
-    --   fuzzy = true, -- false will only do exact matching
-    --   override_generic_sorter = true, -- override the generic sorter
-    --   override_file_sorter = true, -- override the file sorter
-    --   case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-    -- },
+    -- TODO: Mac
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
     file_browser = {
       theme = 'dropdown',
       hijack_netrw = true,
@@ -216,6 +219,13 @@ telescope.setup {
           end
         }
       }
+    },
+    project = {
+      -- base_dirs = {},
+      -- hidden_files = false, -- default: false
+      -- theme = "dropdown",
+      -- order_by = "asc"
     }
   }
 }
+

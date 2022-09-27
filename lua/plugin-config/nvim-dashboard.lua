@@ -45,6 +45,18 @@ db.custom_center = {
     action = ":Neogit",
   },
   {
+    icon = "  ",
+    desc = "Fugitive                            ",
+    shortcut = ":Git   ",
+    action = ":Git",
+  },
+  {
+    icon = "  ",
+    desc = "Porject                             ",
+    shortcut = "Ctrl p",
+    action = "Telescope project",
+  },
+  {
     icon = "  ",
     desc = "New File                            ",
     shortcut = ":enew  ",

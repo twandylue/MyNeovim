@@ -10,6 +10,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- indent mark
+-- vim.opts.list = true
+-- vim.opts.listchars:append "eol:↴"
+
 -- TODO: remove trailing white space
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 --   pattern = { "*" },
@@ -22,7 +26,7 @@ local opts = {
   silent = true,
 }
 
-map("n", "<Esc>", ":nohlsearch<CR>", opts)
+map("n", "<ESC>", ":nohlsearch<CR>", opts)
 map("n", "<leader>fs", ":w<CR>", opts)
 map("n", "<leader>s", ":w<CR>", opts)
 map("n", "<leader>q", ":q<CR>", opts)
@@ -47,6 +51,17 @@ map("n", "<A-left>", ":vertical res +3<Enter>", opts)
 map("n", "<A-=>", ":vertical res +3<Enter>", opts)
 map("n", "<A-right>", ":vertical res -3<Enter>", opts)
 
+-- TODO: Mac
+-- map("n", "<M-j>", ":m .+1<CR>", opts)
+-- map("n", "<M-k>", ":m .-2<CR>", opts)
+-- map("v", "<M-j>", ":m '>+1<CR>gv", opts)
+-- map("v", "<M-k>", ":m '<-2<CR>gv", opts)
+-- -- resize window
+-- map("n", "<M-->", ":vertical res -3<Enter>", opts)
+-- map("n", "<M-left>", ":vertical res +3<Enter>", opts)
+-- map("n", "<M-=>", ":vertical res +3<Enter>", opts)
+-- map("n", "<M-right>", ":vertical res -3<Enter>", opts)
+
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
@@ -70,41 +85,12 @@ map('n', '<leader>gd', '<cmd>Gitsigns diffthis<CR>', opts)
 map('n', '<leader>gD', '<cmd>Gitsigns diffthis "~"<CR>', opts)
 -- map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
--- TODO: dont work
--- require('gitsigns').setup{
---   ...
---   on_attach = function(bufnr)
---     local gs = package.loaded.gitsigns
---
---     local function map(mode, l, r, opts)
---       opts = opts or {}
---       opts.buffer = bufnr
---       vim.keymap.set(mode, l, r, opts)
---     end
---
---     -- Actions
---     map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
---     map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
---     map('n', '<leader>hS', gs.stage_buffer)
---     map('n', '<leader>hu', gs.undo_stage_hunk)
---     map('n', '<leader>hR', gs.reset_buffer)
---     map('n', '<leader>hp', gs.preview_hunk)
---     map('n', '<leader>hb', function() gs.blame_line{full=true} end)
---     map('n', '<leader>tb', gs.toggle_current_line_blame)
---     map('n', '<leader>hd', gs.diffthis)
---     map('n', '<leader>hD', function() gs.diffthis('~') end)
---     map('n', '<leader>td', gs.toggle_deleted)
---
---     -- Text object
---     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
---   end
--- }
-
 require 'hop'.setup {
   vim.api.nvim_set_keymap("n", "gs/", "<Cmd>HopPattern<CR>", { silent = true }),
   vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
+-- telescope
 require('telescope').setup {
   -- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts),
   map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
@@ -118,6 +104,12 @@ require('telescope').setup {
     '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
     , opts),
 }
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-p>',
+  ":lua require'telescope'.extensions.project.project{}<CR>",
+  opts
+)
 
 require('bufferline').setup {
   -- These commands will navigate through buffers in order regardless of which mode you are using
@@ -151,10 +143,27 @@ map('n', '<tab>f', '<Cmd>Lspsaga lsp_finder<cr>', opts)
 map('n', '<tab>p', '<Cmd>Lspsaga peek_definition<cr>', opts)
 map('n', '<tab>r', '<Cmd>Lspsaga rename<cr>', opts)
 map('n', '<A-.>', '<Cmd>Lspsaga code_action<cr>', opts)
+-- TODO: Mac
+map('n', '<M-.>', '<Cmd>Lspsaga code_action<cr>', opts)
 
 -- neogit
 map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
 
 -- toggleterm
+function _G.set_terminal_keymaps()
+  local termOpts = { buffer = 0 }
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], termOpts)
+  vim.keymap.set('t', '<C-[>', [[<Esc>]], termOpts)
+  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], termOpts)
+  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], termOpts)
+  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], termOpts)
+  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termOpts)
+end
+
+-- TODO: Mac
+-- vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts) -- open terminal on current directory
 vim.keymap.set('n', '<A-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
-vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts)
+vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on current root path(neovim)
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

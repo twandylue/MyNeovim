@@ -27,19 +27,26 @@ packer.startup(function(use)
   -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { 'nvim-lua/plenary.nvim' }
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'nvim-telescope/telescope-project.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- nvim-gitsigns
-  use { 'lewis6991/gitsigns.nvim' }
+  use 'lewis6991/gitsigns.nvim'
 
   -- nvim-neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
-  -- diffview
+  -- git-fugitive
+  use 'tpope/vim-fugitive'
+
+  -- git-diffview
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -- git-blame
+  use 'f-person/git-blame.nvim'
 
   -- nvim-feline
   use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
@@ -48,28 +55,25 @@ packer.startup(function(use)
   use { 'phaazon/hop.nvim', branch = 'v2', }
 
   -- nvim-comment
-  use { 'numToStr/Comment.nvim', }
+  use 'numToStr/Comment.nvim'
 
   -- nvim-autopairs
   use "windwp/nvim-autopairs"
+
+  -- vim-autotag
   use 'windwp/nvim-ts-autotag'
 
+  -- vim-illuminate
+  use 'RRethy/vim-illuminate'
+
   -- nvim-indent
-  use {
-    "lukas-reineke/indent-blankline.nvim"
-  }
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- nvim-surround
-  use { "kylechui/nvim-surround", }
+  use "kylechui/nvim-surround"
 
   -- nvim-exchange
-  use { "gbprod/substitute.nvim", }
-
-  -- nvim-barbar
-  -- use {
-  --   'romgrk/barbar.nvim',
-  --   requires = {'kyazdani42/nvim-web-devicons'}
-  -- }
+  use "gbprod/substitute.nvim"
 
   -- nvim-bufferline
   use {
@@ -112,9 +116,21 @@ packer.startup(function(use)
 
   -- vim-easy-align
   use 'kg8m/vim-simple-align'
+
+  -- nvim-dashboard
   use 'glepnir/dashboard-nvim'
 
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+  -- goyo-vim
+  use 'junegunn/goyo.vim'
+  use 'junegunn/limelight.vim'
+
+  -- nvim-notify
+  use 'rcarriga/nvim-notify'
+
+  -- smooth cursor
+  use 'gen740/SmoothCursor.nvim'
+
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' } -- nvim-toggleterm
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
@@ -124,6 +140,9 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippet
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'xiyaowong/nvim-transparent' -- Transparent background
+  use 'ray-x/lsp_signature.nvim' -- lsp signature
+  use 'simrat39/symbols-outline.nvim' -- symbols-outline
+  use 'j-hui/fidget.nvim' -- fidget
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
 

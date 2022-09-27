@@ -84,7 +84,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.o.guicursor = "i:block"
 -- reset pwd to local directory file path when open nvim
 -- vim.o.autochdir = true
-
 -- set color scheme
 vim.cmd('colorscheme gruvbox')
 -- set ff=unix for window
@@ -109,3 +108,13 @@ api.nvim_create_autocmd("TextYankPost", {
   command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
   group = yankGrp,
 })
+
+-- 看起來是 default 所以先不設置
+-- Document highlight in neovim
+-- vim.cmd [[
+--   augroup document_highlight
+--     autocmd! * <buffer>
+--     autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+--     autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+--   augroup END
+-- ]]

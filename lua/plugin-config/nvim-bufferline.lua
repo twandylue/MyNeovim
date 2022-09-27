@@ -27,8 +27,9 @@ bufferline.setup {
     },
     buffer_selected = {
       fg = '#fdf6e3',
-      undercurl = true
-      -- underline = true,
+      -- bg = '#e62c35'
+      -- undercurl = true
+      underline = true,
       -- italic = true
     },
     fill = {
