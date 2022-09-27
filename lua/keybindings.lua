@@ -40,16 +40,32 @@ map("x", "<leader>p", "\"_dP", opts)
 -- map("n", "gk", "gt", { noremap = false })
 
 map("", "<leader>w", "<C-W>", opts)
--- move entire lines
-map("n", "<M-j>", ":m .+1<CR>", opts)
-map("n", "<M-k>", ":m .-2<CR>", opts)
-map("v", "<M-j>", ":m '>+1<CR>gv", opts)
-map("v", "<M-k>", ":m '<-2<CR>gv", opts)
--- resize window
-map("n", "<M-->", ":vertical res -3<Enter>", opts)
-map("n", "<M-left>", ":vertical res +3<Enter>", opts)
-map("n", "<M-=>", ":vertical res +3<Enter>", opts)
-map("n", "<M-right>", ":vertical res -3<Enter>", opts)
+
+if vim.fn.has "mac" == 1 then
+  -- move entire lines
+  map("n", "<M-j>", ":m .+1<CR>", opts)
+  map("n", "<M-k>", ":m .-2<CR>", opts)
+  map("v", "<M-j>", ":m '>+1<CR>gv", opts)
+  map("v", "<M-k>", ":m '<-2<CR>gv", opts)
+  -- -- resize window
+  map("n", "<M-->", ":vertical res -3<Enter>", opts)
+  map("n", "<M-left>", ":vertical res +3<Enter>", opts)
+  map("n", "<M-=>", ":vertical res +3<Enter>", opts)
+  map("n", "<M-right>", ":vertical res -3<Enter>", opts)
+else
+  -- in win
+  -- move entire lines
+  map("n", "<A-j>", ":m .+1<CR>", { noremap = false })
+  map("n", "<A-k>", ":m .-2<CR>", { noremap = false })
+  map("v", "<A-j>", ":m '>+1<CR>gv", { noremap = false })
+  map("v", "<A-k>", ":m '<-2<CR>gv", { noremap = false })
+  -- resize window
+  map("n", "<A-->", ":vertical res -3<Enter>", opts)
+  map("n", "<A-left>", ":vertical res +3<Enter>", opts)
+  map("n", "<A-=>", ":vertical res +3<Enter>", opts)
+  map("n", "<A-right>", ":vertical res -3<Enter>", opts)
+end
+
 
 map("i", "jj", "<Esc>", { noremap = false })
 
@@ -131,7 +147,13 @@ map('n', '<tab>h', '<Cmd>Lspsaga hover_doc<cr>', opts)
 map('n', '<tab>f', '<Cmd>Lspsaga lsp_finder<cr>', opts)
 map('n', '<tab>p', '<Cmd>Lspsaga peek_definition<cr>', opts)
 map('n', '<tab>r', '<Cmd>Lspsaga rename<cr>', opts)
-map('n', '<M-.>', '<Cmd>Lspsaga code_action<cr>', opts)
+
+
+if vim.fn.has "mac" == 1 then
+  map('n', '<M-.>', '<Cmd>Lspsaga code_action<cr>', opts)
+else
+  map('n', '<A-.>', '<Cmd>Lspsaga code_action<cr>', opts)
+end
 
 -- neogit
 map('n', '<leader>gg', '<Cmd>Neogit<cr>', opts)
@@ -147,7 +169,12 @@ function _G.set_terminal_keymaps()
   vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termOpts)
 end
 
-vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts) -- open terminal on current directory
+if vim.fn.has "mac" == 1 then
+  vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts) -- open terminal on current directory
+else
+  vim.keymap.set('n', '<A-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
+end
+
 vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on current root path(neovim)
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead

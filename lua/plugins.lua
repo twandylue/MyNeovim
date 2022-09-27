@@ -102,8 +102,8 @@ packer.startup(function(use)
   -- nvim-treesitter
   -- First time installation
   -- use {
-  --     'nvim-treesitter/nvim-treesitter',
-  --     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   -- }
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -145,4 +145,21 @@ packer.startup(function(use)
   use 'j-hui/fidget.nvim' -- fidget
   use 'williamboman/mason.nvim' -- Mason lsp server installer
   use 'williamboman/mason.lspconfig.nvim'
+
+  -- git-blame
+  use { 'f-person/git-blame.nvim' }
+
+  use 'ray-x/lsp_signature.nvim' -- lsp signature
+
+  -- vim-illuminate
+  use 'RRethy/vim-illuminate'
+
+  -- nvim-notify
+  use 'rcarriga/nvim-notify'
+
+  -- goyo-vim
+  use 'junegunn/goyo.vim'
+  use 'junegunn/limelight.vim'
+
+  use 'j-hui/fidget.nvim' -- fidget
 end)

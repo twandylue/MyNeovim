@@ -61,7 +61,9 @@ nvim_lsp.dockerls.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+  init_options = { hostInfo = "neovim" },
   -- cmd = { "typescript-language-server", "--stdio" },
 }
 
@@ -133,4 +135,35 @@ nvim_lsp.csharp_ls.setup {
   root_dir = util.root_pattern(".git", "*.sln"),
   -- root_dir = util.root_pattern(".git", "*.sln", "*csproj"),
   -- cmd = { "csharp-ls" },
+  root_dir = util.root_pattern(".git", "*.sln")
+}
+
+nvim_lsp.clangd.setup {
+  on_attach = on_attach,
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_dir = util.root_pattern(
+    '.clangd',
+    '.clang-tidy',
+    '.clang-format',
+    'compile_commands.json',
+    'compile_flags.txt',
+    'configure.ac',
+    '.git'
+  ),
+  single_file_support = true
+}
+
+nvim_lsp.pyright.setup {
+  filetypes = { "python" },
+  root_dir = util.root_pattern(".git"),
+  single_file_support = true,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
 }

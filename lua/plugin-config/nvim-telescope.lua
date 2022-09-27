@@ -5,7 +5,9 @@ if not status then
 end
 
 telescope.load_extension('file_browser')
-telescope.load_extension('fzf')
+if vim.fn.has "mac" == 1 then
+  telescope.load_extension('fzf')
+end
 telescope.load_extension('project')
 local fb_actions = require 'telescope'.extensions.file_browser.actions
 
