@@ -135,7 +135,6 @@ nvim_lsp.csharp_ls.setup {
   root_dir = util.root_pattern(".git", "*.sln"),
   -- root_dir = util.root_pattern(".git", "*.sln", "*csproj"),
   -- cmd = { "csharp-ls" },
-  root_dir = util.root_pattern(".git", "*.sln")
 }
 
 nvim_lsp.clangd.setup {

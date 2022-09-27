@@ -86,9 +86,11 @@ vim.o.guicursor = "i:block"
 -- vim.o.autochdir = true
 -- set color scheme
 vim.cmd('colorscheme gruvbox')
--- set ff=unix for window
-vim.cmd('set ff=unix | update')
--- vim.cmd('set ff')
+
+if vim.fn.has "mac" ~= 1 then
+  -- set ff=unix for window
+  vim.cmd('set ff=unix | update')
+end
 
 -- Here is how we configure highlight on yank using Vimscript autocmd.
 -- local cmd = vim.cmd
