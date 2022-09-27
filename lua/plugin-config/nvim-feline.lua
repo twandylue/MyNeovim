@@ -1,10 +1,11 @@
 local status_ok, feline = pcall(require, 'feline')
 if not status_ok then
+  print("feline is not installed")
   return
 end
 
 local vi_mode_utils = require 'feline.providers.vi_mode'
-local icons = require('plugin-config/icons')
+local icons_f = require('plugin-config/icons')
 local colors = require('plugin-config/colors').onedark_dark
 local separator = '|'
 
@@ -32,7 +33,7 @@ local comps = {
   vi_mode = {
     left = {
       provider = function()
-        local label = ' '..vi_mode_utils.get_vim_mode()..' '
+        local label = ' ' .. vi_mode_utils.get_vim_mode() .. ' '
         return label
       end,
       hl = function()
@@ -59,18 +60,25 @@ local comps = {
           file_modified_icon = '',
         }
       },
+      short_provider = {
+        name = 'file_info',
+        opts = {
+          type = 'unique',
+          file_modified_icon = '',
+        }
+      },
       hl = { fg = colors.cyan },
-      icon = '',
+      icon = ' ',
     },
-    -- File words counter
+    -- words calculator
     counter = {
       provider = function()
         if vim.fn.wordcount().visual_words == 1 then
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " word"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. ' ' .. separator
         elseif not (vim.fn.wordcount().visual_words == nil) then
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().visual_words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().visual_words) .. ' ' .. separator
         else
-          return icons.kind.Text.. ' ' .. tostring(vim.fn.wordcount().words) .. " words"
+          return icons_f.kind.Text .. ' ' .. tostring(vim.fn.wordcount().words) .. ' ' .. separator
         end
       end,
       hl = { fg = colors.fg },
@@ -162,7 +170,7 @@ local comps = {
     },
     warn = {
       provider = 'diagnostic_warnings',
-      icon = ' ' ,
+      icon = ' ',
       hl = { fg = colors.yellow },
       left_sep = ' ',
     },
@@ -228,8 +236,8 @@ table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
--- Right section
-table.insert(components.active[1], comps.vi_mode.left)
+-- Left section
+-- table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
 table.insert(components.active[1], comps.git.branch)
 table.insert(components.active[1], comps.git.add)
@@ -237,17 +245,18 @@ table.insert(components.active[1], comps.git.change)
 table.insert(components.active[1], comps.git.remove)
 table.insert(components.inactive[1], comps.file.info)
 
--- Left Section
--- table.insert(components.active[2], comps.diagnos.err)
--- table.insert(components.active[2], comps.diagnos.warn)
--- table.insert(components.active[2], comps.diagnos.hint)
--- table.insert(components.active[2], comps.diagnos.info)
--- table.insert(components.active[2], comps.lsp.name)
+-- Right Section
+table.insert(components.active[2], comps.diagnos.err)
+table.insert(components.active[2], comps.diagnos.warn)
+table.insert(components.active[2], comps.diagnos.hint)
+table.insert(components.active[2], comps.diagnos.info)
+table.insert(components.active[2], comps.lsp.name)
 table.insert(components.active[2], comps.file.type)
 table.insert(components.active[2], comps.file.counter)
-table.insert(components.active[2], comps.file.os)
+-- table.insert(components.active[2], comps.file.os)
 table.insert(components.active[2], comps.file.position)
 table.insert(components.active[2], comps.file.line_percentage)
+-- table.insert(components.active[2], comps.file.scroll_bar)
 
 -- Call feline
 feline.setup {

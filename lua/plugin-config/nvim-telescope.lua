@@ -1,72 +1,81 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
+local status, telescope = pcall(require, 'telescope')
+if not status then
+  print("telescope is not installed")
   return
 end
 
+telescope.load_extension('file_browser')
+if vim.fn.has "mac" == 1 then
+  telescope.load_extension('fzf')
+end
+telescope.load_extension('project')
+local fb_actions = require 'telescope'.extensions.file_browser.actions
+
 local actions = require "telescope.actions"
--- telescope.load_extension "media_files"
-local icons = require "plugin-config.icons"
+local icons_t = require "plugin-config.icons"
 
-require('telescope').setup{
+function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+telescope.setup {
   defaults = {
-    prompt_prefix = icons.ui.Telescope .. " ",
+    prompt_prefix = icons_t.ui.Telescope .. " ",
     selection_caret = " ",
-
     path_display = { "smart" },
     file_ignore_patterns = {
-          ".git/",
-          "target/",
-          "docs/",
-          "vendor/*",
-          "%.lock",
-          "__pycache__/*",
-          "%.sqlite3",
-          "%.ipynb",
-          "node_modules/*",
-          -- "%.jpg",
-          -- "%.jpeg",
-          -- "%.png",
-          "%.svg",
-          "%.otf",
-          "%.ttf",
-          "%.webp",
-          ".dart_tool/",
-          ".github/",
-          ".gradle/",
-          ".idea/",
-          ".settings/",
-          ".vscode/",
-          "__pycache__/",
-          "build/",
-          "env/",
-          "gradle/",
-          "node_modules/",
-          "%.pdb",
-          "%.dll",
-          "%.class",
-          "%.exe",
-          "%.cache",
-          "%.ico",
-          "%.pdf",
-          "%.dylib",
-          "%.jar",
-          "%.docx",
-          "%.met",
-          "smalljre_*/*",
-          ".vale/",
-          "%.burp",
-          "%.mp4",
-          "%.mkv",
-          "%.rar",
-          "%.zip",
-          "%.7z",
-          "%.tar",
-          "%.bz2",
-          "%.epub",
-          "%.flac",
-          "%.tar.gz",
+      ".git/",
+      "target/",
+      -- "docs/",
+      "vendor/*",
+      "%.lock",
+      "__pycache__/*",
+      "%.sqlite3",
+      "%.ipynb",
+      "node_modules/*",
+      -- "%.jpg",
+      -- "%.jpeg",
+      -- "%.png",
+      "%.svg",
+      "%.otf",
+      "%.ttf",
+      "%.webp",
+      ".dart_tool/",
+      ".github/",
+      ".gradle/",
+      ".idea/",
+      ".settings/",
+      ".vscode/",
+      "__pycache__/",
+      "build/",
+      -- "env/",
+      "gradle/",
+      "node_modules/",
+      "%.pdb",
+      "%.dll",
+      "%.class",
+      "%.exe",
+      "%.cache",
+      "%.ico",
+      "%.pdf",
+      "%.dylib",
+      "%.jar",
+      "%.docx",
+      "%.met",
+      "smalljre_*/*",
+      ".vale/",
+      "%.burp",
+      "%.mp4",
+      "%.mkv",
+      "%.rar",
+      "%.zip",
+      "%.7z",
+      "%.tar",
+      "%.bz2",
+      "%.epub",
+      "%.flac",
+      "%.tar.gz",
     },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -145,21 +154,24 @@ require('telescope').setup{
       },
     }
   },
-
   pickers = {
     live_grep = {
-      theme = "dropdown", 
+      theme = "dropdown",
     },
     grep_string = {
-      theme = "dropdown", 
+      theme = "dropdown",
     },
     find_files = {
       previewe = true,
+      theme = "ivy",
+    },
+    git_files = {
+      previewe = true,
+      theme = "ivy",
     },
     buffers = {
-      theme = "dropdown",
+      theme = "cursor",
       previewer = false,
-      initial_mode = "normal",
     },
     planets = {
       show_pluto = true,
@@ -184,35 +196,35 @@ require('telescope').setup{
       theme = "dropdown",
       initial_mode = "normal",
     },
-
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-  }
-}
-
-local transform_mod = require('telescope.actions.mt').transform_mod
-local actions = require("telescope.actions")
-require("telescope").setup{
-  defaults = {
-    mappings = {
-      i = {
-        -- ["<esc>"] = actions.close
-      },
-      n = {
-        -- ["<leader>ff"] = builtin.find_files
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
+    file_browser = {
+      theme = 'dropdown',
+      hijack_netrw = true,
+      mappings = {
+        ['i'] = {
+          ['<C-w>'] = function() vim.cmd('normal vbd') end,
+        },
+        ['n'] = {
+          ['N'] = fb_actions.create,
+          ['h'] = fb_actions.goto_parent_dir,
+          ['/'] = function()
+            vim.cmd('startinsert')
+          end
+        }
       }
     },
+    project = {
+      -- base_dirs = {},
+      -- hidden_files = false, -- default: false
+      -- theme = "dropdown",
+      -- order_by = "asc"
+    }
   }
 }

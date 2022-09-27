@@ -77,9 +77,44 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.pumheight = 10
 -- 永远显示 tabline
 vim.o.showtabline = 2
--- 使用增强状态栏插件后不再需要 vim 的模式提示
-vim.o.showmode = false
+vim.o.showmode = true
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
 -- keep block cursor
 vim.o.guicursor = "i:block"
+-- reset pwd to local directory file path when open nvim
+-- vim.o.autochdir = true
+-- set color scheme
+vim.cmd('colorscheme gruvbox')
+-- set ff=unix for window
+vim.cmd('set ff=unix | update')
+-- vim.cmd('set ff')
+
+-- Here is how we configure highlight on yank using Vimscript autocmd.
+-- local cmd = vim.cmd
+-- -- Highlight on yank
+-- cmd [[
+--   augroup YankHighlight
+--     autocmd!
+--     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+--   augroup end
+-- ]]
+
+local api = vim.api
+
+-- Highlight on yank
+local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
+api.nvim_create_autocmd("TextYankPost", {
+  command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
+  group = yankGrp,
+})
+
+-- 看起來是 default 所以先不設置
+-- Document highlight in neovim
+-- vim.cmd [[
+--   augroup document_highlight
+--     autocmd! * <buffer>
+--     autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+--     autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+--   augroup END
+-- ]]

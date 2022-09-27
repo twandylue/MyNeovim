@@ -1,4 +1,10 @@
-require("substitute").setup{
+local status, nvimsubstitute = pcall(require, 'substitute')
+if (not status) then
+  print("substitute is not installed")
+  return
+end
+
+nvimsubstitute.setup {
   on_substitute = nil,
   yank_substituted_text = false,
   range = {
