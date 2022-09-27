@@ -126,6 +126,9 @@ packer.startup(function(use)
   -- nvim-notify
   use 'rcarriga/nvim-notify'
 
+  -- smooth cursor
+  use 'gen740/SmoothCursor.nvim'
+
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' } -- nvim-toggleterm
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
