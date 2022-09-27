@@ -66,7 +66,7 @@ packer.startup(function(use)
   -- nvim-autopairs
   use "windwp/nvim-autopairs"
 
-  -- vim-autotag
+  -- vim-autotag TODO:
   use 'windwp/nvim-ts-autotag'
 
   -- vim-illuminate
