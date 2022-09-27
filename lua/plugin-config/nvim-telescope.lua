@@ -5,14 +5,15 @@ if not status then
 end
 
 telescope.load_extension('file_browser')
+local fb_actions = require 'telescope'.extensions.file_browser.actions
 if vim.fn.has "mac" == 1 then
   telescope.load_extension('fzf')
 end
 telescope.load_extension('project')
-local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 local actions = require "telescope.actions"
 local icons_t = require "plugin-config.icons"
+-- local trouble = require "trouble.providers.telescope"
 
 function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
@@ -118,6 +119,7 @@ telescope.setup {
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
+        -- ["<C-t>"] = trouble.smart_open_with_trouble,
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
 
