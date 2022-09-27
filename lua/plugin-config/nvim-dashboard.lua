@@ -53,7 +53,7 @@ db.custom_center = {
   {
     icon = "  ",
     desc = "Porject                             ",
-    shortcut = "Ctrl p",
+    shortcut = "Ctrl p ",
     action = "Telescope project",
   },
   {
