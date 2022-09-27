@@ -118,9 +118,19 @@ nvim_lsp.pyright.setup {
   }
 }
 
+nvim_lsp.cmake.setup {
+  filetypes = { "cmake" },
+  init_options = {
+    buildDirectory = "build"
+  },
+  root_dir = util.root_pattern('CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake'),
+  single_file_support = true,
+}
+
 nvim_lsp.csharp_ls.setup {
   on_attach = on_attach,
   filetypes = { "cs" },
   root_dir = util.root_pattern(".git", "*.sln"),
+  -- root_dir = util.root_pattern(".git", "*.sln", "*csproj"),
   -- cmd = { "csharp-ls" },
 }
