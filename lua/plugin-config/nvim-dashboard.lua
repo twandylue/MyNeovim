@@ -51,6 +51,12 @@ db.custom_center = {
     action = ":Git",
   },
   {
+    icon = "  ",
+    desc = "Porject                             ",
+    shortcut = "Ctrl p",
+    action = "Telescope project",
+  },
+  {
     icon = "  ",
     desc = "New File                            ",
     shortcut = ":enew  ",

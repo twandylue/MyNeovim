@@ -79,6 +79,7 @@ require 'hop'.setup {
   vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
 }
 
+-- telescope
 require('telescope').setup {
   -- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts),
   map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
@@ -92,6 +93,12 @@ require('telescope').setup {
     '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
     , opts),
 }
+vim.api.nvim_set_keymap(
+  'n',
+  '<C-p>',
+  ":lua require'telescope'.extensions.project.project{}<CR>",
+  opts
+)
 
 require('bufferline').setup {
   -- These commands will navigate through buffers in order regardless of which mode you are using
@@ -140,8 +147,8 @@ function _G.set_terminal_keymaps()
   vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], termOpts)
 end
 
-vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts)
-vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts)
+vim.keymap.set('n', '<M-\\>', [[<Cmd>ToggleTerm dir=%:p:h<CR>]], opts) -- open terminal on current directory
+vim.keymap.set('n', '<C-\\>', [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on current root path(neovim)
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

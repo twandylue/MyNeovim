@@ -6,6 +6,7 @@ end
 
 telescope.load_extension('file_browser')
 telescope.load_extension('fzf')
+telescope.load_extension('project')
 local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 local actions = require "telescope.actions"
@@ -216,6 +217,12 @@ telescope.setup {
           end
         }
       }
+    },
+    project = {
+      -- base_dirs = {},
+      -- hidden_files = false, -- default: false
+      -- theme = "dropdown",
+      -- order_by = "asc"
     }
   }
 }
