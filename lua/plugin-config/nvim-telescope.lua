@@ -5,8 +5,9 @@ if not status then
 end
 
 telescope.load_extension('file_browser')
--- TODO: Mac
--- telescope.load_extension('fzf')
+if vim.fn.has "mac" == 1 then
+  telescope.load_extension('fzf')
+end
 telescope.load_extension('project')
 local fb_actions = require 'telescope'.extensions.file_browser.actions
 
@@ -197,7 +198,6 @@ telescope.setup {
     },
   },
   extensions = {
-    -- TODO: Mac
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
@@ -228,4 +228,3 @@ telescope.setup {
     }
   }
 }
-
