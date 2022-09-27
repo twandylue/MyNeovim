@@ -15,11 +15,12 @@ db.center_pad = 3
 db.footer_pad = 2
 
 db.custom_center = {
-  -- {
-  --   icon = "  ",
-  --   desc = "Projects                            ",
-  --   action = "Telescope projects",
-  -- },
+  {
+    icon = "  ",
+    desc = "Projects                            ",
+    shortcut = "Ctrl p  ",
+    action = "Telescope project",
+  },
   {
     icon = "  ",
     desc = "Recently files                      ",
@@ -37,12 +38,6 @@ db.custom_center = {
     desc = "Find text                           ",
     shortcut = "      ",
     action = "Telescope live_grep",
-  },
-  {
-    icon = "  ",
-    desc = "Porject                             ",
-    shortcut = "Ctrl p",
-    action = "Telescope project",
   },
   {
     icon = "  ",
