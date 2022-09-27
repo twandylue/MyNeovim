@@ -29,8 +29,14 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+
+  -- nvim-telescope extensions: file browser
   use 'nvim-telescope/telescope-file-browser.nvim'
+
+  -- nvim-telescope extensions: project
   use 'nvim-telescope/telescope-project.nvim'
+
+  -- nvim-telescope extensions: fzf
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- nvim-gitsigns
@@ -80,6 +86,8 @@ packer.startup(function(use)
     'akinsho/bufferline.nvim', tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'
   }
+
+  -- colorizer
   use 'lilydjwg/colorizer'
 
   -- nvim-scrollview
@@ -109,7 +117,9 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
-  use 'nvim-treesitter/nvim-treesitter-context' -- sticky header
+
+  -- sticky header
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   -- vim-visual-multi
   use 'mg979/vim-visual-multi'
@@ -130,26 +140,53 @@ packer.startup(function(use)
   -- smooth cursor
   use 'gen740/SmoothCursor.nvim'
 
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*' } -- nvim-toggleterm
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
-  use 'L3MON4D3/LuaSnip' -- Snippet
-  use 'kyazdani42/nvim-web-devicons' -- File icons
-  use 'xiyaowong/nvim-transparent' -- Transparent background
-  use 'simrat39/symbols-outline.nvim' -- symbols-outline
-  use 'j-hui/fidget.nvim' -- fidget
-  use 'williamboman/mason.nvim' -- Mason lsp server installer
-  use 'williamboman/mason.lspconfig.nvim'
+  -- nvim-toggleterm
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 
-  use 'ray-x/lsp_signature.nvim' -- lsp signature
+  -- vscode-like pictograms
+  use 'onsails/lspkind-nvim'
 
-  -- lsp-trouble
+  -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-buffer'
+
+  -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Completion
+  use 'hrsh7th/nvim-cmp'
+
+  -- Configurations for Nvim LSP
+  use 'neovim/nvim-lspconfig'
+
+  -- LSP UIs-- LSP UIs
+  use 'glepnir/lspsaga.nvim'
+
+  -- lsp signature
+  use 'ray-x/lsp_signature.nvim'
+
+  -- lsp trouble
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+
+  -- Mason lsp server installer and manager
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason.lspconfig.nvim'
+
+  -- Snippet TODO: studying...
+  -- use 'L3MON4D3/LuaSnip'
+
+  -- File icons
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- Transparent background
+  use 'xiyaowong/nvim-transparent'
+
+  -- symbols-outline
+  use 'simrat39/symbols-outline.nvim'
+
+  -- fidget
+  use 'j-hui/fidget.nvim'
+
 end)
