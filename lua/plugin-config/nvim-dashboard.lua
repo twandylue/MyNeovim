@@ -40,6 +40,12 @@ db.custom_center = {
   },
   {
     icon = "  ",
+    desc = "Porject                             ",
+    shortcut = "Ctrl p",
+    action = "Telescope project",
+  },
+  {
+    icon = "  ",
     desc = "Neogit                              ",
     shortcut = "SPC g g",
     action = ":Neogit",
@@ -49,12 +55,6 @@ db.custom_center = {
     desc = "Fugitive                            ",
     shortcut = ":Git   ",
     action = ":Git",
-  },
-  {
-    icon = "  ",
-    desc = "Porject                             ",
-    shortcut = "Ctrl p",
-    action = "Telescope project",
   },
   {
     icon = "  ",
