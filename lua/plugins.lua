@@ -88,7 +88,7 @@ packer.startup(function(use)
   }
 
   -- colorizer
-  use 'lilydjwg/colorizer'
+  use 'norcalli/nvim-colorizer.lua'
 
   -- nvim-scrollview
   use 'dstein64/nvim-scrollview'
@@ -189,4 +189,6 @@ packer.startup(function(use)
   -- fidget
   use 'j-hui/fidget.nvim'
 
+  -- scrollbar
+  use 'petertriho/nvim-scrollbar'
 end)
