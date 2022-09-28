@@ -190,5 +190,5 @@ packer.startup(function(use)
   use 'j-hui/fidget.nvim'
 
   -- scrollbar
-  use 'petertriho/nvim-scrollbar'
+  -- use 'petertriho/nvim-scrollbar'
 end)
