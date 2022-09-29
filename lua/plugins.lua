@@ -134,6 +134,9 @@ packer.startup(function(use)
   use 'junegunn/goyo.vim'
   use 'junegunn/limelight.vim'
 
+  -- zen-mode
+  use "folke/zen-mode.nvim"
+
   -- nvim-notify
   use 'rcarriga/nvim-notify'
 
@@ -175,7 +178,7 @@ packer.startup(function(use)
   use 'williamboman/mason.lspconfig.nvim'
 
   -- Snippet TODO: studying...
-  -- use 'L3MON4D3/LuaSnip'
+  use 'L3MON4D3/LuaSnip'
 
   -- File icons
   use 'kyazdani42/nvim-web-devicons'
