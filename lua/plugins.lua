@@ -191,4 +191,7 @@ packer.startup(function(use)
 
   -- scrollbar
   -- use 'petertriho/nvim-scrollbar'
+
+  -- vim-exchange
+  use 'tommcdo/vim-exchange'
 end)
