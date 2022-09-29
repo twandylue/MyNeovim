@@ -20,6 +20,7 @@ ts.setup {
     "css",
     -- "c",
     "rust",
+    "toml"
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -28,6 +29,10 @@ ts.setup {
   highlight = {
     enable = true,
     disable = {},
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true
   },
   indent = {
     enable = true,
