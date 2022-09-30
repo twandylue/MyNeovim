@@ -8,19 +8,22 @@ ts.setup {
   ensure_installed = {
     "bash",
     "c_sharp",
-    "sql",
+    "python",
+    "rust",
     "lua",
+    "sql",
+    "toml",
     "json",
     "yaml",
     "markdown",
     "dockerfile",
     "regex",
     "javascript",
+    "typescript",
     "html",
     "css",
+    "help",
     -- "c",
-    "rust",
-    "toml"
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -28,7 +31,7 @@ ts.setup {
   auto_install = true,
   highlight = {
     enable = true,
-    disable = {},
+    disable = { "help" },
   },
   rainbow = {
     enable = true,
