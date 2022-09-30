@@ -87,6 +87,12 @@ vim.o.guicursor = "i:block"
 -- set color scheme
 vim.cmd('colorscheme gruvbox')
 
+-- set single status line
+vim.cmd('set laststatus=3')
+
+-- make window separator concealed
+vim.cmd('highlight WinSeparator guibg=None')
+
 if vim.fn.has "mac" ~= 1 then
   -- set ff=unix for window
   vim.cmd('set ff=unix | update')

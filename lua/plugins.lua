@@ -204,4 +204,7 @@ packer.startup(function(use)
   --   -- run = ":Neorg sync-parsers", -- This is the important bit!
   --   requires = "nvim-lua/plenary.nvim"
   -- }
+
+  -- incline.nvim
+  use "b0o/incline.nvim"
 end)
