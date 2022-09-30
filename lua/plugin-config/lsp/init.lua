@@ -10,6 +10,13 @@ if (not status) then
   return
 end
 
+
+local status, lua_dev = pcall(require, 'lua-dev')
+if (not status) then
+  print("lua-dev is not installed")
+  return
+end
+
 -- local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
@@ -67,6 +74,9 @@ nvim_lsp.tsserver.setup {
   -- cmd = { "typescript-language-server", "--stdio" },
 }
 
+-- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
+lua_dev.setup({})
+
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
@@ -78,6 +88,9 @@ nvim_lsp.sumneko_lua.setup {
       workspace = {
         -- make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true)
+      },
+      completion = {
+        callSnippet = "Replace"
       }
     }
   }

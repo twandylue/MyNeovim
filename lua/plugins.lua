@@ -207,4 +207,7 @@ packer.startup(function(use)
 
   -- incline.nvim
   use "b0o/incline.nvim"
+
+  -- dev for lua in neovim
+  use "folke/lua-dev.nvim"
 end)
