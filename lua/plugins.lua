@@ -197,4 +197,11 @@ packer.startup(function(use)
 
   -- vim-exchange
   use 'tommcdo/vim-exchange'
+
+  -- neorg TODO: required neovim +0.8
+  -- use {
+  --   "nvim-neorg/neorg",
+  --   -- run = ":Neorg sync-parsers", -- This is the important bit!
+  --   requires = "nvim-lua/plenary.nvim"
+  -- }
 end)
