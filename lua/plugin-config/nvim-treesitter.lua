@@ -10,6 +10,7 @@ ts.setup {
     "c_sharp",
     "python",
     "rust",
+    "cpp",
     "lua",
     "sql",
     "toml",
