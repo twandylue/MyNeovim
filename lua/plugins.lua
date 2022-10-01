@@ -219,4 +219,7 @@ packer.startup(function(use)
 
   -- cache of neovim modules
   use 'lewis6991/impatient.nvim'
+
+  -- aerial(function list)
+  use 'stevearc/aerial.nvim'
 end)

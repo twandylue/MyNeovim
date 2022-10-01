@@ -4,15 +4,15 @@ if (not statusUtil) then
   return
 end
 
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if (not status) then
+local status_lspconfig, nvim_lsp = pcall(require, 'lspconfig')
+if (not status_lspconfig) then
   print("lspconfig is not installed")
   return
 end
 
 
-local status, lua_dev = pcall(require, 'lua-dev')
-if (not status) then
+local status_lua_dev, lua_dev = pcall(require, 'lua-dev')
+if (not status_lua_dev) then
   print("lua-dev is not installed")
   return
 end
@@ -28,6 +28,10 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 end
+
+nvim_lsp.vimls.setup {
+  on_attach = require("aerial").on_attach,
+}
 
 nvim_lsp.rust_analyzer.setup {
   on_attach = on_attach,
