@@ -6,7 +6,7 @@ vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
--- 使用相对行号
+-- relative line number
 vim.wo.number = true
 vim.wo.relativenumber = true
 -- 高亮所在行
@@ -77,13 +77,17 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.pumheight = 10
 -- 永远显示 tabline
 vim.o.showtabline = 2
+-- show mode
 vim.o.showmode = true
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
--- keep block cursor
+-- set cursor
 vim.o.guicursor = "i:block"
+vim.o.guicursor = "a:blinkon1"
+
 -- reset pwd to local directory file path when open nvim
 -- vim.o.autochdir = true
+
 -- set color scheme
 vim.cmd('colorscheme gruvbox')
 
@@ -116,13 +120,3 @@ api.nvim_create_autocmd("TextYankPost", {
   command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
   group = yankGrp,
 })
-
--- 看起來是 default 所以先不設置
--- Document highlight in neovim
--- vim.cmd [[
---   augroup document_highlight
---     autocmd! * <buffer>
---     autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
---     autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
---   augroup END
--- ]]
