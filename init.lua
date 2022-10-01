@@ -3,10 +3,6 @@ require('basic')
 require('keybindings')
 require('plugins')
 
--- nvim impatient
-require('impatient')
-require('impatient').enable_profile()
-
 -- 插件配置
 require('plugin-config.nvim-tree')
 require('plugin-config.nvim-gitsigns')
@@ -42,4 +38,5 @@ require('plugin-config.nvim-outline')
 require('plugin-config.nvim-fidget')
 require('plugin-config.nvim-zen-mode')
 -- require('plugin-config.nvim-neorg')
+require('plugin-config.nvim-impatient')
 require('plugin-config.nvim-incline')
