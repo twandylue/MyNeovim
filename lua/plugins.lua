@@ -137,6 +137,12 @@ packer.startup(function(use)
   -- zen-mode
   use "folke/zen-mode.nvim"
 
+  -- true-zen (like zen-mode and goyo-vim)
+  use 'Pocco81/true-zen.nvim'
+
+  -- twilight (like limelight)
+  use "folke/twilight.nvim"
+
   -- nvim-notify
   use 'rcarriga/nvim-notify'
 
