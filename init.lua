@@ -3,6 +3,10 @@ require('basic')
 require('keybindings')
 require('plugins')
 
+-- nvim impatient
+require('impatient')
+require('impatient').enable_profile()
+
 -- 插件配置
 require('plugin-config.nvim-tree')
 require('plugin-config.nvim-gitsigns')

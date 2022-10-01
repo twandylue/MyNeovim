@@ -210,4 +210,6 @@ packer.startup(function(use)
 
   -- dev for lua in neovim
   use "folke/lua-dev.nvim"
+
+  use 'lewis6991/impatient.nvim'
 end)
