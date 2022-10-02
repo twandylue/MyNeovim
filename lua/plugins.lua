@@ -208,7 +208,7 @@ packer.startup(function(use)
   use {
     "nvim-neorg/neorg",
     ft = "norg",
-    after="nvim-treesitter",
+    after = "nvim-treesitter",
     requires = "nvim-lua/plenary.nvim"
   }
 
