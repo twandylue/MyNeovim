@@ -207,7 +207,9 @@ packer.startup(function(use)
   -- neorg
   use {
     "nvim-neorg/neorg",
-    -- run = ":Neorg sync-parsers", -- This is the important bit!
+    -- important: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compiler
+    -- ref: https://github.com/nvim-neorg/neorg
+    run = ":Neorg sync-parsers", -- This is the important bit!
     ft = "norg",
     requires = "nvim-lua/plenary.nvim"
   }
