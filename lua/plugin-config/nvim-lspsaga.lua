@@ -9,10 +9,14 @@ saga.init_lsp_saga {
   code_action_lightbulb = { enable = false, },
   border_style = "rounded",
   finder_action_keys = {
-    open = "o",
+    open = "<Enter>",
     vsplit = "<C-v>",
     split = "<C-i>",
     tabe = "t",
     quit = "q",
   },
+  symbol_in_winbar = {
+    enable = false,
+    in_custom = false
+  }
 }
