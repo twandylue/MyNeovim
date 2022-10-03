@@ -32,6 +32,7 @@ ts.setup {
   auto_install = true,
   highlight = {
     enable = true,
+    -- make sure format in help documents correct
     disable = { "help" },
   },
   rainbow = {
