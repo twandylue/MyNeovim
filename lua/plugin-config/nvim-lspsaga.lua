@@ -16,6 +16,7 @@ saga.init_lsp_saga {
     quit = "q",
   },
   symbol_in_winbar = {
+    enable = false,
     in_custom = false
   }
 }
