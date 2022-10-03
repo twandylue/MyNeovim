@@ -39,7 +39,12 @@ require('plugin-config.nvim-fidget')
 require('plugin-config.nvim-zen-mode')
 require('plugin-config.nvim-true-zen')
 require('plugin-config.nvim-twilight')
--- require('plugin-config.nvim-neorg')
+require('plugin-config.nvim-neorg')
 require('plugin-config.nvim-impatient')
 require('plugin-config.nvim-aerial')
 require('plugin-config.nvim-incline')
+
+-- TODO: noevim 0.8+
+-- - spell check by tree-sitter
+-- - winbar in lspsaga
+-- - winbar in nvim navic

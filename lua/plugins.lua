@@ -207,8 +207,8 @@ packer.startup(function(use)
   -- neorg
   use {
     "nvim-neorg/neorg",
+    -- run = ":Neorg sync-parsers", -- This is the important bit!
     ft = "norg",
-    after = "nvim-treesitter",
     requires = "nvim-lua/plenary.nvim"
   }
 

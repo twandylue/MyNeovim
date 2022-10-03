@@ -1,0 +1,21 @@
+@document.meta
+title: 02
+description: 
+authors: andy
+categories: 
+created: 2022-10-02
+updated: 2022-10-03
+version: 0.0.15
+@end
+
+* Thing I have to do
+-- shopping
+  -- [x] buy a apple
+  --- [=] got
+  - [?] go to school
+  - [-] butter
+
+  @code rust
+  println!("tset")
+  @end
+
