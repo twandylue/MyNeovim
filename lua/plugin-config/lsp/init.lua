@@ -39,12 +39,6 @@ nvim_lsp.rust_analyzer.setup {
   -- cmd = { "rust-analyzer" },
 }
 
-nvim_lsp.bashls.setup {
-  on_attach = on_attach,
-  filetypes = { "sh" },
-  -- cmd = { "bash-language-server", "start" },
-}
-
 nvim_lsp.yamlls.setup {
   on_attach = on_attach,
   filetypes = { "yaml", "yaml.docker-compose" },
@@ -116,28 +110,15 @@ nvim_lsp.clangd.setup {
 }
 
 nvim_lsp.bashls.setup {
+  on_attach = on_attach,
   cmd_env = { GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)" },
   filetypes = { "sh" },
   root_dir = util.find_git_ancestor,
   single_file_support = true,
 }
 
-nvim_lsp.pyright.setup {
-  filetypes = { "python" },
-  root_dir = util.root_pattern(".git"),
-  single_file_support = true,
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true
-      }
-    }
-  }
-}
-
 nvim_lsp.cmake.setup {
+  on_attach = on_attach,
   filetypes = { "cmake" },
   init_options = {
     buildDirectory = "build"
@@ -152,21 +133,6 @@ nvim_lsp.csharp_ls.setup {
   root_dir = util.root_pattern(".git", "*.sln"),
   -- root_dir = util.root_pattern(".git", "*.sln", "*csproj"),
   -- cmd = { "csharp-ls" },
-}
-
-nvim_lsp.clangd.setup {
-  on_attach = on_attach,
-  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-  root_dir = util.root_pattern(
-    '.clangd',
-    '.clang-tidy',
-    '.clang-format',
-    'compile_commands.json',
-    'compile_flags.txt',
-    'configure.ac',
-    '.git'
-  ),
-  single_file_support = true
 }
 
 nvim_lsp.pyright.setup {

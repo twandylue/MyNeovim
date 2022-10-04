@@ -14,10 +14,8 @@ mason.setup {}
 
 masonLspconfig.setup {
   ensure_installed = {
-    "cssls",
-    "cssmodules_ls",
-    "html",
     "jsonls",
+    "stylua",
     "lua-language-server",
     "tsserver",
     "pyright",
@@ -25,7 +23,7 @@ masonLspconfig.setup {
     "bashls",
     "csharp-language-server",
     "csharpier",
-    "omnisharp",
+    -- "omnisharp",
     "rust_analyzer",
     "clangd"
   }
