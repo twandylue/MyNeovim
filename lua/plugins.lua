@@ -228,4 +228,10 @@ packer.startup(function(use)
 
   -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
   use 'nanotee/sqls.nvim'
+
+  -- null-ls
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  })
 end)
