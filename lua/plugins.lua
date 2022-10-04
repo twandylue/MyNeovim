@@ -207,7 +207,8 @@ packer.startup(function(use)
   -- neorg TODO: required neovim +0.8
   -- use {
   --   "nvim-neorg/neorg",
-  --   -- run = ":Neorg sync-parsers", -- This is the important bit!
+  --   ft = "norg",
+  --   after = "nvim-treesitter",
   --   requires = "nvim-lua/plenary.nvim"
   -- }
 
