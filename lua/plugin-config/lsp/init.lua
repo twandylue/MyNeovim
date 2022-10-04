@@ -170,6 +170,7 @@ nvim_lsp.clangd.setup {
 }
 
 nvim_lsp.pyright.setup {
+  on_attach = on_attach,
   filetypes = { "python" },
   root_dir = util.root_pattern(".git"),
   single_file_support = true,
@@ -182,4 +183,24 @@ nvim_lsp.pyright.setup {
       }
     }
   }
+}
+
+nvim_lsp.sqls.setup {
+  on_attach = function(client, bufnr)
+    -- builtin vim.lsp.buf.format() of "sqls" is terriable, not works very well
+    require('sqls').on_attach(client, bufnr)
+  end,
+  filetype = { "sql", "mysql" },
+  single_file_support = true,
+  settings = {
+    sqls = {
+      -- for demo
+      connections = {
+        {
+          driver = 'postgresql',
+          dataSourceName = 'host=localhost port=5432 user=postgres password=medusa dbname=portal_shell sslmode=disable',
+        },
+      },
+    },
+  },
 }
