@@ -204,13 +204,13 @@ packer.startup(function(use)
   -- vim-exchange
   use 'tommcdo/vim-exchange'
 
-  -- neorg
-  use {
-    "nvim-neorg/neorg",
-    ft = "norg",
-    after = "nvim-treesitter",
-    requires = "nvim-lua/plenary.nvim"
-  }
+  -- neorg TODO: required neovim +0.8
+  -- use {
+  --   "nvim-neorg/neorg",
+  --   ft = "norg",
+  --   after = "nvim-treesitter",
+  --   requires = "nvim-lua/plenary.nvim"
+  -- }
 
   -- incline.nvim
   use "b0o/incline.nvim"
