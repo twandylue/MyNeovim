@@ -1,6 +1,6 @@
 local status, null_ls = pcall(require, "null-ls")
 if not status then
-	vim.notify("null-ls is not installed", "error")
+	vim.notify("null-ls is not installed", vim.log.levels.ERROR)
 	print("null-ls is not installed")
 	return
 end

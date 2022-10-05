@@ -1,6 +1,6 @@
 local status, notify = pcall(require, "notify")
 if not status then
-	vim.notify("nvim-notify is not installed", "error")
+	vim.notify("nvim-notify is not installed", vim.log.levels.ERROR)
 	print("nvim-notify is not installed")
 	return
 end

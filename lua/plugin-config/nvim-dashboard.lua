@@ -1,6 +1,7 @@
 local status, db = pcall(require, "dashboard")
 if not status then
-	vim.notify("Dashboard is not installed")
+	vim.notify("Dashboard is not installed", vim.log.levels.ERROR)
+	print("Dashboard is not installed.")
 	return
 end
 

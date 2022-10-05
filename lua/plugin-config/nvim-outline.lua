@@ -1,6 +1,6 @@
 local status, outline = pcall(require, "symbols-outline")
 if not status then
-	vim.notify("symbols-outline is not installed", "error")
+	vim.notify("symbols-outline is not installed", vim.log.levels.ERROR)
 	print("symbols-outline is not installed")
 	return
 end
