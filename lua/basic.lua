@@ -89,17 +89,17 @@ vim.o.guicursor = "a:blinkon1"
 -- vim.o.autochdir = true
 
 -- set color scheme
-vim.cmd('colorscheme gruvbox')
+vim.cmd("colorscheme gruvbox")
 
 -- set single status line
-vim.cmd('set laststatus=3')
+vim.cmd("set laststatus=3")
 
 -- make window separator concealed
-vim.cmd('highlight WinSeparator guibg=None')
+vim.cmd("highlight WinSeparator guibg=None")
 
-if vim.fn.has "mac" ~= 1 then
-  -- set ff=unix for window
-  vim.cmd('set ff=unix | update')
+if vim.fn.has("mac") ~= 1 then
+	-- set ff=unix for window
+	vim.cmd("set ff=unix | update")
 end
 
 -- Here is how we configure highlight on yank using Vimscript autocmd.
@@ -117,6 +117,6 @@ local api = vim.api
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
 api.nvim_create_autocmd("TextYankPost", {
-  command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
-  group = yankGrp,
+	command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
+	group = yankGrp,
 })
