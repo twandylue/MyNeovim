@@ -11,7 +11,7 @@ saga.init_lsp_saga({
 	finder_action_keys = {
 		open = "<Enter>",
 		vsplit = "<C-v>",
-		split = "<C-i>",
+		split = "<C-s>",
 		tabe = "t",
 		quit = "q",
 	},
