@@ -1,7 +1,7 @@
-local status, gitblame = pcall(require, 'gitblame')
-if (not status) then
-  print("gitblame is not installed")
-  return
+local status, gitblame = pcall(require, "gitblame")
+if not status then
+	print("gitblame is not installed")
+	return
 end
 
 local g = vim.g
