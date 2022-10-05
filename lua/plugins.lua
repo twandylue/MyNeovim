@@ -121,6 +121,9 @@ packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 
+	-- treesitter playground
+	use("nvim-treesitter/playground")
+
 	-- sticky header
 	use("nvim-treesitter/nvim-treesitter-context")
 
