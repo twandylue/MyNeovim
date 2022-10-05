@@ -36,6 +36,8 @@ nvim_lsp.rust_analyzer.setup({
 	on_attach = on_attach,
 	filetypes = { "rust" },
 	-- cmd = { "rust-analyzer" },
+	-- settings = { ["rust-analyzer"] = {} },
+	root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
 })
 
 nvim_lsp.yamlls.setup({
