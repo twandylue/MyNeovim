@@ -10,6 +10,7 @@ local sources = {
     extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
   }),
   null_ls.builtins.formatting.csharpier,
+  -- null_ls.builtins.completion.spell,
 }
 
 if vim.fn.has("mac") == 1 then
