@@ -13,7 +13,8 @@ local sources = {
 }
 
 if vim.fn.has("mac") == 1 then
-  table.insert(sources, null_ls.builtins.formatting.rustfmt)
+  -- NOTE: rustfmt is builtin in rustup
+  -- table.insert(sources, null_ls.builtins.formatting.rustfmt)
   -- TODO: check luasnip
   -- table.insert(sources, null_ls.builtins.formatting.luasnip)
 end
