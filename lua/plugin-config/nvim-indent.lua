@@ -1,7 +1,7 @@
 local status, blankline = pcall(require, "indent_blankline")
 if not status then
-	print("indent_blankline is not installed")
-	return
+  print("indent_blankline is not installed")
+  return
 end
 
 -- vim.opt.termguicolors = true
@@ -12,14 +12,14 @@ end
 -- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
--- vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.listchars:append "eol:↴"
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 
 blankline.setup({
-	show_current_context = true,
-	-- show_current_context_start = true,
-	show_end_of_line = true,
-	-- space_char_blankline = " ",
-	indent_blankline_use_treesitter = true,
+  show_current_context = true,
+  -- show_current_context_start = true,
+  show_end_of_line = true,
+  -- space_char_blankline = " ",
+  indent_blankline_use_treesitter = true,
 })
