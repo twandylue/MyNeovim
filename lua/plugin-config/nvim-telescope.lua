@@ -10,6 +10,7 @@ if vim.fn.has("mac") == 1 then
   telescope.load_extension("fzf")
 end
 telescope.load_extension("project")
+telescope.load_extension("notify")
 
 local actions = require("telescope.actions")
 local icons_t = require("plugin-config.icons")
