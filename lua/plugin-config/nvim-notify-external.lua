@@ -1,8 +1,8 @@
--- ref: https://github.com/rcarriga/nvim-notify/wiki/Usage-Recipes#lsp-status-updates
+-- ref: https://github.com/rcarriga/nvim-notify/wiki/Usage-Recipes
 -- Utility functions shared between progress reports for LSP and DAP
 local M = {}
 
-M.external = function()
+M.update = function()
   local client_notifs = {}
 
   local function get_notif_data(client_id, token)
