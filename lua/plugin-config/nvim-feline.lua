@@ -189,12 +189,11 @@ local comps = {
   },
   lsp = {
     name = {
-      provider = 'lsp_client_names',
-      icon = '  ',
+      provider = "lsp_client_names",
+      icon = " ",
       hl = { fg = colors.pink },
-      left_sep = '  ',
-      right_sep = ' ',
-    }
+      left_sep = " ",
+    },
   },
   -- git info
   git = {
