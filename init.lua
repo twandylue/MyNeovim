@@ -47,6 +47,4 @@ require("plugin-config.nvim-null-ls")
 
 -- TODO: noevim 0.8+
 -- - spell check by tree-sitter
--- - winbar in lspsaga
--- - winbar in nvim navic
 -- - Luasnip with null-ls
