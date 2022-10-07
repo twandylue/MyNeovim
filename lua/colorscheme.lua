@@ -15,4 +15,6 @@ catppuccin.setup()
 
 -- set color scheme
 vim.api.nvim_command("colorscheme catppuccin")
+
+-- vim.o.background = "dark"
 -- vim.api.nvim_command("colorscheme gruvbox")
