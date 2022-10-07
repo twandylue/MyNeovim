@@ -10,10 +10,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- indent mark
--- vim.opts.list = true
--- vim.opts.listchars:append "eol:↴"
-
 -- TODO: remove trailing white space
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 --   pattern = { "*" },
