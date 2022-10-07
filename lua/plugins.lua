@@ -66,9 +66,6 @@ packer.startup(function(use)
   -- nvim-autopairs
   use("windwp/nvim-autopairs")
 
-  -- vim-autotag(work with treesitter)
-  use("windwp/nvim-ts-autotag")
-
   -- vim-illuminate
   use("RRethy/vim-illuminate")
 
@@ -126,6 +123,12 @@ packer.startup(function(use)
 
   -- sticky header
   use("nvim-treesitter/nvim-treesitter-context")
+
+  -- rainbow parentheses works with treesitter
+  use("p00f/nvim-ts-rainbow")
+
+  -- vim-autotag(work with treesitter)
+  use("windwp/nvim-ts-autotag")
 
   -- vim-visual-multi
   use("mg979/vim-visual-multi")
