@@ -10,10 +10,10 @@ if not status_catppuccin then
   print("Color chemem: catppuccin is not installed")
 end
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 catppuccin.setup()
 
 -- set color scheme
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 vim.api.nvim_command("colorscheme catppuccin")
 
 -- vim.o.background = "dark"
