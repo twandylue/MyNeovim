@@ -17,10 +17,16 @@ packer.startup(function(use)
   })
 
   -- colorscheme: catppuccin
-  use {
+  use({
     "catppuccin/nvim",
     as = "catppuccin",
-  }
+  })
+
+  -- colorscheme: github
+  use("projekt0n/github-nvim-theme")
+
+  -- colorscheme: kanagawa
+  use("rebelot/kanagawa.nvim")
 
   -- nvim-tree
   use({
@@ -249,5 +255,4 @@ packer.startup(function(use)
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   })
-
 end)
