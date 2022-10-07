@@ -98,8 +98,8 @@ vim.cmd("set laststatus=3")
 vim.cmd("highlight WinSeparator guibg=None")
 
 if vim.fn.has("mac") ~= 1 then
-	-- set ff=unix for window
-	vim.cmd("set ff=unix | update")
+  -- set ff=unix for window
+  vim.cmd("set ff=unix | update")
 end
 
 -- Here is how we configure highlight on yank using Vimscript autocmd.
@@ -117,6 +117,6 @@ local api = vim.api
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
 api.nvim_create_autocmd("TextYankPost", {
-	command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
-	group = yankGrp,
+  command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
+  group = yankGrp,
 })
