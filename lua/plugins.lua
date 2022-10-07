@@ -10,11 +10,17 @@ packer.startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
 
-  -- gruvbox theme
+  -- colorscheme: gruvbox
   use({
     "ellisonleao/gruvbox.nvim",
     requires = { "rktjmp/lush.nvim" },
   })
+
+  -- colorscheme: catppuccin
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+  }
 
   -- nvim-tree
   use({
@@ -243,4 +249,5 @@ packer.startup(function(use)
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },
   })
+
 end)
