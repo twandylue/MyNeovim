@@ -88,9 +88,6 @@ vim.o.guicursor = "a:blinkon1"
 -- reset pwd to local directory file path when open nvim
 -- vim.o.autochdir = true
 
--- set color scheme
-vim.cmd("colorscheme gruvbox")
-
 -- set single status line
 vim.cmd("set laststatus=3")
 

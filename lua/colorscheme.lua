@@ -13,5 +13,6 @@ end
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 catppuccin.setup()
 
+-- set color scheme
 vim.api.nvim_command("colorscheme catppuccin")
 -- vim.api.nvim_command("colorscheme gruvbox")
