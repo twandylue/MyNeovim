@@ -31,6 +31,9 @@ packer.startup(function(use)
   -- colorscheme: arctic
   use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 
+  -- colorscheme: nightfox
+  use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+
   -- nvim-tree
   use({
     "kyazdani42/nvim-tree.lua",
