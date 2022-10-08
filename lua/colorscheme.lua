@@ -11,13 +11,13 @@ require("colorschemes.tokyonight")
 -- vim.api.nvim_command("colorscheme github_dark_default") -- github_dimmed, github_dark, github_dark_default, github_dark_colorblind
 
 -- catppuccin
--- latte, frappe, macchiato, mocha
+-- option: latte, frappe, macchiato, mocha
 -- vim.g.catppuccin_flavour = "mocha"
 -- vim.api.nvim_command("colorscheme catppuccin")
 
 -- kanagawa
--- vim.o.background = "dark"
--- vim.api.nvim_command("colorscheme kanagawa")
+vim.o.background = "dark"
+vim.api.nvim_command("colorscheme kanagawa")
 
 -- arctic (not support dashboard)
 -- vim.api.nvim_command("colorscheme arctic")
@@ -27,8 +27,8 @@ require("colorschemes.tokyonight")
 -- vim.g.lightline = { colorscheme = "nightfox" }
 
 -- tokyo
--- tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
-vim.api.nvim_command("colorscheme tokyonight-night")
+-- option: tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
+-- vim.api.nvim_command("colorscheme tokyonight-night")
 
 -- gruvbox
 -- vim.o.background = "dark"
