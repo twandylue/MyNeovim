@@ -4,5 +4,3 @@ if not status then
   print("Color chemem: nord is not installed")
   return
 end
-
-nord.setup()
