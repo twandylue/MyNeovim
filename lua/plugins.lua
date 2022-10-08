@@ -28,6 +28,9 @@ packer.startup(function(use)
   -- colorscheme: kanagawa
   use("rebelot/kanagawa.nvim")
 
+  -- colorscheme: arctic
+  use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
+
   -- nvim-tree
   use({
     "kyazdani42/nvim-tree.lua",
