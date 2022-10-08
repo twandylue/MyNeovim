@@ -45,6 +45,7 @@ require("plugin-config.nvim-impatient")
 require("plugin-config.nvim-aerial")
 require("plugin-config.nvim-incline")
 require("plugin-config.nvim-null-ls")
+require("plugin-config.nvim-noice")
 
 -- TODO: noevim 0.8+
 -- - spell check by tree-sitter
