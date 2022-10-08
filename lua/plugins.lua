@@ -34,6 +34,9 @@ packer.startup(function(use)
   -- colorscheme: nightfox
   use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
 
+  -- colorscheme: tokyonight
+  use("folke/tokyonight.nvim")
+
   -- nvim-tree
   use({
     "kyazdani42/nvim-tree.lua",
