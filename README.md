@@ -2,6 +2,6 @@
 
 My Neovim settings in MacOS and Win
 
-# References:
+## References
 
-- [ Using Lua in Neovim ](https://github.com/nanotee/nvim-lua-guide)
+- [Using Lua in Neovim](https://github.com/nanotee/nvim-lua-guide)
