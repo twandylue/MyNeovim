@@ -33,5 +33,5 @@ notify.setup({
 })
 
 -- Lsp update showed by notify
-local window = require("plugin-config.nvim-notify-external")
-window.update()
+-- local window = require("plugin-config.nvim-notify-external")
+-- window.update()
