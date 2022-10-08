@@ -2,6 +2,7 @@ local status_github, github = pcall(require, "github-theme")
 if not status_github then
   vim.notify("Color chemem: github-theme is not installed")
   print("Color chemem: github-theme is not installed")
+  return
 end
 
 github.setup({

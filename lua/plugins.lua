@@ -41,6 +41,9 @@ packer.startup({
     -- colorscheme: tokyonight
     use("folke/tokyonight.nvim")
 
+    -- colorscheme: nord
+    use("shaunsingh/nord.nvim")
+
     -- nvim-tree
     use({
       "kyazdani42/nvim-tree.lua",

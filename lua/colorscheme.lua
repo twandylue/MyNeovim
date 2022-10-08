@@ -30,6 +30,9 @@ vim.api.nvim_command("colorscheme kanagawa")
 -- option: tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
 -- vim.api.nvim_command("colorscheme tokyonight-night")
 
+-- nord
+-- vim.api.nvim_command("colorscheme nord")
+
 -- gruvbox
 -- vim.o.background = "dark"
 -- vim.api.nvim_command("colorscheme gruvbox")
