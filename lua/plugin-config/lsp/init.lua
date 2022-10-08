@@ -171,3 +171,10 @@ nvim_lsp.sqls.setup({
     },
   },
 })
+
+nvim_lsp.marksman.setup({
+  on_attach = on_attach,
+  filetypes = { "markdown" },
+  root_dir = util.root_pattern(".git"),
+  single_file_support = true,
+})
