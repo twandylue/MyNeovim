@@ -128,6 +128,9 @@ packer.startup(function(use)
     ft = { "markdown" },
   })
 
+  -- markdow table
+  use("dhruvasagar/vim-table-mode")
+
   -- nvim-treesitter
   -- First time installation
   -- use {
