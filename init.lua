@@ -45,7 +45,7 @@ require("plugin-config.nvim-aerial")
 require("plugin-config.nvim-incline")
 require("plugin-config.nvim-null-ls")
 -- require("plugin-config.nvim-noice")
-require("plugin-config.vimwiki")
+-- require("plugin-config.vimwiki")
 
 -- TODO: noevim 0.8+
 -- - Luasnip with null-ls

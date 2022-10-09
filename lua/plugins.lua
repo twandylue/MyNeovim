@@ -288,7 +288,7 @@ packer.startup({
     --   },
     -- })
 
-    -- vim wiki
-    use("vimwiki/vimwiki")
+    -- vim wiki TODO: Studying...
+    -- use("vimwiki/vimwiki")
   end,
 })
