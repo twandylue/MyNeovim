@@ -290,8 +290,5 @@ packer.startup({
 
     -- vim wiki TODO: Studying...
     -- use("vimwiki/vimwiki")
-
-    -- vim-better-whitespace
-    use("ntpeters/vim-better-whitespace")
   end,
 })

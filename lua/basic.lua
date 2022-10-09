@@ -99,6 +99,9 @@ if vim.fn.has("mac") ~= 1 then
   vim.cmd("set ff=unix | update")
 end
 
+-- highlight trailing whitespace
+vim.fn.matchadd("errorMsg", [[\s\+$]])
+
 -- Here is how we configure highlight on yank using Vimscript autocmd.
 -- local cmd = vim.cmd
 -- -- Highlight on yank
