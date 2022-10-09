@@ -13,8 +13,8 @@ require("colorschemes.nord")
 
 -- catppuccin
 -- option: latte, frappe, macchiato, mocha
-vim.g.catppuccin_flavour = "mocha"
-vim.api.nvim_command("colorscheme catppuccin")
+-- vim.g.catppuccin_flavour = "mocha"
+-- vim.api.nvim_command("colorscheme catppuccin")
 
 -- kanagawa
 -- vim.o.background = "dark"
@@ -35,5 +35,5 @@ vim.api.nvim_command("colorscheme catppuccin")
 -- vim.api.nvim_command("colorscheme nord")
 
 -- gruvbox
--- vim.o.background = "dark"
--- vim.api.nvim_command("colorscheme gruvbox")
+vim.o.background = "dark"
+vim.api.nvim_command("colorscheme gruvbox")
