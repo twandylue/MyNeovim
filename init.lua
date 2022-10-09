@@ -4,7 +4,7 @@ require("keybindings")
 require("plugins")
 require("colorscheme")
 
--- 插件配置
+-- plugins settings
 require("plugin-config.nvim-tree")
 require("plugin-config.nvim-gitsigns")
 require("plugin-config.nvim-git-blame")
@@ -19,7 +19,6 @@ require("plugin-config.nvim-substitute")
 require("plugin-config.nvim-colorizer")
 require("plugin-config.nvim-hop")
 require("plugin-config.nvim-transparent")
--- require('plugin-config.nvim-scrollbar')
 require("plugin-config.nvim-notify")
 require("plugin-config.nvim-dashboard")
 require("plugin-config.nvim-toggleterm")
@@ -48,5 +47,4 @@ require("plugin-config.nvim-null-ls")
 -- require("plugin-config.nvim-noice")
 
 -- TODO: noevim 0.8+
--- - spell check by tree-sitter
 -- - Luasnip with null-ls

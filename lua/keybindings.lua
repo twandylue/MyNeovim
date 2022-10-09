@@ -6,7 +6,7 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
--- leader key 为空
+-- leader key is whitespace
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

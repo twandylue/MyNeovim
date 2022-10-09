@@ -238,9 +238,6 @@ packer.startup({
     -- fidget
     use("j-hui/fidget.nvim")
 
-    -- scrollbar
-    -- use 'petertriho/nvim-scrollbar'
-
     -- vim-exchange
     use("tommcdo/vim-exchange")
 
