@@ -13,12 +13,12 @@ require("colorschemes.nord")
 
 -- catppuccin
 -- option: latte, frappe, macchiato, mocha
--- vim.g.catppuccin_flavour = "mocha"
--- vim.api.nvim_command("colorscheme catppuccin")
+vim.g.catppuccin_flavour = "mocha"
+vim.api.nvim_command("colorscheme catppuccin")
 
 -- kanagawa
-vim.o.background = "dark"
-vim.api.nvim_command("colorscheme kanagawa")
+-- vim.o.background = "dark"
+-- vim.api.nvim_command("colorscheme kanagawa")
 
 -- arctic (not support dashboard)
 -- vim.api.nvim_command("colorscheme arctic")
