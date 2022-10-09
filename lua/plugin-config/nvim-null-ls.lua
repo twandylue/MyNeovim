@@ -13,6 +13,7 @@ local sources = {
   -- null_ls.builtins.completion.spell,
   null_ls.builtins.diagnostics.markdownlint,
   -- null_ls.builtins.diagnostics.write_good,
+  null_ls.builtins.diagnostics.shellcheck,
 }
 
 if vim.fn.has("mac") == 1 then
