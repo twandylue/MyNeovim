@@ -10,10 +10,13 @@ local sources = {
     extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
   }),
   null_ls.builtins.formatting.csharpier,
-  -- null_ls.builtins.completion.spell,
-  null_ls.builtins.diagnostics.markdownlint,
-  -- null_ls.builtins.diagnostics.write_good,
+  null_ls.builtins.diagnostics.markdownlint.with({
+    -- disable limitation of line length
+    extra_args = { "--disable", "MD013" },
+  }),
   null_ls.builtins.diagnostics.shellcheck,
+  -- null_ls.builtins.completion.spell,
+  -- null_ls.builtins.diagnostics.write_good,
 }
 
 if vim.fn.has("mac") == 1 then
