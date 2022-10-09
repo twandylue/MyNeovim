@@ -11,4 +11,7 @@ github.setup({
   function_style = "italic",
   -- function_style = "NONE",
   variable_style = "NONE",
+  colors = {
+    bg_search = "#ff0000",
+  },
 })
