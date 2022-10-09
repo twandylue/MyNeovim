@@ -287,5 +287,8 @@ packer.startup({
     --     "rcarriga/nvim-notify",
     --   },
     -- })
+
+    -- vim wiki
+    use("vimwiki/vimwiki")
   end,
 })
