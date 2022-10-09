@@ -244,15 +244,16 @@ packer.startup({
     -- vim-exchange
     use("tommcdo/vim-exchange")
 
+    -- TODO: Studying...
     -- neorg
-    use({
-      "nvim-neorg/neorg",
-      -- important: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compiler
-      -- ref: https://github.com/nvim-neorg/neorg
-      -- run = ":Neorg sync-parsers", -- This is the important bit!
-      ft = "norg",
-      requires = "nvim-lua/plenary.nvim",
-    })
+    -- use({
+    --   "nvim-neorg/neorg",
+    --   -- important: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compiler
+    --   -- ref: https://github.com/nvim-neorg/neorg
+    --   -- run = ":Neorg sync-parsers", -- This is the important bit!
+    --   ft = "norg",
+    --   requires = "nvim-lua/plenary.nvim",
+    -- })
 
     -- incline.nvim
     use("b0o/incline.nvim")
