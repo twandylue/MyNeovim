@@ -241,7 +241,6 @@ packer.startup({
     -- vim-exchange
     use("tommcdo/vim-exchange")
 
-    -- TODO: Studying...
     -- neorg
     use({
       "nvim-neorg/neorg",
