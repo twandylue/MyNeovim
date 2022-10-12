@@ -23,7 +23,7 @@ map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>m", "`", opts)
 map("n", "<S-h>", "^", opts)
 map("n", "<S-l>", "g_", opts)
-map("i", "<C-o>", '<C-o>a', opts)
+map("i", "<C-o>", "<C-o>a", opts)
 -- keep copy text object in register
 map("x", "<leader>p", '"_dP', opts)
 -- used by bufferline
