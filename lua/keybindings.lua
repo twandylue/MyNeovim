@@ -23,6 +23,7 @@ map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>m", "`", opts)
 map("n", "<S-h>", "^", opts)
 map("n", "<S-l>", "g_", opts)
+map("i", "<C-o>", '<C-o>a', opts)
 -- keep copy text object in register
 map("x", "<leader>p", '"_dP', opts)
 -- used by bufferline
@@ -97,7 +98,8 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
+    ,
     opts
   ),
 })
