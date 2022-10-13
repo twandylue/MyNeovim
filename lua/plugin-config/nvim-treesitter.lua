@@ -5,6 +5,13 @@ if not status then
   return
 end
 
+if vim.fn.has("win32") == 1 then
+  -- **warning** for specific lang of treesitter, specific compiler for c is required.
+  -- recommend for win32: scoop install zig
+  -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1985
+  require 'nvim-treesitter.install'.compilers = { 'zig' }
+end
+
 ts.setup({
   ensure_installed = {
     "bash",
@@ -25,7 +32,6 @@ ts.setup({
     "html",
     "css",
     "help",
-    -- "c",
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
