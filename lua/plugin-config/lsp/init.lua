@@ -13,9 +13,9 @@ local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
 
 local M = require("plugin-config.lsp.utils.utils")
-local status_lua_dev, lua_dev = pcall(require, "lua-dev")
-if not status_lua_dev then
-  print("lua-dev is not installed")
+local status_neodev, lua_dev = pcall(require, "neodev")
+if not status_neodev then
+  print("neodev is not installed")
   return
 end
 

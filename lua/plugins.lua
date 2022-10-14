@@ -253,8 +253,8 @@ packer.startup({
     -- incline.nvim
     use("b0o/incline.nvim")
 
-    -- dev for lua in neovim
-    use("folke/lua-dev.nvim")
+    -- neodev for lua in neovim
+    use("folke/neodev.nvim")
 
     -- cache of neovim modules
     use("lewis6991/impatient.nvim")
