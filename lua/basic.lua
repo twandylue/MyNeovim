@@ -11,7 +11,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = true
--- 搜索不要高亮
+-- 搜索要高亮
 vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true

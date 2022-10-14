@@ -12,6 +12,7 @@ github.setup({
   -- function_style = "NONE",
   variable_style = "NONE",
   colors = {
+    cursor_line_nr = "#f52b02",
     bg_search = "#ff0000",
   },
 })
