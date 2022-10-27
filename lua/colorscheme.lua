@@ -36,3 +36,6 @@ vim.api.nvim_command("colorscheme catppuccin")
 -- gruvbox
 -- vim.o.background = "dark"
 -- vim.api.nvim_command("colorscheme gruvbox")
+
+-- vim.g.gruvbox_baby_background_color = "dark"
+-- vim.api.nvim_command("colorscheme gruvbox-baby")

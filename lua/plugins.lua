@@ -20,6 +20,11 @@ packer.startup({
       requires = { "rktjmp/lush.nvim" },
     })
 
+    -- colorscheme: gruvbox-baby
+    use({
+      "luisiacc/gruvbox-baby",
+    })
+
     -- colorscheme: catppuccin
     use({
       "catppuccin/nvim",
