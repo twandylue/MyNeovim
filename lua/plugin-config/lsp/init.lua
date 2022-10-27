@@ -12,7 +12,6 @@ local sumneko_lua = require("plugin-config.lsp.configs.sumneko_lua")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
 
-local M = require("plugin-config.lsp.utils.utils")
 local status_neodev, lua_dev = pcall(require, "neodev")
 if not status_neodev then
   print("neodev is not installed")
@@ -45,7 +44,3 @@ cmake(on_attach)
 -- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})
 sumneko_lua(on_attach)
-
-M.nvim_lsp.vimls.setup({
-  on_attach = require("aerial").on_attach,
-})
