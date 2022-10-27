@@ -12,7 +12,6 @@ require("colorschemes.nord")
 -- vim.api.nvim_command("colorscheme github_dark_default") -- github_dimmed, github_dark, github_dark_default, github_dark_colorblind
 
 -- catppuccin
--- option: latte, frappe, macchiato, mocha
 vim.api.nvim_command("colorscheme catppuccin")
 
 -- kanagawa
