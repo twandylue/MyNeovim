@@ -23,6 +23,12 @@ db.custom_center = {
     action = "Telescope project",
   },
   {
+    icon = "ﮧ  ",
+    desc = "Terminal                            ",
+    shortcut = ":term  ",
+    action = ":terminal powershell",
+  },
+  {
     icon = "  ",
     desc = "Recently files                      ",
     shortcut = "      ",
