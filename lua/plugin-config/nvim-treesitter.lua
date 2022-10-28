@@ -24,7 +24,8 @@ ts.setup({
     "toml",
     "json",
     "yaml",
-    "markdown",
+    -- WARNING: markdown treesitter parsers does not work with my color scheme now, wait for fixing...
+    -- "markdown",
     "dockerfile",
     "regex",
     "javascript",
@@ -36,7 +37,7 @@ ts.setup({
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
   -- Automatically install missing parsers when entering buffer
-  auto_install = true,
+  -- auto_install = true,
   highlight = {
     enable = true,
     -- make sure format in help documents correct
