@@ -4,10 +4,26 @@ if not status then
   return
 end
 
+-- change default terminal as in win
+if vim.fn.has("win32") == 1 then
+  local powershell_options = {
+    shell = vim.fn.executable "powershell" and "powershell" or "pwsh",
+    shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+    shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+    shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+    shellquote = "",
+    shellxquote = "",
+  }
+
+  for option, value in pairs(powershell_options) do
+    vim.opt[option] = value
+  end
+end
+
 toggleterm.setup({
   size = 20,
   open_mapping = [[<c-\>]],
-  hide_numbers = true,
+  hide_numbers = false,
   shade_filetypes = {},
   shade_terminals = true,
   shading_factor = 2,
