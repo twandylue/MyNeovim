@@ -26,7 +26,7 @@ db.custom_center = {
     icon = "ﮧ  ",
     desc = "Terminal                            ",
     shortcut = ":term  ",
-    action = ":terminal powershell",
+    action = ":terminal",
   },
   {
     icon = "  ",
