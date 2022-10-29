@@ -276,8 +276,8 @@ local config_dark = {
         NvimTreeNormal = { bg = mocha.none },
         CmpBorder = { fg = mocha.surface2 },
         CursorLineNr = { fg = "#FF0033" },
-        Search = { bg = "#9D0006", fg = "#FABD2F", style = { "bold" } },
-        IncSearch = { bg = "#FF2D21", fg = "#000000" },
+        Search = { bg = "#9D0006", fg = "#FABD2F" },
+        IncSearch = { bg = "#FF2D21", fg = "#000000", style = { "bold" } },
       }
     end,
   },
