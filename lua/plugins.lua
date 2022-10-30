@@ -170,7 +170,7 @@ packer.startup({
     use("mg979/vim-visual-multi")
 
     -- vim-easy-align
-    use("kg8m/vim-simple-align")
+    use("junegunn/vim-easy-align")
 
     -- nvim-dashboard
     use("glepnir/dashboard-nvim")
