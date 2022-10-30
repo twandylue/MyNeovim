@@ -24,6 +24,8 @@ vim.api.nvim_command("colorscheme catppuccin")
 -- nightfox
 -- vim.api.nvim_command("colorscheme nightfox")
 -- vim.g.lightline = { colorscheme = "nightfox" }
+-- vim.api.nvim_command("colorscheme carbonfox")
+-- vim.g.lightline = { colorscheme = "carbonfox" }
 
 -- tokyo
 -- option: tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
