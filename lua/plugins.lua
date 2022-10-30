@@ -41,7 +41,7 @@ packer.startup({
     use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 
     -- colorscheme: nightfox
-    use({ "EdenEast/nightfox.nvim", tag = "v1.0.0" })
+    use("EdenEast/nightfox.nvim")
 
     -- colorscheme: tokyonight
     use("folke/tokyonight.nvim")
@@ -88,7 +88,7 @@ packer.startup({
     use("f-person/git-blame.nvim")
 
     -- nvim-feline
-    use({ "feline-nvim/feline.nvim", branch = "0.5-compat" })
+    use("feline-nvim/feline.nvim")
 
     -- nvim-hop
     use({ "phaazon/hop.nvim", branch = "v2" })
@@ -96,7 +96,13 @@ packer.startup({
     -- nvim-comment
     use("numToStr/Comment.nvim")
 
-    -- nvim-autopairs
+    -- nvim-todo-comments
+    use({
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+    })
+
+    -- nvim-autopairs TODO:
     use("windwp/nvim-autopairs")
 
     -- vim-illuminate
@@ -108,13 +114,13 @@ packer.startup({
     -- nvim-surround
     use("kylechui/nvim-surround")
 
-    -- nvim-exchange
+    -- exchange text object ( NOTE: cxc to cancel)
     use("gbprod/substitute.nvim")
 
     -- nvim-bufferline
     use({
       "akinsho/bufferline.nvim",
-      tag = "v2.*",
+      tag = "v3.*",
       requires = "kyazdani42/nvim-web-devicons",
     })
 
@@ -123,12 +129,6 @@ packer.startup({
 
     -- nvim-scrollview
     use("dstein64/nvim-scrollview")
-
-    -- nvim-todo-comments
-    use({
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-    })
 
     -- nvim-markdown
     use({
@@ -195,7 +195,7 @@ packer.startup({
     use("gen740/SmoothCursor.nvim")
 
     -- nvim-toggleterm
-    use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
+    use({ "akinsho/toggleterm.nvim", tag = "*" })
 
     -- vscode-like pictograms
     use("onsails/lspkind-nvim")
