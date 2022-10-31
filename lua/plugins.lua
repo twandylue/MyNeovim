@@ -76,7 +76,6 @@ packer.startup({
     use("lewis6991/gitsigns.nvim")
 
     -- nvim-neogit
-    --
     if vim.fn.has("win32") == 1 then
       -- WARNING: In win, neovim can not functionally commit message after neogit/Commit(9c63259c56e13e3385705fd44722f31381045c0c) at 2022/9/12, so I decide to use the old version of neogit by specifying commit
       use({ "TimUntersberger/neogit",
