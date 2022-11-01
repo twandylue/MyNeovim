@@ -7,4 +7,5 @@ end
 
 gruvbox.setup({
   contrast = "true", -- can be "hard", "soft" or empty string
+  dim_inactive = "true",
 })

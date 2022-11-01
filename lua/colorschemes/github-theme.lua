@@ -14,5 +14,7 @@ github.setup({
   colors = {
     cursor_line_nr = "#FF0033",
     bg_search = "#9D0006",
+    hint = "orange",
+    error = "#ff0000",
   },
 })
