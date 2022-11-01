@@ -5,4 +5,14 @@ if not status then
   return
 end
 
-tokyonight.setup()
+tokyonight.setup({
+  -- style = "night"
+  styles = {
+    functions = { italic = true },
+  },
+  dim_inactive = true,
+  on_colors = function(colors)
+    colors.hint = colors.orange
+    colors.error = "#ff0000"
+  end
+})

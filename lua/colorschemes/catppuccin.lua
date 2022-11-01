@@ -290,6 +290,7 @@ local config_dark = {
     neogit = true,
     gitgutter = true,
     illuminate = true,
+    hop = true,
     notify = true,
     markdown = true,
     ts_rainbow = false,
