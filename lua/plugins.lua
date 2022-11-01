@@ -100,6 +100,9 @@ packer.startup({
     -- nvim-hop
     use({ "phaazon/hop.nvim", branch = "v2" })
 
+    -- nvim-leap
+    use({ "ggandor/leap.nvim" })
+
     -- nvim-comment
     use("numToStr/Comment.nvim")
 
