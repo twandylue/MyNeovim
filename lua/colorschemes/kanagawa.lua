@@ -5,4 +5,7 @@ if not status_kanagawa then
   return
 end
 
-kanagawa.setup()
+kanagawa.setup({
+  dimInactive = true,
+  functionStyle = { italic = true },
+})

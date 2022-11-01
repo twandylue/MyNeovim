@@ -122,8 +122,10 @@ local config_mocha = {
       return {
         -- For base configs.
         CursorLineNr = { fg = cp.green },
-        Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
-        IncSearch = { bg = cp.pink, fg = cp.surface1 },
+        -- Search = { bg = cp.surface1, fg = cp.pink, style = { "bold" } },
+        -- IncSearch = { bg = cp.pink, fg = cp.surface1 },
+        Search = { bg = "#9D0006", fg = "#FABD2F" },
+        IncSearch = { bg = "#FF2D21", fg = "#000000" },
 
         -- For native lsp configs.
         DiagnosticVirtualTextError = { bg = cp.none },
