@@ -13,7 +13,7 @@ telescope.load_extension("project")
 telescope.load_extension("notify")
 
 local actions = require("telescope.actions")
-local icons_t = require("plugin-config.icons")
+local icons = require("plugin-config.icons")
 -- local trouble = require "trouble.providers.telescope"
 
 function telescope_buffer_dir()
@@ -22,7 +22,7 @@ end
 
 telescope.setup({
   defaults = {
-    prompt_prefix = icons_t.ui.Telescope .. " ",
+    prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
     file_ignore_patterns = {
