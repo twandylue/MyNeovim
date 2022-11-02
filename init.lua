@@ -46,6 +46,7 @@ require("plugin-config.nvim-incline")
 require("plugin-config.nvim-null-ls")
 require("plugin-config.nvim-leap")
 -- require("plugin-config.nvim-noice")
+require("plugin-config.nvim-colorful-winsep")
 
 -- TODO: noevim 0.8+
 -- - Luasnip with null-ls

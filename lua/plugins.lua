@@ -270,6 +270,9 @@ packer.startup({
     -- incline.nvim
     use("b0o/incline.nvim")
 
+    -- colorful winsep
+    use("nvim-zh/colorful-winsep.nvim")
+
     -- neodev for lua in neovim
     use("folke/neodev.nvim")
 
