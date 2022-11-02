@@ -9,7 +9,8 @@ if vim.fn.has("win32") == 1 then
   -- **warning** for specific lang of treesitter, specific compiler for c is required.
   -- recommend for win32: scoop install zig
   -- ref: https://github.com/nvim-treesitter/nvim-treesitter/issues/1985
-  require("nvim-treesitter.install").compilers = { "zig" }
+  -- NOTE: Use the default compiler(gcc), if default compiler can't work, then use zig as the compiler for tree-sitter
+  -- require("nvim-treesitter.install").compilers = { "zig" }
 end
 
 ts.setup({
