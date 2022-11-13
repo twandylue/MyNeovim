@@ -291,6 +291,9 @@ packer.startup({
       requires = { "nvim-lua/plenary.nvim" },
     })
 
+    -- ssr
+    use({ "cshuaimin/ssr.nvim", module = "ssr" })
+
     -- noise
     -- WARNING: waiting for being more mature
     -- use({
