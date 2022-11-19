@@ -294,6 +294,9 @@ packer.startup({
     -- ssr
     use({ "cshuaimin/ssr.nvim", module = "ssr" })
 
+    -- expand region
+    use({ "terryma/vim-expand-region" })
+
     -- noise
     -- WARNING: waiting for being more mature
     -- use({
