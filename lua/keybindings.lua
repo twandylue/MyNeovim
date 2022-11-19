@@ -27,8 +27,8 @@ map("i", "<C-o>", "<C-o>a", opts)
 -- keep copy text object in register
 map("x", "<leader>p", '"_dP', opts)
 -- used by bufferline
--- map("n", "gj", "gT", { noremap = false })
--- map("n", "gk", "gt", { noremap = false })
+map("n", "gj", "gT", { noremap = false })
+map("n", "gk", "gt", { noremap = false })
 
 map("", "<leader>w", "<C-W>", opts)
 
@@ -107,8 +107,8 @@ vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.projec
 require("bufferline").setup({
   -- These commands will navigate through buffers in order regardless of which mode you are using
   -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-  map("n", "gk", "<cmd>BufferLineCycleNext<CR>", opts),
-  map("n", "gj", "<cmd>BufferLineCyclePrev<CR>", opts),
+  -- map("n", "gk", "<cmd>BufferLineCycleNext<CR>", opts),
+  -- map("n", "gj", "<cmd>BufferLineCyclePrev<CR>", opts),
 
   -- These commands will move the current buffer backwards or forwards in the bufferline
   map("n", "gK", "<cmd>BufferLineMoveNext<CR>", opts),
@@ -148,7 +148,10 @@ else
 end
 
 -- neogit
-map("n", "<leader>gg", "<Cmd>Neogit<cr>", opts)
+-- map("n", "<leader>gg", "<Cmd>Neogit<cr>", opts)
+
+-- vim-fugitive
+map("n", "<leader>gg", "<Cmd>Gtabedit :<cr>", opts)
 
 -- toggleterm
 function _G.set_terminal_keymaps()

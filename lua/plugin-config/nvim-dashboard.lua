@@ -46,12 +46,12 @@ db.custom_center = {
     shortcut = "      ",
     action = "Telescope live_grep",
   },
-  {
-    icon = "  ",
-    desc = "Neogit                              ",
-    shortcut = "SPC g g",
-    action = ":Neogit",
-  },
+  -- {
+  --   icon = "  ",
+  --   desc = "Neogit                              ",
+  --   shortcut = "SPC g g",
+  --   action = ":Neogit",
+  -- },
   {
     icon = "  ",
     desc = "Fugitive                            ",
