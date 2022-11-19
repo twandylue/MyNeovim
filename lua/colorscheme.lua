@@ -9,10 +9,10 @@ require("colorschemes.nord")
 -- setting color scheme
 
 -- github
--- vim.api.nvim_command("colorscheme github_dark_default") -- github_dimmed, github_dark, github_dark_default, github_dark_colorblind
+vim.api.nvim_command("colorscheme github_dark") -- github_dimmed, github_dark, github_dark_default, github_dark_colorblind
 
 -- catppuccin
-vim.api.nvim_command("colorscheme catppuccin")
+-- vim.api.nvim_command("colorscheme catppuccin")
 
 -- kanagawa
 -- vim.o.background = "dark"
