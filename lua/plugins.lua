@@ -184,6 +184,9 @@ packer.startup({
     -- vim-easy-align
     use("junegunn/vim-easy-align")
 
+    -- expand region
+    use({ "terryma/vim-expand-region" })
+
     -- nvim-dashboard
     use("glepnir/dashboard-nvim")
 
@@ -235,6 +238,9 @@ packer.startup({
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
     })
+
+    -- lsp preview
+    use("dnlhc/glance.nvim")
 
     -- Mason lsp server installer and manager
     use("williamboman/mason.nvim")
@@ -293,9 +299,6 @@ packer.startup({
 
     -- ssr
     use({ "cshuaimin/ssr.nvim", module = "ssr" })
-
-    -- expand region
-    use({ "terryma/vim-expand-region" })
 
     -- noise
     -- WARNING: waiting for being more mature

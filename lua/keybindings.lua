@@ -139,10 +139,15 @@ map("n", "<tab>f", "<Cmd>Lspsaga lsp_finder<cr>", opts)
 map("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
 map("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
 
+-- basic lsp api with glance
+map("n", "<tab>d", "<cmd>Glance definitions<cr>", opts)
+map("n", "<tab>i", "<cmd>Glance implementations<cr>", opts)
+map("n", "<tab>u", "<cmd>Glance references<cr>", opts)
+
 -- basic lsp api
-map("n", "<tab>d", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-map("n", "<tab>i", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-map("n", "<tab>u", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+-- map("n", "<tab>d", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+-- map("n", "<tab>i", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+-- map("n", "<tab>u", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 
 if vim.fn.has("mac") == 1 then
   map("n", "<M-.>", "<Cmd>Lspsaga code_action<cr>", opts)
