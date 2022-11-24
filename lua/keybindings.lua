@@ -61,6 +61,8 @@ map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- vinegar style.
+-- map("n", "<leader>e", "<cmd>lua require'nvim-tree'.open_replacing_current_buffer()<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
