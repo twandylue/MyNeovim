@@ -1,3 +1,4 @@
+local lsp_init = require("plugin-config.lsp.init")
 local status, rt = pcall(require, "rust-tools")
 if not status then
   vim.notify("rust-tools is not installed", vim.log.levels.ERROR)
@@ -20,7 +21,11 @@ end
 --
 -- rt.setup(opts)
 
-rt.setup({})
+rt.setup({
+  server = {
+    on_attach = lsp_init.on_attach_rust_tool,
+  },
+})
 
 local dap = require("dap")
 dap.defaults.fallback.terminal_win_cmd = "50vsplit new"

@@ -19,6 +19,20 @@ if not status_neodev then
   return
 end
 
+local M = {
+  on_attach_rust_tool,
+}
+
+local on_attach_rust_tool = function(client, bufnr)
+  -- formatting
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command([[augroup Format]])
+    vim.api.nvim_command([[autocmd! * <buffer>]])
+    vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+    vim.api.nvim_command([[augroup END]])
+  end
+end
+
 local on_attach = function(client, bufnr)
   ih.on_attach(client, bufnr)
   -- formatting
@@ -30,7 +44,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-rust(on_attach)
+rust(on_attach_rust_tool)
 yamlls(on_attach)
 jsonls(on_attach)
 tsserver(on_attach)
@@ -46,3 +60,6 @@ cmake(on_attach)
 -- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})
 sumneko_lua(on_attach)
+
+M.on_attach_rust_tool = on_attach_rust_tool
+return M
