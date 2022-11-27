@@ -11,6 +11,7 @@ local sqls = require("plugin-config.lsp.configs.sqls")
 local sumneko_lua = require("plugin-config.lsp.configs.sumneko_lua")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
+local ih = require("inlay-hints")
 
 local status_neodev, lua_dev = pcall(require, "neodev")
 if not status_neodev then
@@ -19,6 +20,7 @@ if not status_neodev then
 end
 
 local on_attach = function(client, bufnr)
+  ih.on_attach(client, bufnr)
   -- formatting
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])

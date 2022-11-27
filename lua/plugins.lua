@@ -242,6 +242,9 @@ packer.startup({
     -- lsp preview
     use("dnlhc/glance.nvim")
 
+    -- lsp inlay-hints
+    use("simrat39/inlay-hints.nvim")
+
     -- Mason lsp server installer and manager
     use("williamboman/mason.nvim")
     use("williamboman/mason.lspconfig.nvim")
