@@ -245,6 +245,13 @@ packer.startup({
     -- lsp inlay-hints
     use("simrat39/inlay-hints.nvim")
 
+    -- rust-tool
+    use("simrat39/rust-tools.nvim")
+
+    -- Debugging
+    use("nvim-lua/plenary.nvim")
+    use("mfussenegger/nvim-dap")
+
     -- Mason lsp server installer and manager
     use("williamboman/mason.nvim")
     use("williamboman/mason.lspconfig.nvim")
