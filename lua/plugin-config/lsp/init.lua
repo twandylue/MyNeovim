@@ -20,10 +20,10 @@ if not status_neodev then
 end
 
 local M = {
-  on_attach_rust_tool,
+  on_attach_rust_tool = nil,
 }
 
-local on_attach_rust_tool = function(client, bufnr)
+local on_attach_rust_tool = function(client, _)
   -- formatting
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
