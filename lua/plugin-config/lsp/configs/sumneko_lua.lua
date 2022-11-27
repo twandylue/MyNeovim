@@ -6,7 +6,7 @@ local sumneko_lua = function(on_attach)
     settings = {
       Lua = {
         hint = {
-          enable = true,
+          enable = false,
         },
         diagnostics = {
           -- get the language server to recognize the vim global
