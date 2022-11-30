@@ -248,6 +248,9 @@ packer.startup({
     -- rust-tool
     use("simrat39/rust-tools.nvim")
 
+    -- rust.vim
+    use("rust-lang/rust.vim")
+
     -- Debugging
     use("nvim-lua/plenary.nvim")
     use("mfussenegger/nvim-dap")
