@@ -8,6 +8,10 @@ nvimtree.setup({
   git = {
     enable = true,
   },
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true,
+  },
   filters = { custom = { "^.git$" } },
   -- open current directory
   update_focused_file = {
