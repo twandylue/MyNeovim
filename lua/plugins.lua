@@ -313,6 +313,9 @@ packer.startup({
     -- ssr
     use({ "cshuaimin/ssr.nvim", module = "ssr" })
 
+    -- marks
+    use({ "chentoast/marks.nvim" })
+
     -- noise
     -- WARNING: waiting for being more mature
     -- use({
