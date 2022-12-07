@@ -49,6 +49,9 @@ packer.startup({
     -- colorscheme: nord
     use("shaunsingh/nord.nvim")
 
+    -- colorscheme: base16
+    use("RRethy/nvim-base16")
+
     -- nvim-tree
     use({
       "kyazdani42/nvim-tree.lua",
