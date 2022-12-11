@@ -117,7 +117,7 @@ packer.startup({
       requires = "nvim-lua/plenary.nvim",
     })
 
-    -- nvim-autopairs TODO:
+    -- nvim-autopairs
     use("windwp/nvim-autopairs")
 
     -- vim-illuminate
@@ -194,8 +194,8 @@ packer.startup({
     use("glepnir/dashboard-nvim")
 
     -- goyo-vim
-    use("junegunn/goyo.vim")
-    use("junegunn/limelight.vim")
+    -- use("junegunn/goyo.vim")
+    -- use("junegunn/limelight.vim")
 
     -- zen-mode
     use("folke/zen-mode.nvim")
@@ -211,6 +211,9 @@ packer.startup({
 
     -- smooth cursor
     use("gen740/SmoothCursor.nvim")
+
+    -- marks
+    use({ "chentoast/marks.nvim" })
 
     -- nvim-toggleterm
     use({ "akinsho/toggleterm.nvim", tag = "*" })
@@ -301,7 +304,7 @@ packer.startup({
     -- cache of neovim modules
     use("lewis6991/impatient.nvim")
 
-    -- aerial(function list)
+    -- aerial(structures)
     use("stevearc/aerial.nvim")
 
     -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
@@ -314,10 +317,7 @@ packer.startup({
     })
 
     -- ssr
-    use({ "cshuaimin/ssr.nvim", module = "ssr" })
-
-    -- marks
-    use({ "chentoast/marks.nvim" })
+    -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
 
     -- noise
     -- WARNING: waiting for being more mature
