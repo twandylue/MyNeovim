@@ -2,6 +2,14 @@
 
 ## Commands
 
+- Delete buffers
+
+  ```console
+  :bdelete
+  :bd
+  :bd!
+  ```
+
 - [Set the window size of quickfix window](https://stackoverflow.com/questions/42217825/vim-how-to-set-the-window-size-of-quickfix-window)
 
   ```console
