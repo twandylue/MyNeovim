@@ -100,8 +100,7 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
-    ,
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
     opts
   ),
 })
@@ -187,3 +186,6 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 -- vim.keymap.set({ "n", "x" }, "<leader>sr", function()
 --   require("ssr").open()
 -- end)
+
+-- rest(httpclient)
+map("n", "<leader>cc", "<Plug>RestNvim", opts)

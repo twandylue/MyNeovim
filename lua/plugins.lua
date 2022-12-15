@@ -326,6 +326,12 @@ packer.startup({
       },
     })
 
+    -- rest.nvim(http client)
+    use({
+      "rest-nvim/rest.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+    })
+
     -- ssr
     -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
 

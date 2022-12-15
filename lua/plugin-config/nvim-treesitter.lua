@@ -31,8 +31,9 @@ ts.setup({
     "regex",
     "javascript",
     "typescript",
-    "html",
     "css",
+    "html",
+    "http",
     "help",
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -52,6 +52,7 @@ require("plugin-config.nvim-glance")
 require("plugin-config.nvim-rust-tool")
 require("plugin-config.nvim-marks")
 require("plugin-config.nvim-chatGPT")
+require("plugin-config.nvim-rest")
 
 -- TODO: noevim 0.8+
 -- - Luasnip with null-ls
