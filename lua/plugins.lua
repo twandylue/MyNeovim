@@ -316,6 +316,16 @@ packer.startup({
       requires = { "nvim-lua/plenary.nvim" },
     })
 
+    -- ChatGPT
+    use({
+      "jackMort/ChatGPT.nvim",
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+      },
+    })
+
     -- ssr
     -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
 
