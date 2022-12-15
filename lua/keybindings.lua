@@ -184,6 +184,6 @@ vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 -- ssr
-vim.keymap.set({ "n", "x" }, "<leader>sr", function()
-  require("ssr").open()
-end)
+-- vim.keymap.set({ "n", "x" }, "<leader>sr", function()
+--   require("ssr").open()
+-- end)
