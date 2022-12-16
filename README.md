@@ -40,6 +40,11 @@ My Neovim configuration in MacOS and Win
 - curl
 - [jq](https://github.com/stedolan/jq)
 
+## ChatGPT.nvim
+
+- curl
+- [OPENAI_API_KEY](https://beta.openai.com/account/api-keys) as environment variable `$OPENAI_API_KEY`
+
 ## References
 
 - [Using Lua in Neovim](https://github.com/nanotee/nvim-lua-guide)
