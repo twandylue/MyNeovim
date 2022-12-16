@@ -38,6 +38,8 @@
   :lcd %:p:h " Change the directory only for the current window
   ```
 
+## Keys
+
 - Jumping
   
   ```plain
@@ -45,6 +47,8 @@
   ctrl + o: Jump backward to cursor location.
   ctrl + i: Jump forward to cursor location.
   ```
+
+## Plugins
 
 - [rest.nvim](https://github.com/rest-nvim/rest.nvim)
 
