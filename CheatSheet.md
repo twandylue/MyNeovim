@@ -37,3 +37,16 @@
   :cd %:p:h " Change to the directory of the currently open file
   :lcd %:p:h " Change the directory only for the current window
   ```
+
+- [rest.nvim](https://github.com/rest-nvim/rest.nvim)
+
+  ```http
+  GET https://reqres.in/api/users?page=5
+  Cookie: session_token="test"
+  # or/
+  Authentication: Bearer <token>
+  ```
+
+  In `*.http`
+
+  [reference](https://github.com/rest-nvim/rest.nvim/issues/98)

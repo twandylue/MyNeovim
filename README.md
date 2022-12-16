@@ -35,6 +35,11 @@ My Neovim configuration in MacOS and Win
 
 > *important*: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compile
 
+### rest.nvim
+
+- curl
+- [jq](https://github.com/stedolan/jq)
+
 ## References
 
 - [Using Lua in Neovim](https://github.com/nanotee/nvim-lua-guide)
