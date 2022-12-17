@@ -60,9 +60,10 @@ end
 map("i", "jj", "<Esc>", { noremap = false })
 
 -- nvim-tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- vinegar style.
 -- map("n", "<leader>e", "<cmd>lua require'nvim-tree'.open_replacing_current_buffer()<CR>", opts)
+map("n", "<leader>e", "<cmd>Sexplore<CR>", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
@@ -189,3 +190,21 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 -- rest(httpclient)
 map("n", "<leader>cc", "<Plug>RestNvim", opts)
+
+-- Netrw
+vim.api.nvim_create_autocmd("filetype", {
+  pattern = "netrw",
+  desc = "Better mappings for netrw",
+  callback = function()
+    local bind = function(lhs, rhs)
+      vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
+    end
+
+    -- edit new file
+    bind("a", "%")
+    -- rename file
+    bind("r", "R")
+    -- close the preview window
+    bind("P", "<C-w>z")
+  end,
+})

@@ -90,16 +90,18 @@ vim.o.history = 150
 -- reset pwd to local directory file path when open nvim
 -- vim.o.autochdir = true
 
--- set single status line
-vim.cmd("set laststatus=3")
-
--- make window separator concealed
-vim.cmd("highlight WinSeparator guibg=None")
-
-if vim.fn.has("mac") ~= 1 then
-  -- set ff=unix for window
-  vim.cmd("set ff=unix | update")
-end
+vim.cmd([[
+  " set single status line
+  set laststatus=3
+  " make window separator concealed
+  highlight WinSeparator guibg=None
+  " for netrw
+  let g:netrw_keepdir = 0
+  let g:netrw_winsize = 30
+  let g:netrw_banner = 0
+  " let g:netrw_localrmdir = '!rm -rf'
+  let g:netrw_localcopydircmd = 'cp -r'
+]])
 
 -- highlight trailing whitespace
 vim.fn.matchadd("errorMsg", [[\s\+$]])

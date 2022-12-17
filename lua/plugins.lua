@@ -58,6 +58,9 @@ packer.startup({
       requires = "kyazdani42/nvim-web-devicons",
     })
 
+    -- vim-vinegar
+    use({ "tpope/vim-vinegar" })
+
     -- nvim-telescope
     -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
     use({
