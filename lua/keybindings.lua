@@ -63,7 +63,8 @@ map("i", "jj", "<Esc>", { noremap = false })
 -- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- vinegar style.
 -- map("n", "<leader>e", "<cmd>lua require'nvim-tree'.open_replacing_current_buffer()<CR>", opts)
-map("n", "<leader>e", "<cmd>Sexplore<CR>", opts)
+-- map("n", "<leader>e", "<cmd>Sexplore<CR>", opts)
+map("n", "<leader>e", "<Plug>(dirvish_split_up)", opts)
 
 -- gitsigns
 -- <c-w>w => could focus on preview window
@@ -101,7 +102,8 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
+    ,
     opts
   ),
 })
@@ -206,5 +208,6 @@ vim.api.nvim_create_autocmd("filetype", {
     bind("r", "R")
     -- close the preview window
     bind("P", "<C-w>z")
+    bind("<tab>", "<CR>")
   end,
 })

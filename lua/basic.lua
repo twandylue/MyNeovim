@@ -96,8 +96,9 @@ vim.cmd([[
   " make window separator concealed
   highlight WinSeparator guibg=None
   " for netrw
-  let g:netrw_keepdir = 0
-  let g:netrw_winsize = 30
+  " let g:netrw_keepdir = 0
+  let g:netrw_liststyle=1
+  let g:netrw_winsize = 45
   let g:netrw_banner = 0
   " let g:netrw_localrmdir = '!rm -rf'
   let g:netrw_localcopydircmd = 'cp -r'

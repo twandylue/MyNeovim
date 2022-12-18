@@ -64,6 +64,11 @@ packer.startup({
     -- vim-vinegar
     use({ "tpope/vim-vinegar" })
 
+    -- vim-dirvish
+    use("justinmk/vim-dirvish")
+    -- use("kristijanhusak/vim-dirvish-git")
+    -- use({ "roginfarrer/vim-dirvish-dovish", branch = "main" })
+
     -- nvim-telescope
     -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
     use({
@@ -337,6 +342,11 @@ packer.startup({
       "rest-nvim/rest.nvim",
       requires = { "nvim-lua/plenary.nvim" },
     })
+
+    -- vim sugar
+    use("tpope/vim-eunuch")
+    -- TODO:
+    -- use("tpope/vim-unimpaired")
 
     -- ssr
     -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
