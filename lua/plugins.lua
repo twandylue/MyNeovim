@@ -66,8 +66,8 @@ packer.startup({
 
     -- vim-dirvish
     use("justinmk/vim-dirvish")
-    -- use("kristijanhusak/vim-dirvish-git")
-    -- use({ "roginfarrer/vim-dirvish-dovish", branch = "main" })
+    use("kristijanhusak/vim-dirvish-git")
+    use({ "roginfarrer/vim-dirvish-dovish", branch = "main" })
 
     -- nvim-telescope
     -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
