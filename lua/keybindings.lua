@@ -102,8 +102,7 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
-    ,
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
     opts
   ),
 })
@@ -132,8 +131,8 @@ require("bufferline").setup({
 })
 
 -- lspsaga
-map("n", "[l", "<Cmd>Lspsaga show_line_diagnostics<cr>", opts)
-map("n", "[c", "<Cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
+map("n", "<tab>l", "<Cmd>Lspsaga show_line_diagnostics<cr>", opts)
+map("n", "<tab>e", "<Cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
 map("n", "]e", "<Cmd>Lspsaga diagnostic_jump_next<cr>", opts)
 map("n", "[e", "<Cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 map("n", "<tab>h", "<Cmd>Lspsaga hover_doc<cr>", opts)
