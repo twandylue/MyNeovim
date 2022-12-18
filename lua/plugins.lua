@@ -345,8 +345,7 @@ packer.startup({
 
     -- vim sugar
     use("tpope/vim-eunuch")
-    -- TODO:
-    -- use("tpope/vim-unimpaired")
+    use("tpope/vim-unimpaired")
 
     -- ssr
     -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
