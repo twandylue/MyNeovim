@@ -58,6 +58,9 @@ packer.startup({
       requires = "kyazdani42/nvim-web-devicons",
     })
 
+    -- nvim-netrw
+    use("prichrd/netrw.nvim")
+
     -- vim-vinegar
     use({ "tpope/vim-vinegar" })
 
