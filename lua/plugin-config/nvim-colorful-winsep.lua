@@ -7,6 +7,6 @@ end
 
 winsep.setup({
   highlight = {
-    guifg = "#FF2D21",
+    fg = "#FF2D21",
   },
 })
