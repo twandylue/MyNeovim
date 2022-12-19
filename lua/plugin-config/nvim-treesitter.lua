@@ -25,8 +25,8 @@ ts.setup({
     "toml",
     "json",
     "yaml",
-    -- WARNING: markdown treesitter parsers does not work with my color scheme now, wait for fixing...
-    -- "markdown",
+    "markdown",
+    "markdown_inline",
     "dockerfile",
     "regex",
     "javascript",
@@ -42,7 +42,7 @@ ts.setup({
   -- auto_install = true,
   highlight = {
     enable = true,
-    -- make sure format in help documents correct
+    additional_vim_regex_highlighting = { "markdown" },
     disable = { "help" },
   },
   rainbow = {

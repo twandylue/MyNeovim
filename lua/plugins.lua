@@ -303,6 +303,9 @@ packer.startup({
       requires = "nvim-lua/plenary.nvim",
     })
 
+    -- nvim.obsidian
+    use({ "epwalsh/obsidian.nvim", tag = "v1.*" })
+
     -- incline.nvim
     use("b0o/incline.nvim")
 
