@@ -48,13 +48,9 @@ require("plugin-config.nvim-aerial")
 require("plugin-config.nvim-incline")
 require("plugin-config.nvim-null-ls")
 require("plugin-config.nvim-leap")
--- require("plugin-config.nvim-noice")
 require("plugin-config.nvim-colorful-winsep")
 require("plugin-config.nvim-glance")
 require("plugin-config.nvim-rust-tool")
 require("plugin-config.nvim-marks")
 require("plugin-config.nvim-chatGPT")
 require("plugin-config.nvim-rest")
-
--- TODO: noevim 0.8+
--- - Luasnip with null-ls

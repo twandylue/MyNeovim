@@ -349,20 +349,5 @@ packer.startup({
 
     -- ssr
     -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
-
-    -- noise
-    -- WARNING: waiting for being more mature
-    -- use({
-    --   event = "VimEnter",
-    --   "folke/noice.nvim",
-    --   config = function()
-    --     require("noice").setup()
-    --   end,
-    --   requires = {
-    --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --     "MunifTanjim/nui.nvim",
-    --     "rcarriga/nvim-notify",
-    --   },
-    -- })
   end,
 })
