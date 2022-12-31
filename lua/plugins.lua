@@ -43,9 +43,6 @@ packer.startup({
     -- colorscheme: nightfox
     use("EdenEast/nightfox.nvim")
 
-    -- colorscheme: nord
-    use("shaunsingh/nord.nvim")
-
     -- colorscheme: base16
     use("RRethy/nvim-base16")
 

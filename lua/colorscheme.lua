@@ -3,7 +3,6 @@ require("colorschemes.nightfox")
 require("colorschemes.catppuccin")
 require("colorschemes.gruvbox")
 require("colorschemes.kanagawa")
-require("colorschemes.nord")
 
 -- setting color scheme
 
@@ -25,13 +24,6 @@ vim.api.nvim_command("colorscheme github_dark") -- github_dimmed, github_dark, g
 -- vim.g.lightline = { colorscheme = "nightfox" }
 -- vim.api.nvim_command("colorscheme carbonfox")
 -- vim.g.lightline = { colorscheme = "carbonfox" }
-
--- tokyo
--- option: tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
--- vim.api.nvim_command("colorscheme tokyonight-night")
-
--- nord
--- vim.api.nvim_command("colorscheme nord")
 
 -- gruvbox
 -- vim.o.background = "dark"
