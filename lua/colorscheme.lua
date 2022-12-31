@@ -3,7 +3,6 @@ require("colorschemes.nightfox")
 require("colorschemes.catppuccin")
 require("colorschemes.gruvbox")
 require("colorschemes.kanagawa")
-require("colorschemes.tokyonight")
 require("colorschemes.nord")
 
 -- setting color scheme

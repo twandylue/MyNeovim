@@ -43,9 +43,6 @@ packer.startup({
     -- colorscheme: nightfox
     use("EdenEast/nightfox.nvim")
 
-    -- colorscheme: tokyonight
-    use("folke/tokyonight.nvim")
-
     -- colorscheme: nord
     use("shaunsingh/nord.nvim")
 
