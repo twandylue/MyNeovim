@@ -113,6 +113,12 @@ packer.startup({
     -- nvim-feline
     use("feline-nvim/feline.nvim")
 
+    -- nvim-lualin
+    use({
+      "nvim-lualine/lualine.nvim",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    })
+
     -- nvim-hop
     use({ "phaazon/hop.nvim", branch = "v2" })
 
