@@ -91,7 +91,7 @@ vim.o.history = 150
 -- vim.o.autochdir = true
 
 vim.cmd([[
-  " set single status line
+  " set global status line
   set laststatus=3
   " make window separator concealed
   highlight WinSeparator guibg=None
