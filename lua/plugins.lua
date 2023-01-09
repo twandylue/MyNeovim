@@ -31,6 +31,9 @@ packer.startup({
       as = "catppuccin",
     })
 
+    -- colorscheme: tokyonight
+    use("folke/tokyonight.nvim")
+
     -- colorscheme: github
     use("projekt0n/github-nvim-theme")
 

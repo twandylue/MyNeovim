@@ -3,6 +3,7 @@ require("colorschemes.nightfox")
 require("colorschemes.catppuccin")
 require("colorschemes.gruvbox")
 require("colorschemes.kanagawa")
+require("colorschemes.tokyonight")
 
 -- setting color scheme
 
@@ -22,8 +23,8 @@ require("colorschemes.kanagawa")
 -- nightfox
 -- vim.api.nvim_command("colorscheme nightfox")
 -- vim.g.lightline = { colorscheme = "nightfox" }
-vim.api.nvim_command("colorscheme carbonfox")
-vim.g.lightline = { colorscheme = "carbonfox" }
+-- vim.api.nvim_command("colorscheme carbonfox")
+-- vim.g.lightline = { colorscheme = "carbonfox" }
 
 -- gruvbox
 -- vim.o.background = "dark"
@@ -31,3 +32,5 @@ vim.g.lightline = { colorscheme = "carbonfox" }
 
 -- vim.g.gruvbox_baby_background_color = "dark"
 -- vim.api.nvim_command("colorscheme gruvbox-baby")
+
+vim.api.nvim_command("colorscheme tokyonight")
