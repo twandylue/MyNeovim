@@ -6,7 +6,8 @@ require("colorscheme")
 
 -- plugins settings
 -- require("plugin-config.nvim-tree")
-require("plugin-config.nvim-netrw")
+-- require("plugin-config.nvim-netrw")
+require("plugin-config.nvim-oil")
 require("plugin-config.nvim-gitsigns")
 require("plugin-config.nvim-git-blame")
 require("plugin-config.nvim-neogit")
