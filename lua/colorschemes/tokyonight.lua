@@ -36,7 +36,7 @@ tokyonight.setup({
     colors.error = "#ff0000"
   end,
   on_highlights = function(highlights)
-    highlights.LineNr = { fg = "#d1c524" } -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    highlights.LineNr = { fg = "#dead3c" } -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     highlights.CursorLineNr = { fg = "#ff0000", bold = true } -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     highlights.ModeMsg = { fg = "#73c936", bold = true } -- 'showmode' message (e.g., "-- INSERT -- ")
   end,
