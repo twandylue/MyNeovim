@@ -10,7 +10,7 @@ oil.setup({
     "icon",
     "permissions",
     "size",
-    -- "mtime",
+    "mtime",
   },
   -- Window-local options to use for oil buffers
   win_options = {
@@ -25,20 +25,16 @@ oil.setup({
   },
   -- Restore window options to previous values when leaving an oil buffer
   restore_win_options = true,
-  -- Skip the confirmation popup for simple operations
   skip_confirm_for_simple_edits = false,
-  -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
-  -- options with a `callback` (e.g. { callback = function() ... end, desc = "", nowait = true })
-  -- Additionally, if it is a string that matches "action.<name>",
-  -- it will use the mapping at require("oil.action").<name>
-  -- Set to `false` to remove a keymap
   keymaps = {
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
     ["<C-v>"] = "actions.select_vsplit",
-    ["<C-s>"] = "actions.select_split",
+    ["<C-h>"] = "actions.select_split",
     ["<C-p>"] = "actions.preview",
-    ["<C-c>"] = "actions.close",
+    ["<Esc>"] = "actions.close",
+    ["<Space>e"] = "actions.close",
+    ["<Space>q"] = "actions.close",
     ["<C-r>"] = "actions.refresh",
     ["-"] = "actions.parent",
     ["_"] = "actions.open_cwd",
@@ -49,12 +45,10 @@ oil.setup({
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
   view_options = {
-    -- Show files and directories that start with "."
     show_hidden = false,
   },
   -- Configuration for the floating window in oil.open_float
   float = {
-    -- Padding around the floating window
     padding = 2,
     max_width = 0,
     max_height = 0,
