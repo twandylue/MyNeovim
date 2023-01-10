@@ -6,7 +6,7 @@ if not status then
 end
 
 db.custom_footer = {
-  "Andy Lu",
+  "Andy Lu", "🎉 In neovim we trust 🎉"
 }
 
 db.preview_file_height = 11
@@ -46,12 +46,6 @@ db.custom_center = {
     shortcut = "      ",
     action = "Telescope live_grep",
   },
-  -- {
-  --   icon = "  ",
-  --   desc = "Neogit                              ",
-  --   shortcut = "SPC g g",
-  --   action = ":Neogit",
-  -- },
   {
     icon = "  ",
     desc = "Fugitive                            ",
@@ -64,11 +58,6 @@ db.custom_center = {
     shortcut = ":enew  ",
     action = "enew",
   },
-  -- {
-  --   icon = "  ",
-  --   desc = "Edit keybindings                    ",
-  --   action = "edit ~/.config/nvim/lua/keybindings.lua",
-  -- },
 }
 
 db.custom_header = {
