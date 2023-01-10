@@ -43,7 +43,7 @@ telescope.setup({
       "%.ttf",
       "%.webp",
       ".dart_tool/",
-      ".github/",
+      -- ".github/",
       ".gradle/",
       ".idea/",
       ".settings/",

@@ -101,6 +101,7 @@ require("telescope").setup({
   map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
   map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts),
   map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
+  map("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts),
   map("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
   map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
   map("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
@@ -108,7 +109,8 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
+    ,
     opts
   ),
 })
