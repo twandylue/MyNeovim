@@ -57,9 +57,6 @@ packer.startup({
       },
     })
 
-    -- nvim-netrw
-    use("prichrd/netrw.nvim")
-
     -- vim-vinegar
     use({ "tpope/vim-vinegar" })
 
