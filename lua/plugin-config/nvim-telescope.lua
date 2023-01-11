@@ -11,10 +11,12 @@ if vim.fn.has("mac") == 1 then
 end
 telescope.load_extension("project")
 telescope.load_extension("notify")
+telescope.load_extension("live_grep_args")
 
 local actions = require("telescope.actions")
 local icons = require("plugin-config.icons")
 -- local trouble = require "trouble.providers.telescope"
+local lga_actions = require("telescope-live-grep-args.actions")
 
 function telescope_buffer_dir()
   return vim.fn.expand("%:p:h")
@@ -206,6 +208,16 @@ telescope.setup({
       override_generic_sorter = true, -- override the generic sorter
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
+    live_grep_args = {
+      auto_quoting = true,
+      mappings = {
+        i = {
+          -- cheatsheet: https://cheatography.com/njones/cheat-sheets/ripgrep/
+          ["<C-q>"] = lga_actions.quote_prompt(),
+          -- ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }), -- global but case-i­nse­nsitive
+        },
+      },
     },
     file_browser = {
       theme = "dropdown",
