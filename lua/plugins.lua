@@ -246,7 +246,7 @@ packer.startup({
     -- Configurations for Nvim LSP
     use("neovim/nvim-lspconfig")
 
-    -- LSP UIs-- LSP UIs
+    -- LSP UIs
     use("glepnir/lspsaga.nvim")
 
     -- lsp signature
