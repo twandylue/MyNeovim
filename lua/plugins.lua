@@ -23,9 +23,6 @@ local plugins = {
   -- colorscheme: kanagawa
   "rebelot/kanagawa.nvim",
 
-  -- colorscheme: arctic
-  { "rockyzhang24/arctic.nvim", dependencies = { "rktjmp/lush.nvim" } },
-
   -- colorscheme: nightfox
   "EdenEast/nightfox.nvim",
 
