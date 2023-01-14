@@ -74,9 +74,6 @@ local plugins = {
   -- git-diffview
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
-  -- git-blame
-  -- "f-person/git-blame.nvim",
-
   -- nvim-feline
   "feline-nvim/feline.nvim",
 

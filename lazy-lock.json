@@ -14,7 +14,6 @@
   "diffview.nvim": { "branch": "main", "commit": "0987307b6e3488b14e07d1bd728b747122f10efd" },
   "feline.nvim": { "branch": "master", "commit": "d48b6f92c6ccdd6654c956f437be49ea160b5b0c" },
   "fidget.nvim": { "branch": "main", "commit": "44585a0c0085765195e6961c15529ba6c5a2a13b" },
-  "git-blame.nvim": { "branch": "master", "commit": "746aed33ccdfe1e41f8b7d5683052337f1b20f01" },
   "github-nvim-theme": { "branch": "main", "commit": "8dcfe1f69c1863650260fb2a9cf6cdf9d065515c" },
   "gitsigns.nvim": { "branch": "main", "commit": "addd6e174a85fc1c4007ab0b65d77e6555b417bf" },
   "glance.nvim": { "branch": "master", "commit": "611478d2b36beb3c416c92f77e7c116d7bd25ee6" },
