@@ -35,6 +35,8 @@ ts.setup({
     "html",
     "http",
     "help",
+    "norg",
+    "norg_meta",
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
