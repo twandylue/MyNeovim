@@ -86,8 +86,8 @@ local plugins = {
     dependencies = { "kyazdani42/nvim-web-devicons", opt = lazy },
   },
 
-  -- nvim-hop
-  { "phaazon/hop.nvim", branch = "v2" },
+  -- vim-easymotion
+  { "easymotion/vim-easymotion" },
 
   -- nvim-leap
   { "ggandor/leap.nvim" },
