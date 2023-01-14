@@ -5,18 +5,36 @@ if not status then
 end
 
 saga.setup({
-  server_filetype_map = {},
-  code_action_lightbulb = { enable = false },
+  preview = {
+    lines_above = 0,
+    lines_below = 20,
+  },
+  lightbulb = {
+    enable = false,
+  },
+  outline = {
+    keys = {
+      jump = "<Enter>",
+      expand_collapse = "-",
+      quit = "q",
+    },
+  },
+  code_action = {
+    num_shortcut = true,
+    keys = {
+      quit = "q",
+      exec = "<CR>",
+    },
+  },
   border_style = "rounded",
-  finder_action_keys = {
-    open = "<Enter>",
+  finder = {
+    edit = { "o", "<CR>" },
     vsplit = "<C-v>",
     split = "<C-s>",
-    tabe = "t",
-    quit = "q",
+    tabe = "<C-t>",
+    quit = { "q", "<ESC>" },
   },
   symbol_in_winbar = {
     enable = true,
-    in_custom = false,
   },
 })
