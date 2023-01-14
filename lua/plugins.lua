@@ -1,3 +1,9 @@
+local status, lazy = pcall(require, "lazy")
+if not status then
+  print("lazy is not installed")
+  return
+end
+
 local plugins = {
   "wbthomason/packer.nvim",
   -- colorscheme: gruvbox
@@ -77,7 +83,7 @@ local plugins = {
   -- nvim-lualin
   {
     "nvim-lualine/lualine.nvim",
-    -- dependencies = { "kyazdani42/nvim-web-devicons", opt = lazy },
+    dependencies = { "kyazdani42/nvim-web-devicons", opt = lazy },
   },
 
   -- nvim-hop
@@ -107,7 +113,7 @@ local plugins = {
   -- nvim-surround
   "kylechui/nvim-surround",
 
-  -- exchange text object ( NOTE: cxc to cancel)
+  -- exchange text object ( NOTE: `cxc` to cancel)
   "gbprod/substitute.nvim",
 
   -- nvim-bufferline
@@ -138,10 +144,12 @@ local plugins = {
 
   -- nvim-treesitter
   -- First time installation
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-  -- }
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = function()
+  --     require("nvim-treesitter.install").update({ with_sync = true })
+  --   end,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
