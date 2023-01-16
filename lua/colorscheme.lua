@@ -17,9 +17,6 @@ require("colorschemes.tokyonight")
 -- vim.o.background = "dark"
 -- vim.api.nvim_command("colorscheme kanagawa")
 
--- arctic (not support dashboard)
--- vim.api.nvim_command("colorscheme arctic")
-
 -- nightfox
 -- vim.api.nvim_command("colorscheme nightfox")
 -- vim.g.lightline = { colorscheme = "nightfox" }

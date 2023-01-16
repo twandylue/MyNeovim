@@ -1,355 +1,322 @@
-local status, packer = pcall(require, "packer")
+local status, lazy = pcall(require, "lazy")
 if not status then
-  print("Packer is not installed")
+  print("lazy is not installed")
   return
 end
 
-vim.cmd([[packadd packer.nvim]])
-
-packer.startup({
-  config = {
-    max_jobs = 10,
+local plugins = {
+  "wbthomason/packer.nvim",
+  -- colorscheme: gruvbox
+  {
+    "ellisonleao/gruvbox.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
   },
-  function(use)
-    -- Packer can manage itself
-    use("wbthomason/packer.nvim")
+  -- colorscheme: gruvbox-baby
+  "luisiacc/gruvbox-baby",
 
-    -- colorscheme: gruvbox
-    use({
-      "ellisonleao/gruvbox.nvim",
-      requires = { "rktjmp/lush.nvim" },
-    })
+  -- colorscheme: catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+  },
 
-    -- colorscheme: gruvbox-baby
-    use({
-      "luisiacc/gruvbox-baby",
-    })
+  -- colorscheme: tokyonight
+  "folke/tokyonight.nvim",
 
-    -- colorscheme: catppuccin
-    use({
-      "catppuccin/nvim",
-      as = "catppuccin",
-    })
+  -- colorscheme: github
+  "projekt0n/github-nvim-theme",
 
-    -- colorscheme: tokyonight
-    use("folke/tokyonight.nvim")
+  -- colorscheme: kanagawa
+  "rebelot/kanagawa.nvim",
 
-    -- colorscheme: github
-    use("projekt0n/github-nvim-theme")
+  -- colorscheme: nightfox
+  "EdenEast/nightfox.nvim",
 
-    -- colorscheme: kanagawa
-    use("rebelot/kanagawa.nvim")
+  -- colorscheme: base16
+  "RRethy/nvim-base16",
 
-    -- colorscheme: arctic
-    use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
+  -- nvim-tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "kyazdani42/nvim-web-devicons", -- optional, for file icons
+    },
+  },
 
-    -- colorscheme: nightfox
-    use("EdenEast/nightfox.nvim")
+  -- vim-vinegar
+  "tpope/vim-vinegar",
 
-    -- colorscheme: base16
-    use("RRethy/nvim-base16")
+  -- oil-nvim
+  "stevearc/oil.nvim",
 
-    -- nvim-tree
-    use({
-      "nvim-tree/nvim-tree.lua",
-      requires = {
-        "nvim-tree/nvim-web-devicons", -- optional, for file icons
-      },
-    })
+  -- nvim-telescope
+  -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
+  {
+    "nvim-telescope/telescope.nvim",
+    version = "0.1.0",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
+  },
 
-    -- vim-vinegar
-    use({ "tpope/vim-vinegar" })
+  -- nvim-telescope extensions: file browser
+  "nvim-telescope/telescope-file-browser.nvim",
 
-    -- oil-nvim
-    use({
-      "stevearc/oil.nvim",
-    })
+  -- nvim-telescope extensions: project
+  "nvim-telescope/telescope-project.nvim",
 
-    -- nvim-telescope
-    -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
-    use({
+  -- nvim-telescope extensions: fzf
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
+  -- nvim-gitsigns
+  "lewis6991/gitsigns.nvim",
+
+  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+
+  -- git-fugitive
+  "tpope/vim-fugitive",
+
+  -- git-diffview
+  { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
+
+  -- nvim-feline
+  "feline-nvim/feline.nvim",
+
+  -- nvim-lualin
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "kyazdani42/nvim-web-devicons", opt = lazy },
+  },
+
+  -- vim-easymotion
+  { "easymotion/vim-easymotion" },
+
+  -- nvim-leap
+  { "ggandor/leap.nvim" },
+
+  -- nvim-comment
+  "numToStr/Comment.nvim",
+
+  -- nvim-todo-comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+  },
+
+  -- nvim-autopairs
+  "windwp/nvim-autopairs",
+
+  -- vim-illuminate
+  "RRethy/vim-illuminate",
+
+  -- nvim-indent
+  "lukas-reineke/indent-blankline.nvim",
+
+  -- nvim-surround
+  "kylechui/nvim-surround",
+
+  -- exchange text object ( NOTE: `cxc` to cancel)
+  "gbprod/substitute.nvim",
+
+  -- nvim-bufferline
+  {
+    "akinsho/bufferline.nvim",
+    version = "v3.*",
+    dependencies = "kyazdani42/nvim-web-devicons",
+  },
+
+  -- colorizer
+  "norcalli/nvim-colorizer.lua",
+
+  -- nvim-scrollview
+  "dstein64/nvim-scrollview",
+
+  -- nvim-markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+
+  -- markdow table
+  "dhruvasagar/vim-table-mode",
+
+  -- nvim-treesitter
+  -- First time installation
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = function()
+  --     require("nvim-treesitter.install").update({ with_sync = true })
+  --   end,
+  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+
+  -- treesitter playground
+  "nvim-treesitter/playground",
+
+  -- sticky header
+  "nvim-treesitter/nvim-treesitter-context",
+
+  -- rainbow parentheses works with treesitter
+  "p00f/nvim-ts-rainbow",
+
+  -- vim-autotag(work with treesitter)
+  "windwp/nvim-ts-autotag",
+
+  -- vim-visual-multi
+  "mg979/vim-visual-multi",
+
+  -- vim-easy-align
+  "junegunn/vim-easy-align",
+
+  -- expand region
+  "terryma/vim-expand-region",
+
+  -- nvim-dashboard
+  "glepnir/dashboard-nvim",
+
+  -- zen-mode
+  "folke/zen-mode.nvim",
+
+  -- true-zen (like zen-mode and goyo-vim)
+  "Pocco81/true-zen.nvim",
+
+  -- twilight (like limelight)
+  "folke/twilight.nvim",
+
+  -- nvim-notify
+  "rcarriga/nvim-notify",
+
+  -- smooth cursor
+  "gen740/SmoothCursor.nvim",
+
+  -- marks
+  "chentoast/marks.nvim",
+
+  -- nvim-toggleterm
+  { "akinsho/toggleterm.nvim", version = "*" },
+
+  -- vscode-like pictograms
+  "onsails/lspkind-nvim",
+
+  -- nvim-cmp source for buffer words
+  "hrsh7th/cmp-buffer",
+
+  -- nvim-cmp source for neovim's built-in LSP
+  "hrsh7th/cmp-nvim-lsp",
+
+  -- Completion
+  "hrsh7th/nvim-cmp",
+
+  -- Configurations for Nvim LSP
+  "neovim/nvim-lspconfig",
+
+  -- LSP UIs
+  "glepnir/lspsaga.nvim",
+
+  -- lsp signature
+  "ray-x/lsp_signature.nvim",
+
+  -- lsp trouble
+  {
+    "folke/trouble.nvim",
+    dependencies = "kyazdani42/nvim-web-devicons",
+  },
+
+  -- lsp preview
+  "dnlhc/glance.nvim",
+
+  -- lsp inlay-hints
+  "simrat39/inlay-hints.nvim",
+
+  -- rust-tool
+  "simrat39/rust-tools.nvim",
+
+  -- rust.vim
+  "rust-lang/rust.vim",
+
+  -- Debugging
+  "nvim-lua/plenary.nvim",
+  "mfussenegger/nvim-dap",
+
+  -- Mason lsp server installer and manager
+  "williamboman/mason.nvim",
+  "williamboman/mason.lspconfig.nvim",
+
+  -- Snippet TODO: studying...
+  "L3MON4D3/LuaSnip",
+
+  -- File icons
+  "kyazdani42/nvim-web-devicons",
+
+  -- Transparent background
+  "xiyaowong/nvim-transparent",
+
+  -- symbols-outline
+  "simrat39/symbols-outline.nvim",
+
+  -- fidget
+  "j-hui/fidget.nvim",
+
+  -- vim-exchange
+  "tommcdo/vim-exchange",
+
+  -- neorg
+  {
+    "nvim-neorg/neorg",
+    -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
+    -- ref: https://github.com/nvim-neorg/neorg
+    -- build = ":Neorg sync-parsers", -- This is the important bit!
+    dependencies = "nvim-lua/plenary.nvim",
+  },
+
+  -- incline.nvim
+  "b0o/incline.nvim",
+
+  -- colorful winsep
+  "nvim-zh/colorful-winsep.nvim",
+
+  -- neodev for lua in neovim
+  "folke/neodev.nvim",
+
+  -- cache of neovim modules
+  "lewis6991/impatient.nvim",
+
+  -- aerial(structures,
+  "stevearc/aerial.nvim",
+
+  -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
+  "nanotee/sqls.nvim",
+
+  -- null-ls
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  -- ChatGPT
+  {
+    "jackMort/ChatGPT.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
-      tag = "0.1.0",
-      requires = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
-    })
-
-    -- nvim-telescope extensions: file browser
-    use("nvim-telescope/telescope-file-browser.nvim")
-
-    -- nvim-telescope extensions: project
-    use("nvim-telescope/telescope-project.nvim")
-
-    -- nvim-telescope extensions: fzf
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-
-    -- nvim-gitsigns
-    use("lewis6991/gitsigns.nvim")
-
-    -- nvim-neogit
-    if vim.fn.has("win32") == 1 then
-      -- WARNING: In win, neovim can not functionally commit message after neogit/Commit(9c63259c56e13e3385705fd44722f31381045c0c) at 2022/9/12, so I decide to use the old version of neogit by specifying commit
-      use({
-        "TimUntersberger/neogit",
-        commit = "536ded80c32caf58c50c62ed4670b61d6a462d8e",
-        requires = "nvim-lua/plenary.nvim",
-      })
-    else
-      use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
-    end
-
-    -- git-fugitive
-    use("tpope/vim-fugitive")
-
-    -- git-diffview
-    use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-
-    -- git-blame
-    use("f-person/git-blame.nvim")
-
-    -- nvim-feline
-    use("feline-nvim/feline.nvim")
-
-    -- nvim-lualin
-    use({
-      "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    })
-
-    -- nvim-hop
-    use({ "phaazon/hop.nvim", branch = "v2" })
-
-    -- nvim-leap
-    use({ "ggandor/leap.nvim" })
-
-    -- nvim-comment
-    use("numToStr/Comment.nvim")
-
-    -- nvim-todo-comments
-    use({
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-    })
-
-    -- nvim-autopairs
-    use("windwp/nvim-autopairs")
-
-    -- vim-illuminate
-    use("RRethy/vim-illuminate")
-
-    -- nvim-indent
-    use("lukas-reineke/indent-blankline.nvim")
-
-    -- nvim-surround
-    use("kylechui/nvim-surround")
-
-    -- exchange text object ( NOTE: cxc to cancel)
-    use("gbprod/substitute.nvim")
-
-    -- nvim-bufferline
-    use({
-      "akinsho/bufferline.nvim",
-      tag = "v3.*",
-      requires = "kyazdani42/nvim-web-devicons",
-    })
-
-    -- colorizer
-    use("norcalli/nvim-colorizer.lua")
-
-    -- nvim-scrollview
-    use("dstein64/nvim-scrollview")
-
-    -- nvim-markdown
-    use({
-      "iamcco/markdown-preview.nvim",
-      run = "cd app && npm install",
-      setup = function()
-        vim.g.mkdp_filetypes = { "markdown" }
-      end,
-      ft = { "markdown" },
-    })
-
-    -- markdow table
-    use("dhruvasagar/vim-table-mode")
-
-    -- nvim-treesitter
-    -- First time installation
-    -- use {
-    --   'nvim-treesitter/nvim-treesitter',
-    --   run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-    -- }
-    use({
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-    })
-
-    -- treesitter playground
-    use("nvim-treesitter/playground")
-
-    -- sticky header
-    use("nvim-treesitter/nvim-treesitter-context")
-
-    -- rainbow parentheses works with treesitter
-    use("p00f/nvim-ts-rainbow")
-
-    -- vim-autotag(work with treesitter)
-    use("windwp/nvim-ts-autotag")
-
-    -- vim-visual-multi
-    use("mg979/vim-visual-multi")
-
-    -- vim-easy-align
-    use("junegunn/vim-easy-align")
-
-    -- expand region
-    use({ "terryma/vim-expand-region" })
-
-    -- nvim-dashboard
-    use("glepnir/dashboard-nvim")
-
-    -- goyo-vim
-    -- use("junegunn/goyo.vim")
-    -- use("junegunn/limelight.vim")
-
-    -- zen-mode
-    use("folke/zen-mode.nvim")
-
-    -- true-zen (like zen-mode and goyo-vim)
-    use("Pocco81/true-zen.nvim")
-
-    -- twilight (like limelight)
-    use("folke/twilight.nvim")
-
-    -- nvim-notify
-    use("rcarriga/nvim-notify")
-
-    -- smooth cursor
-    use("gen740/SmoothCursor.nvim")
-
-    -- marks
-    use({ "chentoast/marks.nvim" })
-
-    -- nvim-toggleterm
-    use({ "akinsho/toggleterm.nvim", tag = "*" })
-
-    -- vscode-like pictograms
-    use("onsails/lspkind-nvim")
-
-    -- nvim-cmp source for buffer words
-    use("hrsh7th/cmp-buffer")
-
-    -- nvim-cmp source for neovim's built-in LSP
-    use("hrsh7th/cmp-nvim-lsp")
-
-    -- Completion
-    use("hrsh7th/nvim-cmp")
-
-    -- Configurations for Nvim LSP
-    use("neovim/nvim-lspconfig")
-
-    -- LSP UIs
-    use("glepnir/lspsaga.nvim")
-
-    -- lsp signature
-    use("ray-x/lsp_signature.nvim")
-
-    -- lsp trouble
-    use({
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-    })
-
-    -- lsp preview
-    use("dnlhc/glance.nvim")
-
-    -- lsp inlay-hints
-    use("simrat39/inlay-hints.nvim")
-
-    -- rust-tool
-    use("simrat39/rust-tools.nvim")
-
-    -- rust.vim
-    use("rust-lang/rust.vim")
-
-    -- Debugging
-    use("nvim-lua/plenary.nvim")
-    use("mfussenegger/nvim-dap")
-
-    -- Mason lsp server installer and manager
-    use("williamboman/mason.nvim")
-    use("williamboman/mason.lspconfig.nvim")
-
-    -- Snippet TODO: studying...
-    use("L3MON4D3/LuaSnip")
-
-    -- File icons
-    use("kyazdani42/nvim-web-devicons")
-
-    -- Transparent background
-    use("xiyaowong/nvim-transparent")
-
-    -- symbols-outline
-    use("simrat39/symbols-outline.nvim")
-
-    -- fidget
-    use("j-hui/fidget.nvim")
-
-    -- vim-exchange
-    use("tommcdo/vim-exchange")
-
-    -- neorg
-    use({
-      "nvim-neorg/neorg",
-      -- important: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compiler
-      -- ref: https://github.com/nvim-neorg/neorg
-      -- run = ":Neorg sync-parsers", -- This is the important bit!
-      requires = "nvim-lua/plenary.nvim",
-    })
-
-    -- incline.nvim
-    use("b0o/incline.nvim")
-
-    -- colorful winsep
-    use("nvim-zh/colorful-winsep.nvim")
-
-    -- neodev for lua in neovim
-    use("folke/neodev.nvim")
-
-    -- cache of neovim modules
-    use("lewis6991/impatient.nvim")
-
-    -- aerial(structures)
-    use("stevearc/aerial.nvim")
-
-    -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
-    use("nanotee/sqls.nvim")
-
-    -- null-ls
-    use({
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-    })
-
-    -- ChatGPT
-    use({
-      "jackMort/ChatGPT.nvim",
-      requires = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-      },
-    })
-
-    -- rest.nvim(http client)
-    use({
-      "rest-nvim/rest.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-    })
-
-    -- vim sugar
-    use("tpope/vim-eunuch")
-    use("tpope/vim-unimpaired")
-
-    -- ssr
-    -- use({ "cshuaimin/ssr.nvim", module = "ssr" })
-  end,
-})
+    },
+  },
+
+  -- rest.nvim(http client,
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  -- vim sugar
+  "tpope/vim-eunuch",
+  "tpope/vim-unimpaired",
+}
+
+return plugins

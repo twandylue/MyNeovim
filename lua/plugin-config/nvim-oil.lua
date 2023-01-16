@@ -30,7 +30,7 @@ oil.setup({
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
     ["<C-v>"] = "actions.select_vsplit",
-    ["<C-h>"] = "actions.select_split",
+    ["<C-s>"] = "actions.select_split",
     ["<C-p>"] = "actions.preview",
     ["<Space>e"] = "actions.close",
     ["<Space>q"] = "actions.close",

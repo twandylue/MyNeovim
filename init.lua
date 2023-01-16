@@ -1,14 +1,29 @@
 print("init.lua loaded")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = require("plugins")
+require("lazy").setup(plugins)
+
 require("basic")
 require("keybindings")
-require("plugins")
 require("colorscheme")
 
 -- plugins settings
 -- require("plugin-config.nvim-tree")
 require("plugin-config.nvim-oil")
 require("plugin-config.nvim-gitsigns")
-require("plugin-config.nvim-git-blame")
 require("plugin-config.nvim-neogit")
 -- require("plugin-config.nvim-feline")
 require("plugin-config.nvim-lualine")
@@ -19,7 +34,6 @@ require("plugin-config.nvim-surround")
 require("plugin-config.nvim-illuminate")
 require("plugin-config.nvim-substitute")
 require("plugin-config.nvim-colorizer")
-require("plugin-config.nvim-hop")
 require("plugin-config.nvim-transparent")
 require("plugin-config.nvim-notify")
 require("plugin-config.nvim-dashboard")

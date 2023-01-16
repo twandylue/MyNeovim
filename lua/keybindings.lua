@@ -90,10 +90,8 @@ map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
 map("n", "<leader>gD", '<cmd>Gitsigns diffthis "~"<CR>', opts)
 -- map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 
-require("hop").setup({
-  vim.api.nvim_set_keymap("n", "gs/", "<Cmd>HopPattern<CR>", { silent = true }),
-  vim.api.nvim_set_keymap("n", "gss", "<Cmd>HopChar2<CR>", { silent = true }),
-})
+-- easy-motion
+map("n", "<leader>g/", "<Plug>(easymotion-sn)", opts)
 
 -- telescope
 require("telescope").setup({
@@ -110,8 +108,7 @@ require("telescope").setup({
   map(
     "n",
     "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
-    ,
+    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
     opts
   ),
 })
