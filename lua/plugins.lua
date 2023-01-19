@@ -39,7 +39,7 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icons
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
   },
 
@@ -83,7 +83,7 @@ local plugins = {
   -- nvim-lualin
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons", opt = lazy },
+    dependencies = { "nvim-tree/nvim-web-devicons", opt = lazy },
   },
 
   -- vim-easymotion
@@ -120,7 +120,7 @@ local plugins = {
   {
     "akinsho/bufferline.nvim",
     version = "v3.*",
-    dependencies = "kyazdani42/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
   -- colorizer
@@ -224,7 +224,7 @@ local plugins = {
   -- lsp trouble
   {
     "folke/trouble.nvim",
-    dependencies = "kyazdani42/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
   },
 
   -- lsp preview
@@ -251,7 +251,7 @@ local plugins = {
   "L3MON4D3/LuaSnip",
 
   -- File icons
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
 
   -- Transparent background
   "xiyaowong/nvim-transparent",
