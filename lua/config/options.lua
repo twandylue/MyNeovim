@@ -106,22 +106,3 @@ vim.cmd([[
 
 -- highlight trailing whitespace
 vim.fn.matchadd("errorMsg", [[\s\+$]])
-
--- Here is how we configure highlight on yank using Vimscript autocmd.
--- local cmd = vim.cmd
--- -- Highlight on yank
--- cmd [[
---   augroup YankHighlight
---     autocmd!
---     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
---   augroup end
--- ]]
-
-local api = vim.api
-
--- Highlight on yank
-local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
-api.nvim_create_autocmd("TextYankPost", {
-  command = "silent! lua vim.highlight.on_yank{ higroup='IncSearch', timeout=250 }",
-  group = yankGrp,
-})

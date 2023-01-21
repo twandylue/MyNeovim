@@ -64,6 +64,7 @@ end
 
 map("i", "jj", "<Esc>", { noremap = false })
 
+-- With Plugins
 -- nvim-tree
 -- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- vinegar style.
@@ -191,29 +192,5 @@ vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
--- ssr
--- vim.keymap.set({ "n", "x" }, "<leader>sr", function()
---   require("ssr").open()
--- end)
-
 -- rest(httpclient)
 map("n", "<leader>cc", "<Plug>RestNvim", opts)
-
--- Netrw
-vim.api.nvim_create_autocmd("filetype", {
-  pattern = "netrw",
-  desc = "Better mappings for netrw",
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
-    end
-
-    -- edit new file
-    bind("a", "%")
-    -- rename file
-    bind("r", "R")
-    -- close the preview window
-    bind("P", "<C-w>z")
-    bind("<tab>", "<CR>")
-  end,
-})

@@ -69,7 +69,7 @@ local plugins = {
   -- nvim-gitsigns
   "lewis6991/gitsigns.nvim",
 
-  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim", enabled = false },
 
   -- git-fugitive
   "tpope/vim-fugitive",
@@ -286,7 +286,7 @@ local plugins = {
   -- cache of neovim modules
   "lewis6991/impatient.nvim",
 
-  -- aerial(structures,
+  -- aerial
   "stevearc/aerial.nvim",
 
   -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
