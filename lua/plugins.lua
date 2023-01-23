@@ -216,7 +216,7 @@ local plugins = {
   "neovim/nvim-lspconfig",
 
   -- LSP UIs
-  "glepnir/lspsaga.nvim",
+  { "glepnir/lspsaga.nvim", event = "BufRead" },
 
   -- lsp signature
   "ray-x/lsp_signature.nvim",
