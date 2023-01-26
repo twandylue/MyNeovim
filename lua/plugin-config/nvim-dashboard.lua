@@ -88,6 +88,7 @@ db.setup({
     },
     footer = {
       "",
+      "",
       "Andy Lu",
       "🎉 In neovim we trust 🎉",
     },
