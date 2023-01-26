@@ -180,7 +180,7 @@ local plugins = {
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
-    dependices = { { "nvim-tree/nvim-web-devicons" } },
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
   -- zen-mode
@@ -223,7 +223,7 @@ local plugins = {
   {
     "glepnir/lspsaga.nvim",
     event = "BufRead",
-    dependices = { { "nvim-tree/nvim-web-devicons" } },
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
   -- lsp signature
