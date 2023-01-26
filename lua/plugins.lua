@@ -177,7 +177,11 @@ local plugins = {
   "terryma/vim-expand-region",
 
   -- nvim-dashboard
-  "glepnir/dashboard-nvim",
+  {
+    "glepnir/dashboard-nvim",
+    event = "VimEnter",
+    pin = true,
+  },
 
   -- zen-mode
   "folke/zen-mode.nvim",

@@ -6,7 +6,8 @@ if not status then
 end
 
 db.custom_footer = {
-  "Andy Lu", "🎉 In neovim we trust 🎉"
+  "Andy Lu",
+  "🎉 In neovim we trust 🎉",
 }
 
 db.preview_file_height = 11
