@@ -30,6 +30,12 @@ db.custom_center = {
     action = ":terminal",
   },
   {
+    icon = "  ",
+    desc = "File Explorer                       ",
+    shortcut = ":SPC E ",
+    action = ":Oil",
+  },
+  {
     icon = "  ",
     desc = "Recently files                      ",
     shortcut = "      ",
