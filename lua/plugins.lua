@@ -180,6 +180,7 @@ local plugins = {
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
+    pin = true,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
