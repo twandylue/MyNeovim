@@ -241,7 +241,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-dashboard")
     end,
-    pin = true,
+    commit = "f7d623457d6621b25a1292b24e366fae40cb79ab",
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
