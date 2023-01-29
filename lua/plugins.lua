@@ -65,10 +65,21 @@ local plugins = {
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-live-grep-args.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-telescope/telescope-project.nvim",
     },
+  },
+
+  -- nvim-telescope extensions
+  {
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
   },
 
   -- nvim-telescope extensions: fzf
@@ -295,12 +306,18 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-cmp")
     end,
-    dependencies = {
-      -- nvim-cmp source for neovim's built-in LSP
-      "hrsh7th/cmp-nvim-lsp",
-      -- nvim-cmp source for buffer words
-      "hrsh7th/cmp-buffer",
-    },
+  },
+
+  -- cmp extensions
+  {
+    -- nvim-cmp source for neovim's built-in LSP
+    "hrsh7th/cmp-nvim-lsp",
+    dependencies = "hrsh7th/nvim-cmp",
+  },
+  {
+    -- nvim-cmp source for buffer words
+    "hrsh7th/cmp-buffer",
+    dependencies = "hrsh7th/nvim-cmp",
   },
 
   -- Configurations for Nvim LSP
