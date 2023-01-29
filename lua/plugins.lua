@@ -223,10 +223,10 @@ local plugins = {
 
   "nvim-treesitter/playground",
 
-  -- rainbow parentheses works with treesitter TODO:
+  -- rainbow parentheses works with treesitter TODO: set dependencies?
   "p00f/nvim-ts-rainbow",
 
-  -- vim-autotag(work with treesitter) TODO:
+  -- vim-autotag(work with treesitter) TODO: set dependencies?
   "windwp/nvim-ts-autotag",
 
   "mg979/vim-visual-multi",
@@ -384,7 +384,7 @@ local plugins = {
     end,
   },
 
-  -- Snippet TODO: studying...
+  -- Snippet (TODO: studying...)
   "L3MON4D3/LuaSnip",
 
   -- File icons
