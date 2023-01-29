@@ -10,6 +10,7 @@ local plugins = {
     "ellisonleao/gruvbox.nvim",
     dependencies = { "rktjmp/lush.nvim" },
   },
+
   -- colorscheme: gruvbox-baby
   "luisiacc/gruvbox-baby",
 
@@ -34,7 +35,8 @@ local plugins = {
   -- colorscheme: base16
   "RRethy/nvim-base16",
 
-  -- nvim-tree
+  "tpope/vim-vinegar",
+
   {
     "nvim-tree/nvim-tree.lua",
     config = function()
@@ -46,10 +48,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- vim-vinegar
-  "tpope/vim-vinegar",
-
-  -- oil-nvim
   {
     "stevearc/oil.nvim",
     config = function()
@@ -65,19 +63,17 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-telescope")
     end,
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-project.nvim",
+    },
   },
-
-  -- nvim-telescope extensions: file browser
-  "nvim-telescope/telescope-file-browser.nvim",
-
-  -- nvim-telescope extensions: project
-  "nvim-telescope/telescope-project.nvim",
 
   -- nvim-telescope extensions: fzf
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
-  -- nvim-gitsigns
   {
     "lewis6991/gitsigns.nvim",
     config = function()
@@ -108,7 +104,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- nvim-lualine
   {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -120,8 +115,7 @@ local plugins = {
   -- lualine-lsp-progress
   "arkav/lualine-lsp-progress",
 
-  -- vim-easymotion
-  { "easymotion/vim-easymotion" },
+  "easymotion/vim-easymotion",
 
   {
     "ggandor/leap.nvim",
@@ -159,7 +153,6 @@ local plugins = {
     end,
   },
 
-  -- nvim-indent
   "lukas-reineke/indent-blankline.nvim",
 
   {
@@ -188,10 +181,8 @@ local plugins = {
     end,
   },
 
-  -- nvim-scrollview
   "dstein64/nvim-scrollview",
 
-  -- nvim-markdown
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -201,7 +192,6 @@ local plugins = {
     ft = { "markdown" },
   },
 
-  -- markdow table
   "dhruvasagar/vim-table-mode",
 
   -- nvim-treesitter
@@ -220,10 +210,9 @@ local plugins = {
     end,
   },
 
-  -- treesitter playground
   "nvim-treesitter/playground",
 
-  -- TODO:
+  -- TODO: required?
   {
     "nvim-treesitter/nvim-treesitter-context",
     config = function()
@@ -231,19 +220,16 @@ local plugins = {
     end,
   },
 
-  -- rainbow parentheses works with treesitter
+  -- rainbow parentheses works with treesitter TODO:
   "p00f/nvim-ts-rainbow",
 
-  -- vim-autotag(work with treesitter)
+  -- vim-autotag(work with treesitter) TODO:
   "windwp/nvim-ts-autotag",
 
-  -- vim-visual-multi
   "mg979/vim-visual-multi",
 
-  -- vim-easy-align
   "junegunn/vim-easy-align",
 
-  -- expand region
   "terryma/vim-expand-region",
 
   {
@@ -311,12 +297,6 @@ local plugins = {
   -- vscode-like pictograms
   "onsails/lspkind-nvim",
 
-  -- nvim-cmp source for buffer words
-  "hrsh7th/cmp-buffer",
-
-  -- nvim-cmp source for neovim's built-in LSP
-  -- "hrsh7th/cmp-nvim-lsp",
-
   -- Completion
   {
     "hrsh7th/nvim-cmp",
@@ -324,7 +304,10 @@ local plugins = {
       require("plugin-config.nvim-cmp")
     end,
     dependencies = {
+      -- nvim-cmp source for neovim's built-in LSP
       "hrsh7th/cmp-nvim-lsp",
+      -- nvim-cmp source for buffer words
+      "hrsh7th/cmp-buffer",
     },
   },
 
@@ -377,10 +360,9 @@ local plugins = {
     end,
   },
 
-  -- rust.vim
   "rust-lang/rust.vim",
 
-  -- Debugging
+  -- Debugging(TODO:)
   "nvim-lua/plenary.nvim",
   "mfussenegger/nvim-dap",
 
@@ -414,7 +396,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- vim-exchange
   "tommcdo/vim-exchange",
 
   {
@@ -435,19 +416,19 @@ local plugins = {
     end,
   },
 
-  -- WARN: conflict with lspsaga(outline)
   {
     "nvim-zh/colorful-winsep.nvim",
     config = function()
       require("plugin-config.nvim-colorful-winsep")
     end,
+    -- WARN: conflict with lspsaga(outline)
     enabled = false,
   },
 
   -- neodev for lua in neovim
   "folke/neodev.nvim",
 
-  -- cache of neovim modules
+  -- cache of neovim modules (TODO: required?)
   {
     "lewis6991/impatient.nvim",
     config = function()
