@@ -13,6 +13,7 @@ saga.setup({
     enable = false,
   },
   outline = {
+    win_width = 40,
     keys = {
       jump = "<Enter>",
       expand_collapse = "-",
@@ -36,5 +37,26 @@ saga.setup({
   },
   symbol_in_winbar = {
     enable = true,
+    separator = " > ",
+    hide_keyword = true,
+    show_file = true,
+    folder_level = 2,
+    respect_root = false,
+    color_mode = true,
+  },
+  definition = {
+    edit = "<CR>",
+    vsplit = "<C-v>",
+    split = "<C-s>",
+    tabe = "<C-t>",
+    quit = "q",
+    close = "<Esc>",
+  },
+  rename = {
+    quit = "<C-c>",
+    exec = "<CR>",
+    mark = "x",
+    confirm = "<CR>",
+    in_select = true,
   },
 })
