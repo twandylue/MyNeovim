@@ -5,7 +5,6 @@ if not status then
 end
 
 local plugins = {
-  "wbthomason/packer.nvim",
   -- colorscheme: gruvbox
   {
     "ellisonleao/gruvbox.nvim",
