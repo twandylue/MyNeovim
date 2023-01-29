@@ -38,6 +38,9 @@ ts.setup({
     "norg",
     "norg_meta",
     "graphql",
+    "gitcommit",
+    "gitignore",
+    "vim",
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
