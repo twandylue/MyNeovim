@@ -410,7 +410,7 @@ local plugins = {
   {
     "nvim-neorg/neorg",
     config = function()
-      require("plugin-config.nvim-null-ls")
+      require("plugin-config.nvim-neorg")
     end,
     -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
     -- ref: https://github.com/nvim-neorg/neorg
@@ -451,6 +451,9 @@ local plugins = {
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("plugin-config.nvim-null-ls")
+    end,
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
