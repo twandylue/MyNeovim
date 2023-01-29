@@ -69,6 +69,7 @@ local plugins = {
   -- nvim-gitsigns
   "lewis6991/gitsigns.nvim",
 
+  -- neogit
   { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim", enabled = false },
 
   -- git-fugitive
@@ -85,6 +86,9 @@ local plugins = {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", opt = lazy },
   },
+
+  -- lualine-lsp-progress
+  "arkav/lualine-lsp-progress",
 
   -- vim-easymotion
   { "easymotion/vim-easymotion" },
@@ -266,10 +270,7 @@ local plugins = {
   "xiyaowong/nvim-transparent",
 
   -- symbols-outline
-  "simrat39/symbols-outline.nvim",
-
-  -- fidget
-  "j-hui/fidget.nvim",
+  { "simrat39/symbols-outline.nvim", enabled = false },
 
   -- vim-exchange
   "tommcdo/vim-exchange",
