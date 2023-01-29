@@ -212,15 +212,6 @@ local plugins = {
 
   "nvim-treesitter/playground",
 
-  -- TODO: required?
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    config = function()
-      require("plugin-config.nvim-treesitter-context")
-    end,
-    enabled = false,
-  },
-
   -- rainbow parentheses works with treesitter TODO:
   "p00f/nvim-ts-rainbow",
 
@@ -428,15 +419,6 @@ local plugins = {
 
   -- neodev for lua in neovim
   "folke/neodev.nvim",
-
-  -- cache of neovim modules (TODO: required?)
-  {
-    "lewis6991/impatient.nvim",
-    config = function()
-      require("plugin-config.nvim-impatient")
-    end,
-    enabled = false,
-  },
 
   {
     "stevearc/aerial.nvim",
