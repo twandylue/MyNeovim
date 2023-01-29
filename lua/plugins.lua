@@ -218,6 +218,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-treesitter-context")
     end,
+    enabled = false,
   },
 
   -- rainbow parentheses works with treesitter TODO:
@@ -362,7 +363,7 @@ local plugins = {
 
   "rust-lang/rust.vim",
 
-  -- Debugging(TODO:)
+  -- Debugging(TODO: studying...)
   "nvim-lua/plenary.nvim",
   "mfussenegger/nvim-dap",
 
@@ -434,6 +435,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-impatient")
     end,
+    enabled = false,
   },
 
   {
