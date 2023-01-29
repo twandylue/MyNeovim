@@ -223,6 +223,13 @@ local plugins = {
 
   "nvim-treesitter/playground",
 
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require("plugin-config.nvim-treesitter-context")
+    end,
+  },
+
   -- rainbow parentheses works with treesitter TODO: set dependencies?
   "p00f/nvim-ts-rainbow",
 

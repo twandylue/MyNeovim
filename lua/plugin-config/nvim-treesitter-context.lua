@@ -5,9 +5,9 @@ if not status then
 end
 
 stickyscrollerbar.setup({
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  enable = true,
   max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-  trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  trim_scope = "outer",
   patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes
     -- Note that setting an entry here replaces all other patterns for this entry.
@@ -23,11 +23,6 @@ stickyscrollerbar.setup({
       "switch",
       "case",
     },
-    -- Example for a specific filetype.
-    -- If a pattern is missing, *open a PR* so everyone can benefit.
-    --   rust = {
-    --       'impl_item',
-    --   },
   },
   exact_patterns = {
     -- Example for a specific filetype with Lua patterns
@@ -35,9 +30,6 @@ stickyscrollerbar.setup({
     -- exactly match "impl_item" only)
     -- rust = true,
   },
-
-  -- [!] The options below are exposed but shouldn't require your attention,
-  --     you can safely ignore them.
 
   zindex = 20, -- The Z-index of the context window
   mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
