@@ -79,9 +79,9 @@ local plugins = {
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- nvim-feline
-  "feline-nvim/feline.nvim",
+  { "feline-nvim/feline.nvim", enabled = false },
 
-  -- nvim-lualin
+  -- nvim-lualine
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", opt = lazy },
@@ -288,7 +288,7 @@ local plugins = {
   "b0o/incline.nvim",
 
   -- colorful winsep
-  "nvim-zh/colorful-winsep.nvim",
+  { "nvim-zh/colorful-winsep.nvim", enabled = false },
 
   -- neodev for lua in neovim
   "folke/neodev.nvim",
@@ -297,7 +297,7 @@ local plugins = {
   "lewis6991/impatient.nvim",
 
   -- aerial
-  "stevearc/aerial.nvim",
+  { "stevearc/aerial.nvim", enabled = false },
 
   -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
   "nanotee/sqls.nvim",
