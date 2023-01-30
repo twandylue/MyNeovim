@@ -8,4 +8,5 @@ local marksman = function(on_attach)
     single_file_support = true,
   })
 end
+
 return marksman
