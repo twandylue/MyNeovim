@@ -25,8 +25,9 @@ neorg.setup({
     ["core.norg.dirman"] = {
       config = {
         workspaces = {
+          work = "~/Desktop/My-Neorg/work",
+          life = "~/Desktop/My-Neorg/life",
           my_ws = "~/Desktop/MyWorkNotes/neorg", -- Format: <name_of_workspace> = <path_to_workspace_root>
-          my_other_notes = "~/Desktop/MyWorkNotes",
         },
         autochdir = true, -- Automatically change the directory to the current workspace's root every time
         index = "index.norg", -- The name of the main (root) .norg file

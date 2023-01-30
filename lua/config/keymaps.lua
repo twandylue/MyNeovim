@@ -31,9 +31,9 @@ map("n", "Q", "<nop>", opts)
 map("i", "<C-o>", "<C-o>a", opts)
 -- keep copy text object in register
 map("x", "<leader>p", '"_dP', opts)
--- used by bufferline
 map("n", "gj", "gT", { noremap = false })
 map("n", "gk", "gt", { noremap = false })
+map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
 
 map("", "<leader>w", "<C-W>", opts)
 
@@ -64,6 +64,7 @@ end
 
 map("i", "jj", "<Esc>", { noremap = false })
 
+-- With Plugins
 -- nvim-tree
 -- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- vinegar style.
@@ -93,48 +94,30 @@ map("n", "<leader>gD", '<cmd>Gitsigns diffthis "~"<CR>', opts)
 -- easy-motion
 map("n", "<leader>g/", "<Plug>(easymotion-sn)", opts)
 
--- telescope
-require("telescope").setup({
-  -- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts),
-  map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts),
-  map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts),
-  map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts),
-  map("n", "[fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts),
-  map("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts),
-  map("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts),
-  map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts),
-  map("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts),
-  map("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts),
-  map(
-    "n",
-    "tf",
-    '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
-    opts
-  ),
-})
+-- Telescope
+-- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
+map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts)
+map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts)
+map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
+map("n", "[fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+map("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts)
+map("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
+map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
+map("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts)
+map("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
+map(
+  "n",
+  "tf",
+  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
+  ,
+  opts
+)
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 
-require("bufferline").setup({
-  -- These commands will navigate through buffers in order regardless of which mode you are using
-  -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-  -- map("n", "gk", "<cmd>BufferLineCycleNext<CR>", opts),
-  -- map("n", "gj", "<cmd>BufferLineCyclePrev<CR>", opts),
-
-  -- These commands will move the current buffer backwards or forwards in the bufferline
-  map("n", "gK", "<cmd>BufferLineMoveNext<CR>", opts),
-  map("n", "gJ", "<cmd>BufferLineMovePrev<CR>", opts),
-
-  map("n", "gP", "<cmd>BufferLineTogglePin<CR>", opts),
-  -- map('n', 'gl', '<cmd>BufferLinePick<CR>', opts),
-
-  -- close buffer tab
-  map("n", "<leader>bd", "<cmd>bdelete<CR>", opts),
-
-  -- These commands will sort buffers by directory, language, or a custom criteria
-  -- nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-  -- map('n', 'be', '<cmd>BufferLineSortByExtension<CR>', opts),
-  -- map('n', 'bd', '<cmd>BufferLineSortByDirectory<CR>', opts),
-})
+-- bufferline
+map("n", "gK", "<cmd>BufferLineMoveNext<CR>", opts)
+map("n", "gJ", "<cmd>BufferLineMovePrev<CR>", opts)
+map("n", "gP", "<cmd>BufferLineTogglePin<CR>", opts)
 
 -- lspsaga
 map("n", "<tab>l", "<Cmd>Lspsaga show_line_diagnostics<cr>", opts)
@@ -147,7 +130,7 @@ map("n", "<tab>f", "<Cmd>Lspsaga lsp_finder<cr>", opts)
 map("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
 map("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
 
--- basic lsp api with glance
+-- basic lsp api with glance.nvim
 map("n", "<tab>d", "<cmd>Glance definitions<cr>", opts)
 map("n", "<tab>i", "<cmd>Glance implementations<cr>", opts)
 map("n", "<tab>u", "<cmd>Glance references<cr>", opts)
@@ -169,7 +152,7 @@ end
 -- vim-fugitive
 map("n", "<leader>gg", "<Cmd>Gtabedit :<cr>", opts)
 
--- toggleterm
+-- Toggleterm
 function _G.set_terminal_keymaps()
   local termOpts = { buffer = 0 }
   vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], termOpts)
@@ -191,29 +174,5 @@ vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
--- ssr
--- vim.keymap.set({ "n", "x" }, "<leader>sr", function()
---   require("ssr").open()
--- end)
-
--- rest(httpclient)
+-- Rest(httpclient) (TODO: should consider filetype)
 map("n", "<leader>cc", "<Plug>RestNvim", opts)
-
--- Netrw
-vim.api.nvim_create_autocmd("filetype", {
-  pattern = "netrw",
-  desc = "Better mappings for netrw",
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set("n", lhs, rhs, { remap = true, buffer = true })
-    end
-
-    -- edit new file
-    bind("a", "%")
-    -- rename file
-    bind("r", "R")
-    -- close the preview window
-    bind("P", "<C-w>z")
-    bind("<tab>", "<CR>")
-  end,
-})

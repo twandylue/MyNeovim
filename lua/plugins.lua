@@ -5,12 +5,12 @@ if not status then
 end
 
 local plugins = {
-  "wbthomason/packer.nvim",
   -- colorscheme: gruvbox
   {
     "ellisonleao/gruvbox.nvim",
     dependencies = { "rktjmp/lush.nvim" },
   },
+
   -- colorscheme: gruvbox-baby
   "luisiacc/gruvbox-baby",
 
@@ -35,41 +35,71 @@ local plugins = {
   -- colorscheme: base16
   "RRethy/nvim-base16",
 
-  -- nvim-tree
+  "tpope/vim-vinegar",
+
   {
     "nvim-tree/nvim-tree.lua",
+    config = function()
+      require("plugin-config.nvim-tree")
+    end,
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
+    enabled = false,
   },
 
-  -- vim-vinegar
-  "tpope/vim-vinegar",
-
-  -- oil-nvim
-  "stevearc/oil.nvim",
+  {
+    "stevearc/oil.nvim",
+    config = function()
+      require("plugin-config.nvim-oil")
+    end,
+  },
 
   -- nvim-telescope
   -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
   {
     "nvim-telescope/telescope.nvim",
     version = "0.1.0",
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
+    config = function()
+      require("plugin-config.nvim-telescope")
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
 
-  -- nvim-telescope extensions: file browser
-  "nvim-telescope/telescope-file-browser.nvim",
-
-  -- nvim-telescope extensions: project
-  "nvim-telescope/telescope-project.nvim",
+  -- nvim-telescope extensions
+  {
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+  },
 
   -- nvim-telescope extensions: fzf
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
-  -- nvim-gitsigns
-  "lewis6991/gitsigns.nvim",
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("plugin-config.nvim-gitsigns")
+    end,
+  },
 
-  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+  {
+    "TimUntersberger/neogit",
+    config = function()
+      require("plugin-config.nvim-neogit")
+    end,
+    dependencies = "nvim-lua/plenary.nvim",
+    enabled = false,
+  },
 
   -- git-fugitive
   "tpope/vim-fugitive",
@@ -77,59 +107,93 @@ local plugins = {
   -- git-diffview
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
-  -- nvim-feline
-  "feline-nvim/feline.nvim",
+  {
+    "feline-nvim/feline.nvim",
+    config = function()
+      require("plugin-config.nvim-feline")
+    end,
+    enabled = false,
+  },
 
-  -- nvim-lualin
   {
     "nvim-lualine/lualine.nvim",
+    config = function()
+      require("plugin-config.nvim-lualine")
+    end,
     dependencies = { "nvim-tree/nvim-web-devicons", opt = lazy },
   },
 
-  -- vim-easymotion
-  { "easymotion/vim-easymotion" },
+  -- lualine-lsp-progress
+  "arkav/lualine-lsp-progress",
 
-  -- nvim-leap
-  { "ggandor/leap.nvim" },
+  "easymotion/vim-easymotion",
 
-  -- nvim-comment
-  "numToStr/Comment.nvim",
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require("plugin-config.nvim-leap")
+    end,
+  },
 
-  -- nvim-todo-comments
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("plugin-config.nvim-comment")
+    end,
+  },
+
   {
     "folke/todo-comments.nvim",
+    config = function()
+      require("plugin-config.nvim-todo-comments")
+    end,
     dependencies = "nvim-lua/plenary.nvim",
   },
 
-  -- nvim-autopairs
-  "windwp/nvim-autopairs",
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("plugin-config.nvim-autopairs")
+    end,
+  },
 
-  -- vim-illuminate
-  "RRethy/vim-illuminate",
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require("plugin-config.nvim-illuminate")
+    end,
+  },
 
-  -- nvim-indent
   "lukas-reineke/indent-blankline.nvim",
 
-  -- nvim-surround
-  "kylechui/nvim-surround",
+  {
+    "kylechui/nvim-surround",
+    config = function()
+      require("plugin-config.nvim-surround")
+    end,
+  },
 
   -- exchange text object ( NOTE: `cxc` to cancel)
   "gbprod/substitute.nvim",
 
-  -- nvim-bufferline
   {
     "akinsho/bufferline.nvim",
     version = "v3.*",
+    config = function()
+      require("plugin-config.nvim-bufferline")
+    end,
     dependencies = "nvim-tree/nvim-web-devicons",
   },
 
-  -- colorizer
-  "norcalli/nvim-colorizer.lua",
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("plugin-config.nvim-colorizer")
+    end,
+  },
 
-  -- nvim-scrollview
   "dstein64/nvim-scrollview",
 
-  -- nvim-markdown
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -139,7 +203,6 @@ local plugins = {
     ft = { "markdown" },
   },
 
-  -- markdow table
   "dhruvasagar/vim-table-mode",
 
   -- nvim-treesitter
@@ -153,141 +216,241 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    config = function()
+      require("plugin-config.nvim-treesitter")
+    end,
   },
 
-  -- treesitter playground
   "nvim-treesitter/playground",
 
-  -- sticky header
-  "nvim-treesitter/nvim-treesitter-context",
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      require("plugin-config.nvim-treesitter-context")
+    end,
+  },
 
-  -- rainbow parentheses works with treesitter
+  -- rainbow parentheses works with treesitter TODO: set dependencies?
   "p00f/nvim-ts-rainbow",
 
-  -- vim-autotag(work with treesitter)
+  -- vim-autotag(work with treesitter) TODO: set dependencies?
   "windwp/nvim-ts-autotag",
 
-  -- vim-visual-multi
   "mg979/vim-visual-multi",
 
-  -- vim-easy-align
   "junegunn/vim-easy-align",
 
-  -- expand region
   "terryma/vim-expand-region",
 
-  -- nvim-dashboard
-  "glepnir/dashboard-nvim",
+  {
+    "glepnir/dashboard-nvim",
+    event = "VimEnter",
+    config = function()
+      require("plugin-config.nvim-dashboard")
+    end,
+    commit = "f7d623457d6621b25a1292b24e366fae40cb79ab",
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
 
-  -- zen-mode
-  "folke/zen-mode.nvim",
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("plugin-config.nvim-zen-mode")
+    end,
+  },
 
   -- true-zen (like zen-mode and goyo-vim)
-  "Pocco81/true-zen.nvim",
+  {
+    "Pocco81/true-zen.nvim",
+    config = function()
+      require("plugin-config.nvim-true-zen")
+    end,
+  },
 
   -- twilight (like limelight)
-  "folke/twilight.nvim",
+  {
+    "folke/twilight.nvim",
+    config = function()
+      require("plugin-config.nvim-twilight")
+    end,
+  },
 
-  -- nvim-notify
-  "rcarriga/nvim-notify",
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      require("plugin-config.nvim-notify")
+    end,
+  },
 
-  -- smooth cursor
-  "gen740/SmoothCursor.nvim",
+  {
+    "gen740/SmoothCursor.nvim",
+    config = function()
+      require("plugin-config.nvim-smooth-cursor")
+    end,
+  },
 
-  -- marks
-  "chentoast/marks.nvim",
+  {
+    "chentoast/marks.nvim",
+    config = function()
+      require("plugin-config.nvim-marks")
+    end,
+  },
 
-  -- nvim-toggleterm
-  { "akinsho/toggleterm.nvim", version = "*" },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("plugin-config.nvim-toggleterm")
+    end,
+  },
 
   -- vscode-like pictograms
   "onsails/lspkind-nvim",
 
-  -- nvim-cmp source for buffer words
-  "hrsh7th/cmp-buffer",
-
-  -- nvim-cmp source for neovim's built-in LSP
-  "hrsh7th/cmp-nvim-lsp",
-
   -- Completion
-  "hrsh7th/nvim-cmp",
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugin-config.nvim-cmp")
+    end,
+  },
+
+  -- cmp extensions
+  {
+    -- nvim-cmp source for neovim's built-in LSP
+    "hrsh7th/cmp-nvim-lsp",
+    dependencies = "hrsh7th/nvim-cmp",
+  },
+  {
+    -- nvim-cmp source for buffer words
+    "hrsh7th/cmp-buffer",
+    dependencies = "hrsh7th/nvim-cmp",
+  },
 
   -- Configurations for Nvim LSP
   "neovim/nvim-lspconfig",
 
   -- LSP UIs
-  "glepnir/lspsaga.nvim",
+  {
+    "glepnir/lspsaga.nvim",
+    event = "BufRead",
+    config = function()
+      require("plugin-config.nvim-lspsaga")
+    end,
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  },
 
-  -- lsp signature
-  "ray-x/lsp_signature.nvim",
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("plugin-config.lsp.lsp-signature")
+    end,
+  },
 
-  -- lsp trouble
   {
     "folke/trouble.nvim",
+    config = function()
+      require("plugin-config.nvim-trouble")
+    end,
     dependencies = "nvim-tree/nvim-web-devicons",
   },
 
-  -- lsp preview
-  "dnlhc/glance.nvim",
+  {
+    "dnlhc/glance.nvim",
+    config = function()
+      require("plugin-config.nvim-glance")
+    end,
+  },
 
-  -- lsp inlay-hints
-  "simrat39/inlay-hints.nvim",
+  {
+    "simrat39/inlay-hints.nvim",
+    config = function()
+      require("plugin-config.nvim-lsp-inlay-hints")
+    end,
+  },
 
-  -- rust-tool
-  "simrat39/rust-tools.nvim",
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require("plugin-config.nvim-rust-tool")
+    end,
+  },
 
-  -- rust.vim
   "rust-lang/rust.vim",
 
-  -- Debugging
+  -- Debugging(TODO: studying...)
   "nvim-lua/plenary.nvim",
   "mfussenegger/nvim-dap",
 
   -- Mason lsp server installer and manager
-  "williamboman/mason.nvim",
-  "williamboman/mason.lspconfig.nvim",
+  { "williamboman/mason.nvim" },
+  {
+    "williamboman/mason.lspconfig.nvim",
+    config = function()
+      require("plugin-config.nvim-mason")
+    end,
+  },
 
-  -- Snippet TODO: studying...
+  -- Snippet (TODO: studying...)
   "L3MON4D3/LuaSnip",
 
   -- File icons
   "nvim-tree/nvim-web-devicons",
 
-  -- Transparent background
-  "xiyaowong/nvim-transparent",
-
-  -- symbols-outline
-  "simrat39/symbols-outline.nvim",
-
-  -- fidget
-  "j-hui/fidget.nvim",
-
-  -- vim-exchange
-  "tommcdo/vim-exchange",
-
-  -- neorg
   {
-    "nvim-neorg/neorg",
-    -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
-    -- ref: https://github.com/nvim-neorg/neorg
-    -- build = ":Neorg sync-parsers", -- This is the important bit!
-    dependencies = "nvim-lua/plenary.nvim",
+    "xiyaowong/nvim-transparent",
+    config = function()
+      require("plugin-config.nvim-transparent")
+    end,
   },
 
-  -- incline.nvim
-  "b0o/incline.nvim",
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("plugin-config.nvim-outline")
+    end,
+    enabled = false,
+  },
 
-  -- colorful winsep
-  "nvim-zh/colorful-winsep.nvim",
+  "tommcdo/vim-exchange",
+
+  {
+    "nvim-neorg/neorg",
+    config = function()
+      require("plugin-config.nvim-neorg")
+    end,
+    -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
+    -- ref: https://github.com/nvim-neorg/neorg
+    build = ":Neorg sync-parsers", -- This is the important bit!
+    dependencies = { { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" } },
+  },
+
+  {
+    "b0o/incline.nvim",
+    config = function()
+      require("plugin-config.nvim-incline")
+    end,
+  },
+
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = function()
+      require("plugin-config.nvim-colorful-winsep")
+    end,
+    -- WARN: conflict with lspsaga(outline)
+    enabled = false,
+  },
 
   -- neodev for lua in neovim
   "folke/neodev.nvim",
 
-  -- cache of neovim modules
-  "lewis6991/impatient.nvim",
-
-  -- aerial(structures,
-  "stevearc/aerial.nvim",
+  {
+    "stevearc/aerial.nvim",
+    config = function()
+      require("plugin-config.nvim-aerial")
+    end,
+    enabled = false,
+  },
 
   -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
   "nanotee/sqls.nvim",
@@ -295,12 +458,17 @@ local plugins = {
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("plugin-config.nvim-null-ls")
+    end,
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
-  -- ChatGPT
   {
     "jackMort/ChatGPT.nvim",
+    config = function()
+      require("plugin-config.nvim-chatGPT")
+    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
@@ -308,9 +476,12 @@ local plugins = {
     },
   },
 
-  -- rest.nvim(http client,
+  -- rest.nvim(http client)
   {
     "rest-nvim/rest.nvim",
+    config = function()
+      require("plugin-config.nvim-rest")
+    end,
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
