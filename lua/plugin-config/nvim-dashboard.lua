@@ -5,75 +5,98 @@ if not status then
   return
 end
 
-db.custom_footer = {
-  "Andy Lu",
-  "🎉 In neovim we trust 🎉",
-}
-
-db.preview_file_height = 11
-db.preview_file_width = 70
-db.header_pad = 3
-db.center_pad = 3
-db.footer_pad = 2
-
-db.custom_center = {
-  {
-    icon = "  ",
-    desc = "Projects                            ",
-    shortcut = "Ctrl p ",
-    action = "Telescope project",
+db.setup({
+  theme = "doom",
+  hide = {
+    statusline = true,
   },
-  {
-    icon = "ﮧ  ",
-    desc = "Terminal                            ",
-    shortcut = ":term  ",
-    action = ":terminal",
+  config = {
+    header = {
+      [[]],
+      [[]],
+      [[]],
+      [[]],
+      [[]],
+      [[]],
+      [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
+      [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
+      [[ ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
+      [[ ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
+      [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
+      [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
+      [[]],
+      [[]],
+    },
+    center = {
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "Projects                      ",
+        desc_hl = "String",
+        key = "Ctrl p",
+        key_hl = "Number",
+        action = "Telescope project",
+      },
+      {
+        icon = "ﮧ  ",
+        icon_hl = "Title",
+        desc = "Terminal",
+        desc_hl = "String",
+        key = ":term",
+        key_hl = "Number",
+        action = ":terminal",
+      },
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "File Explorer",
+        desc_hl = "String",
+        key = "SPC E",
+        key_hl = "Number",
+        action = ":Oil",
+      },
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "Recently opened files",
+        desc_hl = "String",
+        key = "",
+        key_hl = "Number",
+        action = "Telescope oldfiles",
+      },
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "Find File",
+        desc_hl = "String",
+        key = "SPC .",
+        key_hl = "Number",
+        action = "Telescope find_files find_command=rg,--hidden,--files",
+      },
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "Find Text",
+        desc_hl = "String",
+        key = "[ g",
+        key_hl = "Number",
+        action = "Telescope live_grep",
+      },
+      {
+        icon = "  ",
+        icon_hl = "Title",
+        desc = "New",
+        desc_hl = "String",
+        key = ":enew",
+        key_hl = "Number",
+        action = "enew",
+      },
+    },
+    footer = {
+      "",
+      "",
+      "Andy Lu",
+      "🎉 In neovim we trust 🎉",
+    },
   },
-  {
-    icon = "  ",
-    desc = "File Explorer                       ",
-    shortcut = ":SPC E ",
-    action = ":Oil",
-  },
-  {
-    icon = "  ",
-    desc = "Recently files                      ",
-    shortcut = "      ",
-    action = "Telescope oldfiles",
-  },
-  {
-    icon = "  ",
-    desc = "Find file                           ",
-    shortcut = "SPC .  ",
-    action = "Telescope find_files find_command=rg,--hidden,--files",
-  },
-  {
-    icon = "  ",
-    desc = "Find text                           ",
-    shortcut = "      ",
-    action = "Telescope live_grep",
-  },
-  {
-    icon = "  ",
-    desc = "Fugitive                            ",
-    shortcut = ":Git   ",
-    action = ":Git",
-  },
-  {
-    icon = "  ",
-    desc = "New File                            ",
-    shortcut = ":enew  ",
-    action = "enew",
-  },
-}
-
-db.custom_header = {
-  [[]],
-  [[]],
-  [[ ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ]],
-  [[ ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ]],
-  [[ ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ]],
-  [[ ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ]],
-  [[ ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ]],
-  [[ ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ]],
-}
+})
