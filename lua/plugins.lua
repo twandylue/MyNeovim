@@ -336,6 +336,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-lspsaga")
     end,
+    pin = true,
     dependencies = { { "nvim-tree/nvim-web-devicons" } },
   },
 
