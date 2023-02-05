@@ -22,6 +22,7 @@ stickyscrollerbar.setup({
       "if",
       "switch",
       "case",
+      "loop",
     },
   },
   exact_patterns = {
