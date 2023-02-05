@@ -13,7 +13,7 @@ My Neovim configuration in MacOS and Win
 ### nvim-treesitter
 
 - git
-- A C compiler([Windows User](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
+- A C compiler([Windows User](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
 
 ### telescope.nvim
 
