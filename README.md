@@ -13,12 +13,12 @@ My Neovim configuration in MacOS and Win
 ### nvim-treesitter
 
 - git
-- A C compiler([Windows User](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
+- A C compiler([Windows User](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
 
 ### telescope.nvim
 
 - [sharkdp/fd](https://github.com/sharkdp/fd)
-- [repgrep](https://github.com/BurntSushi/ripgrep)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fzf](https://github.com/junegunn/fzf)
 
 ### rust-tools.nvim
