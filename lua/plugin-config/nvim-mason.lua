@@ -20,7 +20,6 @@ masonLspconfig.setup({
     -- "csharp_ls",
     "dockerls",
     "jsonls",
-    "marksman",
     "pyright",
     "rust_analyzer",
     -- "sqls",
