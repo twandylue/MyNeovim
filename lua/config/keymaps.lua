@@ -132,11 +132,7 @@ map("n", "<tab>h", "<Cmd>Lspsaga hover_doc<cr>", opts)
 map("n", "<tab>f", "<Cmd>Lspsaga lsp_finder<cr>", opts)
 map("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
 map("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
-
--- basic lsp api with glance.nvim
-map("n", "<tab>d", "<cmd>Glance definitions<cr>", opts)
-map("n", "<tab>i", "<cmd>Glance implementations<cr>", opts)
-map("n", "<tab>u", "<cmd>Glance references<cr>", opts)
+map("n", "<tab>d", "<cmd>Lspsaga goto_definition<CR>", opts)
 
 -- basic lsp api
 -- map("n", "<tab>d", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
