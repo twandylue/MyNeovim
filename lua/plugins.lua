@@ -377,6 +377,7 @@ local plugins = {
 
   -- Debugging(TODO: studying...)
   "nvim-lua/plenary.nvim",
+
   "mfussenegger/nvim-dap",
 
   -- Mason lsp server installer and manager
@@ -387,6 +388,9 @@ local plugins = {
       require("plugin-config.nvim-mason")
     end,
   },
+
+  -- Mason null-ls installer and manager
+  "jay-babu/mason-null-ls.nvim",
 
   -- Snippet (TODO: studying...)
   "L3MON4D3/LuaSnip",
