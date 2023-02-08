@@ -4,20 +4,20 @@ if not status then
   return
 end
 
-local status2, masonLspconfig = pcall(require, "mason-lspconfig")
-if not status2 then
+local status_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_lspconfig then
   print("mason-lspconfig is not installed")
   return
 end
 
 mason.setup({})
 
-masonLspconfig.setup({
+mason_lspconfig.setup({
   automatic_installation = true,
   ensure_installed = {
     "bashls",
     "clangd",
-    -- "csharp_ls",
+    "csharp_ls",
     "dockerls",
     "jsonls",
     "pyright",
