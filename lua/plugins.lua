@@ -4,6 +4,11 @@ if not status then
   return
 end
 
+local chatGPT_enabled = true
+if vim.fn.has("win32") == 1 then
+  chatGPT_enabled = false
+end
+
 local plugins = {
   -- colorscheme: gruvbox
   {
@@ -473,6 +478,7 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
+    enabled = chatGPT_enabled
   },
 
   -- rest.nvim(http client)
