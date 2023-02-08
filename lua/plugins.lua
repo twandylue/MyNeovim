@@ -360,13 +360,6 @@ local plugins = {
   },
 
   {
-    "dnlhc/glance.nvim",
-    config = function()
-      require("plugin-config.nvim-glance")
-    end,
-  },
-
-  {
     "simrat39/inlay-hints.nvim",
     config = function()
       require("plugin-config.nvim-lsp-inlay-hints")
