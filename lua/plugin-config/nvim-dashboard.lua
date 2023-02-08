@@ -51,7 +51,7 @@ db.setup({
         icon_hl = "Title",
         desc = "File Explorer",
         desc_hl = "String",
-        key = "SPC E",
+        key = "SPC e",
         key_hl = "Number",
         action = ":Oil",
       },
