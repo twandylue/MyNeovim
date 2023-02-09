@@ -51,10 +51,6 @@ ts.setup({
     additional_vim_regex_highlighting = { "markdown" },
     disable = { "help" },
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-  },
   indent = {
     enable = true,
     disable = {},
@@ -79,5 +75,4 @@ ts.setup({
       goto_node = "<cr>",
       show_help = "?",
     },
-  },
 })

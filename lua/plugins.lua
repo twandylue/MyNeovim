@@ -235,9 +235,6 @@ local plugins = {
     end,
   },
 
-  -- rainbow parentheses works with treesitter TODO: set dependencies?
-  "p00f/nvim-ts-rainbow",
-
   -- vim-autotag(work with treesitter) TODO: set dependencies?
   "windwp/nvim-ts-autotag",
 
