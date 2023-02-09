@@ -75,4 +75,5 @@ ts.setup({
       goto_node = "<cr>",
       show_help = "?",
     },
+  }
 })
