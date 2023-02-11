@@ -55,7 +55,7 @@ clangd(on_attach)
 
 -- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})
-sumneko_lua()
+sumneko_lua(on_attach)
 
 M.on_attach_rust_tool = on_attach_rust_tool
 return M
