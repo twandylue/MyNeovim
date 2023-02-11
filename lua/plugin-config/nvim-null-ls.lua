@@ -43,6 +43,7 @@ end
 mason.setup({})
 
 -- ref: https://docs.rockylinux.org/books/nvchad/custom/plugins/null_ls
+-- for 'black' in Python, because there is no default formater in 'pyright'
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
   if client.supports_method "textDocument/formatting" then

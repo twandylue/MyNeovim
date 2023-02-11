@@ -22,7 +22,7 @@ local M = {
 }
 
 local on_attach_rust_tool = function(client, _)
-  -- formatting
+  -- formatting with rust tool
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
     vim.api.nvim_command([[autocmd! * <buffer>]])
@@ -33,7 +33,7 @@ end
 
 local on_attach = function(client, bufnr)
   ih.on_attach(client, bufnr)
-  -- formatting
+  -- formatiing with default formater in lsp
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
     vim.api.nvim_command([[autocmd! * <buffer>]])

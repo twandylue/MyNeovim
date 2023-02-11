@@ -12,7 +12,7 @@ local sumneko_lua = function(on_attach)
           enable = false,
         },
         format = {
-          -- use null-ls to formatiing, not default formater in lua-lsp
+          -- use null-ls for formatiing, not default formater in lua-lsp
           enable = false,
         },
         diagnostics = {
