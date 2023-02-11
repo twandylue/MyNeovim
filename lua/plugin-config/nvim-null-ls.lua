@@ -17,17 +17,20 @@ if not status_null_ls then
   return
 end
 
+local b = null_ls.builtins
+
 local sources = {
-  null_ls.builtins.formatting.stylua.with({
+  b.formatting.black,
+  b.formatting.stylua.with({
     extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
   }),
-  null_ls.builtins.formatting.csharpier,
-  null_ls.builtins.diagnostics.markdownlint.with({
+  b.formatting.csharpier,
+  b.diagnostics.markdownlint.with({
     -- disable limitation of line length
     extra_args = { "--disable", "MD013" },
   }),
-  null_ls.builtins.diagnostics.shellcheck,
-  null_ls.builtins.diagnostics.yamllint.with({
+  b.diagnostics.shellcheck,
+  b.diagnostics.yamllint.with({
     extra_args = { "-d", "{rules: {line-length: {max: 999}}}" },
   }),
 }
@@ -39,8 +42,25 @@ end
 
 mason.setup({})
 
+-- ref: https://docs.rockylinux.org/books/nvchad/custom/plugins/null_ls
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local on_attach = function(client, bufnr)
+  if client.supports_method "textDocument/formatting" then
+    vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ bufnr = bufnr })
+        end,
+    })
+  end
+end
+
 null_ls.setup({
+  debug = true,
   sources = sources,
+  on_attach = on_attach,
 })
 
 mason_null_ls.setup({
