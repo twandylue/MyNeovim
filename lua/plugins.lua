@@ -384,8 +384,12 @@ local plugins = {
   -- Mason null-ls installer and manager
   "jay-babu/mason-null-ls.nvim",
 
-  -- Snippet (TODO: studying...)
-  "L3MON4D3/LuaSnip",
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("plugin-config.nvim-luasnip")
+    end,
+  },
 
   -- File icons
   "nvim-tree/nvim-web-devicons",
