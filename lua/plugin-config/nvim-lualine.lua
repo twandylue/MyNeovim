@@ -42,5 +42,5 @@ line.setup({
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {},
+  extensions = { "quickfix", "toggleterm", "fugitive" },
 })
