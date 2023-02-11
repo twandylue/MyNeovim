@@ -21,15 +21,20 @@ local b = null_ls.builtins
 
 local sources = {
   b.formatting.black,
-  b.formatting.stylua.with({
-    extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
-  }),
   b.formatting.csharpier,
+  b.diagnostics.codespell,
+  b.diagnostics.commitlint,
+  b.diagnostics.gitlint,
+  b.diagnostics.hadolint,
   b.diagnostics.markdownlint.with({
     -- disable limitation of line length
     extra_args = { "--disable", "MD013" },
   }),
+  b.formatting.stylua.with({
+    extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+  }),
   b.diagnostics.shellcheck,
+  b.formatting.shellharden,
   b.diagnostics.yamllint.with({
     extra_args = { "-d", "{rules: {line-length: {max: 999}}}" },
   }),
@@ -46,14 +51,14 @@ mason.setup({})
 -- for 'black' in Python, because there is no default formater in 'pyright'
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
-  if client.supports_method "textDocument/formatting" then
-    vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = augroup,
       buffer = bufnr,
       callback = function()
         vim.lsp.buf.format({ bufnr = bufnr })
-        end,
+      end,
     })
   end
 end
