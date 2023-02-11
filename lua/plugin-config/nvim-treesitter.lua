@@ -55,6 +55,15 @@ ts.setup({
     enable = true,
     disable = {},
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<Tab>", -- normal mode
+      node_incremental = "<Tab>=", -- visual mode
+      node_decremental = "<Tab>-", -- visual mode
+    },
+  },
+  -- extensions
   autotag = {
     ensure = true,
   },
@@ -75,5 +84,5 @@ ts.setup({
       goto_node = "<cr>",
       show_help = "?",
     },
-  }
+  },
 })
