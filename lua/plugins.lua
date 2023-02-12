@@ -237,8 +237,6 @@ local plugins = {
 
   "junegunn/vim-easy-align",
 
-  "terryma/vim-expand-region",
-
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
