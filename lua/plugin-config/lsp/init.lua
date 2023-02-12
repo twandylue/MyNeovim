@@ -6,7 +6,7 @@ local jsonls = require("plugin-config.lsp.configs.jsonls")
 local pyright = require("plugin-config.lsp.configs.pyright")
 local rust = require("plugin-config.lsp.configs.rust")
 local sqls = require("plugin-config.lsp.configs.sqls")
-local sumneko_lua = require("plugin-config.lsp.configs.sumneko_lua")
+local lua_ls = require("plugin-config.lsp.configs.lua_ls")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
 local ih = require("inlay-hints")
@@ -55,7 +55,7 @@ clangd(on_attach)
 
 -- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})
-sumneko_lua(on_attach)
+lua_ls(on_attach)
 
 M.on_attach_rust_tool = on_attach_rust_tool
 return M

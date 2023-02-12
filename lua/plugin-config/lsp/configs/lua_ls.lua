@@ -1,7 +1,7 @@
 local M = require("plugin-config.lsp.utils.utils")
 
-local sumneko_lua = function(on_attach)
-  M.nvim_lsp.sumneko_lua.setup({
+local lua_ls = function(on_attach)
+  M.nvim_lsp.lua_ls.setup({
     on_attach = on_attach,
     settings = {
       Lua = {
@@ -34,4 +34,4 @@ local sumneko_lua = function(on_attach)
   })
 end
 
-return sumneko_lua
+return lua_ls
