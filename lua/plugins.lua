@@ -183,6 +183,7 @@ local plugins = {
       require("plugin-config.nvim-bufferline")
     end,
     dependencies = "nvim-tree/nvim-web-devicons",
+    enabled = false,
   },
 
   {
