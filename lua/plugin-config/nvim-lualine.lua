@@ -27,7 +27,7 @@ line.setup({
     lualine_a = {},
     lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = { "filename" },
-    lualine_x = { "lsp_progress", "encoding", "fileformat", "filetype" },
+    lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" },
   },
@@ -44,7 +44,7 @@ line.setup({
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = { "lsp_progress" },
     lualine_z = { "tabs" }
   },
   winbar = {},
