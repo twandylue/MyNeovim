@@ -426,6 +426,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-incline")
     end,
+    enabled = false,
   },
 
   {
