@@ -86,8 +86,6 @@ vim.o.guicursor = "i:block"
 vim.o.guicursor = "a:blinkon1"
 -- set command history
 vim.o.history = 150
--- Get the break at a word boundary
-vim.o.linebreak = true
 
 vim.cmd([[
   " set global status line
