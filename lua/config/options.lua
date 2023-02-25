@@ -86,9 +86,8 @@ vim.o.guicursor = "i:block"
 vim.o.guicursor = "a:blinkon1"
 -- set command history
 vim.o.history = 150
-
--- reset pwd to local directory file path when open nvim
--- vim.o.autochdir = true
+-- Get the break at a word boundary
+vim.o.linebreak = true
 
 vim.cmd([[
   " set global status line
