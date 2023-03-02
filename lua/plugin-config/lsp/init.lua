@@ -5,7 +5,7 @@ local dockerls = require("plugin-config.lsp.configs.dockerls")
 local jsonls = require("plugin-config.lsp.configs.jsonls")
 local pyright = require("plugin-config.lsp.configs.pyright")
 local rust = require("plugin-config.lsp.configs.rust")
-local sqls = require("plugin-config.lsp.configs.sqls")
+-- local sqls = require("plugin-config.lsp.configs.sqls")
 local lua_ls = require("plugin-config.lsp.configs.lua_ls")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
@@ -33,7 +33,7 @@ end
 
 local on_attach = function(client, bufnr)
   ih.on_attach(client, bufnr)
-  -- formatiing with default formater in lsp
+  -- formatiing with default formatter in lsp
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
     vim.api.nvim_command([[autocmd! * <buffer>]])
@@ -49,7 +49,7 @@ tsserver(on_attach)
 bashls(on_attach)
 -- csharp_ls(on_attach)
 pyright(on_attach)
-sqls(on_attach)
+-- sqls(on_attach)
 dockerls(on_attach)
 clangd(on_attach)
 

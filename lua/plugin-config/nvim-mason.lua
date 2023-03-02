@@ -17,7 +17,7 @@ mason_lspconfig.setup({
   ensure_installed = {
     "bashls",
     "clangd",
-    "csharp_ls",
+    -- "csharp_ls",
     "dockerls",
     "jsonls",
     "pyright",

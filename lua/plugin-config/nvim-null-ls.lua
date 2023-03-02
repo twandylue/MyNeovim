@@ -21,7 +21,7 @@ local b = null_ls.builtins
 
 local sources = {
   b.formatting.black,
-  b.formatting.csharpier,
+  -- b.formatting.csharpier,
   b.diagnostics.codespell,
   b.diagnostics.commitlint,
   b.diagnostics.gitlint,
