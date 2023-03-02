@@ -58,9 +58,9 @@ ts.setup({
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<Tab>", -- normal mode
-      node_incremental = "<Tab>=", -- visual mode
-      node_decremental = "<Tab>-", -- visual mode
+      -- init_selection = "<Tab>", -- normal mode
+      -- node_incremental = "<Tab>=", -- visual mode
+      -- node_decremental = "<Tab>-", -- visual mode
     },
   },
   -- extensions
