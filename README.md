@@ -9,8 +9,8 @@ My Neovim configuration in MacOS and Win
 - npm(>=7.10.0)
 - node(>=16.0.0)
 - yarn(>=1.22.15)
-- Go (for `sqls`)
-- dotnet 6 (for `csharp_ls` and `csharpier`)
+- Go (for [sqls](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#sqls))
+- dotnet 6 (for [csharp_ls](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#csharp-language-server) and [csharpier](https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#csharpier))
 
 ### nvim-treesitter
 
