@@ -9,11 +9,13 @@ My Neovim configuration in MacOS and Win
 - npm(>=7.10.0)
 - node(>=16.0.0)
 - yarn(>=1.22.15)
+- Go (for `sqls`)
+- dotnet 6 (for `csharp_ls` and `csharpier`)
 
 ### nvim-treesitter
 
-- git
-- A C compiler([Windows User](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
+- Git
+- A C compiler([Windows](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support))
 
 ### telescope.nvim
 
@@ -33,7 +35,7 @@ My Neovim configuration in MacOS and Win
 
 - A C++ compiler(C++14 support)
 
-> *important*: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compile
+> **important**: export the CC(support for c++14) variable in general: export CC=/path/to/newer/compile
 
 ### rest.nvim
 
