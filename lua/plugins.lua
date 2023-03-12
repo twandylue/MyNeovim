@@ -393,6 +393,14 @@ local plugins = {
   -- File icons
   "nvim-tree/nvim-web-devicons",
 
+  -- lsp-lens
+  {
+    "VidocqH/lsp-lens.nvim",
+    config = function()
+      require("plugin-config.nvim-lsp-lens")
+    end,
+  },
+
   {
     "xiyaowong/nvim-transparent",
     config = function()
