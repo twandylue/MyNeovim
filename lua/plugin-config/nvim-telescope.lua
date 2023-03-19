@@ -18,10 +18,6 @@ local icons = require("plugin-config.icons")
 -- local trouble = require "trouble.providers.telescope"
 local lga_actions = require("telescope-live-grep-args.actions")
 
-function telescope_buffer_dir()
-  return vim.fn.expand("%:p:h")
-end
-
 telescope.setup({
   defaults = {
     prompt_prefix = icons.ui.Telescope .. " ",
@@ -126,10 +122,10 @@ telescope.setup({
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
 
-        ["<Tab>"] = actions.close,
-        ["<S-Tab>"] = actions.close,
-        -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        -- ["<Tab>"] = actions.close,
+        -- ["<S-Tab>"] = actions.close,
+        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
@@ -183,7 +179,7 @@ telescope.setup({
       show_moon = true,
     },
     colorscheme = {
-      -- enable_preview = true,
+      enable_preview = true,
     },
     lsp_references = {
       theme = "dropdown",
