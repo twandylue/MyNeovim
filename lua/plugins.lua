@@ -476,6 +476,15 @@ local plugins = {
     end,
   },
 
+  -- fzf in lua
+  {
+    "ibhagwan/fzf-lua",
+    config = function()
+      require("plugin-config.nvim-fzf-lua")
+    end,
+    requires = { "nvim-tree/nvim-web-devicons" },
+  },
+
   -- rest.nvim(http client)
   {
     "rest-nvim/rest.nvim",
