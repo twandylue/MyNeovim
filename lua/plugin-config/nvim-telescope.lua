@@ -122,8 +122,6 @@ telescope.setup({
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
 
-        -- ["<Tab>"] = actions.close,
-        -- ["<S-Tab>"] = actions.close,
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
@@ -135,6 +133,7 @@ telescope.setup({
         ["M"] = actions.move_to_middle,
         ["L"] = actions.move_to_bottom,
         ["q"] = actions.close,
+        ["<C-c>"] = actions.close,
         ["dd"] = require("telescope.actions").delete_buffer,
         ["s"] = actions.select_horizontal,
         ["v"] = actions.select_vertical,
