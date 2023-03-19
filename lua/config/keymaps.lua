@@ -111,11 +111,13 @@ map("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
 map(
   "n",
   "tf",
-  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>'
-  ,
+  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode = "normal", layout_config = { height = 50 } })<CR>',
   opts
 )
 vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
+map("n", "<tab>d", "<cmd>Telescope lsp_definitions<cr>", opts)
+map("n", "<tab>i", "<cmd>Telescope lsp_implementations<cr>", opts)
+map("n", "<tab>u", "<cmd>Telescope lsp_references<cr>", opts)
 
 -- bufferline
 map("n", "gK", "<cmd>BufferLineMoveNext<CR>", opts)
