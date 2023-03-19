@@ -71,7 +71,7 @@ vim.o.list = false
 vim.o.listchars = "space:·,tab:··"
 -- 补全增强
 vim.o.wildmenu = true
--- Dont' pass messages to |ins-completin menu|
+-- Don't pass messages to |ins-completin menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- 补全最多显示10行
 vim.o.pumheight = 10
@@ -86,6 +86,9 @@ vim.o.guicursor = "i:block"
 vim.o.guicursor = "a:blinkon1"
 -- set command history
 vim.o.history = 150
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.cmd([[
   " set global status line
