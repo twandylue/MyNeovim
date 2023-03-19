@@ -181,18 +181,18 @@ telescope.setup({
       enable_preview = true,
     },
     lsp_references = {
-      theme = "dropdown",
+      theme = "ivy",
       initial_mode = "normal",
     },
     lsp_definitions = {
-      theme = "dropdown",
-      initial_mode = "normal",
-    },
-    lsp_declarations = {
-      theme = "dropdown",
+      theme = "ivy",
       initial_mode = "normal",
     },
     lsp_implementations = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_declarations = {
       theme = "dropdown",
       initial_mode = "normal",
     },
