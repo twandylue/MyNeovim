@@ -31,6 +31,8 @@
 :cprev  " Move to the previous compile error
 ```
 
+[Focus on quickfix window](https://www.reddit.com/r/vim/comments/hfovi6/how_can_i_keep_my_cursor_intact_in_quickfix_list/)
+
 ### [The working directory](https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file)
 
 ```plain
