@@ -491,6 +491,14 @@ local plugins = {
   -- vim sugar
   "tpope/vim-eunuch",
   "tpope/vim-unimpaired",
+
+  -- copilot
+  {
+    "github/copilot.vim",
+    config = function()
+      require("plugin-config.nvim-copilot")
+    end,
+  },
 }
 
 return plugins
