@@ -5,6 +5,7 @@ require("colorschemes.gruvbox")
 require("colorschemes.kanagawa")
 require("colorschemes.tokyonight")
 
+-- TODO: remove this section in future since we can set up colorscheme in lazy.nvim
 -- setting color scheme
 
 -- github
@@ -30,4 +31,4 @@ require("colorschemes.tokyonight")
 -- vim.g.gruvbox_baby_background_color = "dark"
 -- vim.api.nvim_command("colorscheme gruvbox-baby")
 
-vim.api.nvim_command("colorscheme tokyonight")
+-- vim.api.nvim_command("colorscheme tokyonight")

@@ -21,7 +21,15 @@ local plugins = {
   },
 
   -- colorscheme: tokyonight
-  "folke/tokyonight.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("colorschemes.tokyonight")
+      vim.api.nvim_command("colorscheme tokyonight")
+    end,
+  },
 
   -- colorscheme: github
   "projekt0n/github-nvim-theme",
@@ -298,21 +306,14 @@ local plugins = {
   -- Completion
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+    },
     config = function()
       require("plugin-config.nvim-cmp")
     end,
-  },
-
-  -- cmp extensions
-  {
-    -- nvim-cmp source for neovim's built-in LSP
-    "hrsh7th/cmp-nvim-lsp",
-    dependencies = "hrsh7th/nvim-cmp",
-  },
-  {
-    -- nvim-cmp source for buffer words
-    "hrsh7th/cmp-buffer",
-    dependencies = "hrsh7th/nvim-cmp",
   },
 
   -- Configurations for Nvim LSP
