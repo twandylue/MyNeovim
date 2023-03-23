@@ -198,7 +198,7 @@ local plugins = {
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
-    setup = function()
+    config = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
@@ -207,13 +207,6 @@ local plugins = {
   "dhruvasagar/vim-table-mode",
 
   -- nvim-treesitter
-  -- First time installation
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = function()
-  --     require("nvim-treesitter.install").update({ with_sync = true })
-  --   end,
-  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -482,7 +475,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-fzf-lua")
     end,
-    requires = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
   -- rest.nvim(http client)

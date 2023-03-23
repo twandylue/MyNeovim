@@ -10,7 +10,7 @@ if not status_lspconfig then
   return
 end
 
-mason.setup({})
+mason.setup()
 
 mason_lspconfig.setup({
   automatic_installation = true,
