@@ -27,8 +27,8 @@ local M = {
   on_attach_rust_tool = nil,
 }
 
-local on_attach_rust_tool = function(client, _)
-  navbuddy.attach(client, _)
+local on_attach_rust_tool = function(client, bufnr)
+  navbuddy.attach(client, bufnr)
   -- formatting with rust tool
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])

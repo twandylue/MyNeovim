@@ -9,6 +9,9 @@ local plugins = {
   {
     "ellisonleao/gruvbox.nvim",
     dependencies = { "rktjmp/lush.nvim" },
+    config = function()
+      require("colorschemes.gruvbox")
+    end,
   },
 
   -- colorscheme: gruvbox-baby
@@ -18,6 +21,9 @@ local plugins = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    config = function()
+      require("colorschemes.catppuccin")
+    end,
   },
 
   -- colorscheme: tokyonight
@@ -32,13 +38,28 @@ local plugins = {
   },
 
   -- colorscheme: github
-  "projekt0n/github-nvim-theme",
+  {
+    "projekt0n/github-nvim-theme",
+    config = function()
+      require("colorschemes.github-theme")
+    end,
+  },
 
   -- colorscheme: kanagawa
-  "rebelot/kanagawa.nvim",
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("colorschemes.kanagawa")
+    end,
+  },
 
   -- colorscheme: nightfox
-  "EdenEast/nightfox.nvim",
+  {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      require("colorschemes.nightfox")
+    end,
+  },
 
   -- colorscheme: base16
   "RRethy/nvim-base16",
