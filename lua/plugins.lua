@@ -9,9 +9,12 @@ local plugins = {
   {
     "ellisonleao/gruvbox.nvim",
     dependencies = { "rktjmp/lush.nvim" },
+    lazy = false,
+    priority = 1000,
     config = function()
       require("colorschemes.gruvbox")
     end,
+    enabled = false,
   },
 
   -- colorscheme: gruvbox-baby
@@ -21,9 +24,12 @@ local plugins = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("colorschemes.catppuccin")
     end,
+    enabled = false,
   },
 
   -- colorscheme: tokyonight
@@ -35,30 +41,40 @@ local plugins = {
       require("colorschemes.tokyonight")
       vim.api.nvim_command("colorscheme tokyonight")
     end,
+    enabled = true,
   },
 
   -- colorscheme: github
   {
     "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("colorschemes.github-theme")
     end,
+    enabled = false,
   },
 
   -- colorscheme: kanagawa
   {
     "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("colorschemes.kanagawa")
     end,
+    enabled = false,
   },
 
   -- colorscheme: nightfox
   {
     "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("colorschemes.nightfox")
     end,
+    enabled = false,
   },
 
   -- colorscheme: base16

@@ -21,5 +21,5 @@ github.setup({
     return {
       ModeMsg = { fg = "#73c936", style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     }
-  end
+  end,
 })
