@@ -33,6 +33,28 @@
 
 [Focus on quickfix window](https://www.reddit.com/r/vim/comments/hfovi6/how_can_i_keep_my_cursor_intact_in_quickfix_list/)
 
+### Grep in Vim
+
+In Linux or Unix
+
+```plain
+:grep <word> <file>
+
+:grep test ./src/main.rs
+:grep test ** " grep from all file under the current directory(pwd)
+```
+
+In Windows
+
+```plain
+:vimgrep <word> <file>
+
+:vimgrep test ./src/main.rs
+:vimgrep test ** " grep from all file under the current directory(pwd)
+```
+
+[Learn more](https://zhuanlan.zhihu.com/p/148280898)
+
 ### [The working directory](https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file)
 
 ```plain
@@ -57,7 +79,14 @@ ls -a | vim -
 :r ![external command] " execute external command and `insert` the output to your buffer(cursor location).
 ```
 
-## Keys
+### Format JSON file with jq in Vim
+
+```plain
+:'<,'>!jq . " format selected section with jq
+:%!jq . " format all file with jq
+```
+
+## Keys Map
 
 ### Jumping
 
