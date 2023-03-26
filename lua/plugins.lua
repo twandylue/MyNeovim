@@ -67,7 +67,7 @@ local plugins = {
   -- notice dependencies before installation (https://github.com/nvim-telescope/telescope.nvim#getting-started)
   {
     "nvim-telescope/telescope.nvim",
-    version = "0.1.0",
+    version = "0.1.1",
     config = function()
       require("plugin-config.nvim-telescope")
     end,

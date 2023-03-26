@@ -94,23 +94,16 @@ telescope.setup({
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<c-d>"] = require("telescope.actions").delete_buffer,
-
-        -- ["<C-u>"] = actions.preview_scrolling_up,
-        -- ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
 
         -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<Tab>"] = actions.close,
-        ["<S-Tab>"] = actions.close,
         -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<Tab>"] = actions.complete_tag,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<C-l>"] = actions.complete_tag,
-        ["<C-h>"] = actions.which_key, -- keys from pressing <C-h>
-        -- ["<esc>"] = actions.close,
       },
       n = {
-        -- ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-s>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
@@ -118,6 +111,8 @@ telescope.setup({
         -- ["<C-t>"] = trouble.smart_open_with_trouble,
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -131,18 +126,13 @@ telescope.setup({
         ["L"] = actions.move_to_bottom,
         ["q"] = actions.close,
         ["<C-c>"] = actions.close,
+        ["<ESC>"] = actions.close,
         ["dd"] = require("telescope.actions").delete_buffer,
-        ["s"] = actions.select_horizontal,
-        ["v"] = actions.select_vertical,
-        ["t"] = actions.select_tab,
 
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -153,10 +143,12 @@ telescope.setup({
   },
   pickers = {
     live_grep = {
-      theme = "dropdown",
+      previewe = true,
+      theme = "ivy",
     },
     grep_string = {
-      theme = "dropdown",
+      previewe = true,
+      theme = "ivy",
     },
     find_files = {
       previewe = true,
