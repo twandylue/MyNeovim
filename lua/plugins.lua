@@ -90,9 +90,6 @@ local plugins = {
     dependencies = "nvim-telescope/telescope.nvim",
   },
 
-  -- nvim-telescope extensions: fzf
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
   {
     "lewis6991/gitsigns.nvim",
     config = function()

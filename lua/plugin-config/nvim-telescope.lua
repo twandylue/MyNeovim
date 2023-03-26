@@ -6,9 +6,6 @@ end
 
 telescope.load_extension("file_browser")
 local fb_actions = require("telescope").extensions.file_browser.actions
-if vim.fn.has("mac") == 1 then
-  telescope.load_extension("fzf")
-end
 telescope.load_extension("project")
 telescope.load_extension("notify")
 telescope.load_extension("live_grep_args")
@@ -198,17 +195,12 @@ telescope.setup({
     },
   },
   extensions = {
-    fzf = {
-      fuzzy = true, -- false will only do exact matching
-      override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-    },
     live_grep_args = {
+      theme = "ivy",
       auto_quoting = true,
       mappings = {
         i = {
-          -- cheatsheet: https://cheatography.com/njones/cheat-sheets/ripgrep/
+          -- NOTE: cheatsheet: https://github.com/nvim-telescope/telescope-live-grep-args.nvim
           ["<C-q>"] = lga_actions.quote_prompt(),
           -- ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }), -- global but case-i­nse­nsitive
         },
