@@ -327,6 +327,18 @@ local plugins = {
   },
 
   {
+    "SmiteshP/nvim-navbuddy",
+    config = function()
+      require("plugin-config.nvim-navbuddy")
+    end,
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+    },
+  },
+
+  {
     "ray-x/lsp_signature.nvim",
     config = function()
       require("plugin-config.lsp.lsp-signature")

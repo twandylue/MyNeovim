@@ -12,7 +12,7 @@ local lua_ls = function(on_attach)
           enable = false,
         },
         format = {
-          -- use null-ls for formatiing, not default formater in lua-lsp
+          -- use null-ls for formatting, not default formatter in lua-lsp
           enable = false,
         },
         diagnostics = {

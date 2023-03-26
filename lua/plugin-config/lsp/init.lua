@@ -17,11 +17,18 @@ if not status_neodev then
   return
 end
 
+local status, navbuddy = pcall(require, "nvim-navbuddy")
+if not status then
+  print("nvim-navbuddy is not installed")
+  return
+end
+
 local M = {
   on_attach_rust_tool = nil,
 }
 
 local on_attach_rust_tool = function(client, _)
+  navbuddy.attach(client, _)
   -- formatting with rust tool
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
@@ -32,8 +39,9 @@ local on_attach_rust_tool = function(client, _)
 end
 
 local on_attach = function(client, bufnr)
+  navbuddy.attach(client, bufnr)
   ih.on_attach(client, bufnr)
-  -- formatiing with default formatter in lsp
+  -- formatting with default formatter in lsp
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
     vim.api.nvim_command([[autocmd! * <buffer>]])
