@@ -87,8 +87,8 @@ vim.o.guicursor = "a:blinkon1"
 -- set command history
 vim.o.history = 150
 -- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 vim.cmd([[
   " set global status line

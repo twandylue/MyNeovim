@@ -15,8 +15,7 @@ saga.setup({
   outline = {
     win_width = 40,
     keys = {
-      jump = "<Enter>",
-      expand_collapse = "-",
+      expand_collapse = "o",
       quit = "q",
     },
   },
@@ -29,11 +28,13 @@ saga.setup({
   },
   border_style = "rounded",
   finder = {
-    edit = { "o", "<CR>" },
-    vsplit = "<C-v>",
-    split = "<C-s>",
-    tabe = "<C-t>",
-    quit = { "q", "<ESC>" },
+    keys = {
+      expand_or_jump = "<CR>",
+      vsplit = "<C-v>",
+      split = "<C-s>",
+      tabe = "<C-t>",
+      quit = { "q", "<ESC>" },
+    },
   },
   symbol_in_winbar = {
     enable = true,
