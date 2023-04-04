@@ -100,13 +100,18 @@ ctrl + i:  " Jump forward to cursor location.
 
 ### [rest.nvim](https://github.com/rest-nvim/rest.nvim)
 
+In `*.http`
+
 ```http
 GET https://reqres.in/api/users?page=5
 Cookie: session_token="test"
-# or/
-Authentication: Bearer <token>
-  ```
+```
 
-In `*.http`
+or
+
+```http
+GET https://reqres.in/api/users?page=5
+Authentication: Bearer <token>
+```
 
 - [reference](https://github.com/rest-nvim/rest.nvim/issues/98)
