@@ -5,6 +5,18 @@ if not status then
 end
 
 local plugins = {
+  -- gruber
+  {
+    "blazkowolf/gruber-darker.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("gruber-darker")
+      -- vim.api.nvim_command("hi! LineNr guibg=#2e2d2d ctermbg=none")
+    end,
+    enabled = true,
+  },
+
   -- colorscheme: gruvbox
   {
     "ellisonleao/gruvbox.nvim",
@@ -41,7 +53,7 @@ local plugins = {
       require("colorschemes.tokyonight")
       vim.api.nvim_command("colorscheme tokyonight")
     end,
-    enabled = true,
+    enabled = false,
   },
 
   -- colorscheme: github

@@ -82,6 +82,13 @@ ls -a | vim -
 ### Format JSON file with jq in Vim
 
 ```plain
+:'<,'>!jq " format selected section with jq
+:%!jq " format all file with jq
+```
+
+or
+
+```plain
 :'<,'>!jq . " format selected section with jq
 :%!jq . " format all file with jq
 ```
