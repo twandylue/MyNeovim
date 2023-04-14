@@ -105,4 +105,4 @@ vim.cmd([[
 ]])
 
 -- highlight trailing whitespace
-vim.fn.matchadd("errorMsg", [[\s\+$]])
+-- vim.fn.matchadd("errorMsg", [[\s\+$]])
