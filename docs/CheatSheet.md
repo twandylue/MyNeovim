@@ -10,6 +10,13 @@
 :bd!
 ```
 
+### Show trail
+
+```plain
+:set list  " show
+:set list! " hide
+```
+
 ### [Set the window size of quickfix window](https://stackoverflow.com/questions/42217825/vim-how-to-set-the-window-size-of-quickfix-window)
 
 ```plain
