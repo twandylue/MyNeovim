@@ -7,6 +7,10 @@ end
 
 local b = null_ls.builtins
 local sources = {
+  b.formatting.stylua.with({
+    extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+  }),
+  b.formatting.shellharden,
   b.formatting.black,
   -- b.formatting.csharpier,
   b.diagnostics.codespell,
@@ -17,11 +21,7 @@ local sources = {
     -- disable limitation of line length
     extra_args = { "--disable", "MD013" },
   }),
-  b.formatting.stylua.with({
-    extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
-  }),
   b.diagnostics.shellcheck,
-  b.formatting.shellharden,
   b.diagnostics.yamllint.with({
     extra_args = { "-d", "{rules: {line-length: {max: 999}}}" },
   }),
@@ -33,7 +33,8 @@ if vim.fn.has("mac") == 1 then
 end
 
 -- ref: https://docs.rockylinux.org/books/nvchad/custom/plugins/null_ls
--- for 'black' in Python, because there is no default formatter in 'pyright'
+-- for lsp servers which do not include formatter in default. For example, we need 'black' in Python, because there is no default formatter in 'pyright'
+-- Thus, we need 'stylua', 'black' and 'shellharden'(the formatting items in sources)
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
