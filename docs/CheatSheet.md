@@ -17,6 +17,8 @@
 :set list! " hide
 ```
 
+[Learn more](https://vi.stackexchange.com/questions/31811/neovim-lua-config-how-to-append-to-listchars)
+
 ### [Set the window size of quickfix window](https://stackoverflow.com/questions/42217825/vim-how-to-set-the-window-size-of-quickfix-window)
 
 ```plain

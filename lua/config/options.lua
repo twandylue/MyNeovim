@@ -106,4 +106,5 @@ vim.cmd([[
 
 -- highlight trailing whitespace
 -- vim.fn.matchadd("errorMsg", [[\s\+$]])
-vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~" }
+vim.opt.list = true
+vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~", space = "." }

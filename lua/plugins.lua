@@ -12,6 +12,7 @@ local plugins = {
     priority = 1000,
     config = function()
       vim.cmd.colorscheme("gruber-darker")
+      vim.api.nvim_command("highlight Cursor guibg=red")
       -- vim.api.nvim_command("hi! LineNr guibg=#2e2d2d ctermbg=none")
     end,
     enabled = true,
@@ -218,7 +219,7 @@ local plugins = {
     end,
   },
 
-  "lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
 
   {
     "kylechui/nvim-surround",
