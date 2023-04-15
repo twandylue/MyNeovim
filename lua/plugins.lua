@@ -434,7 +434,17 @@ local plugins = {
   },
 
   -- Mason null-ls installer and manager
-  "jay-babu/mason-null-ls.nvim",
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+    config = function()
+      require("plugin-config.nvim-mason-null-ls")
+    end,
+  },
 
   {
     "L3MON4D3/LuaSnip",

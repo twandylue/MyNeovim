@@ -1,9 +1,3 @@
-local status_mason, mason = pcall(require, "mason")
-if not status_mason then
-  print("mason is not installed")
-  return
-end
-
 local status, null_ls = pcall(require, "null-ls")
 if not status then
   vim.notify("null-ls is not installed", vim.log.levels.ERROR)
@@ -11,14 +5,7 @@ if not status then
   return
 end
 
-local status_null_ls, mason_null_ls = pcall(require, "mason-null-ls")
-if not status_null_ls then
-  print("mason-null-ls is not installed")
-  return
-end
-
 local b = null_ls.builtins
-
 local sources = {
   b.formatting.black,
   -- b.formatting.csharpier,
@@ -45,10 +32,8 @@ if vim.fn.has("mac") == 1 then
   -- table.insert(sources, null_ls.builtins.formatting.luasnip)
 end
 
-mason.setup({})
-
 -- ref: https://docs.rockylinux.org/books/nvchad/custom/plugins/null_ls
--- for 'black' in Python, because there is no default formater in 'pyright'
+-- for 'black' in Python, because there is no default formatter in 'pyright'
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local on_attach = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
@@ -67,10 +52,4 @@ null_ls.setup({
   debug = true,
   sources = sources,
   on_attach = on_attach,
-})
-
-mason_null_ls.setup({
-  ensure_installed = nil,
-  automatic_installation = true,
-  automatic_setup = false,
 })
