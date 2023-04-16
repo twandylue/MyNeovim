@@ -9,7 +9,8 @@ local rust = require("plugin-config.lsp.configs.rust")
 local lua_ls = require("plugin-config.lsp.configs.lua_ls")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
-local ih = require("inlay-hints")
+
+local inlay_hinter = require("inlay-hints")
 
 local status_neodev, lua_dev = pcall(require, "neodev")
 if not status_neodev then
@@ -23,9 +24,11 @@ if not status then
   return
 end
 
-local M = {
-  on_attach_rust_tool = nil,
-}
+local function check_if_active_client_in_current_buf()
+  local bufnr = vim.fn.bufnr();
+  local active_client = vim.lsp.get_active_clients({bufnr = bufnr})
+  return next(active_client) ~= nil
+end
 
 local on_attach_rust_tool = function(client, bufnr)
   navbuddy.attach(client, bufnr)
@@ -40,7 +43,7 @@ end
 
 local on_attach = function(client, bufnr)
   navbuddy.attach(client, bufnr)
-  ih.on_attach(client, bufnr)
+  inlay_hinter.on_attach(client, bufnr)
   -- formatting with default formatter in lsp
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command([[augroup Format]])
@@ -65,5 +68,8 @@ clangd(on_attach)
 lua_dev.setup({})
 lua_ls(on_attach)
 
+local M = {
+  on_attach_rust_tool = nil,
+}
 M.on_attach_rust_tool = on_attach_rust_tool
 return M
