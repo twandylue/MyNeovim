@@ -188,6 +188,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-leap")
     end,
+    enabled = false,
   },
 
   {

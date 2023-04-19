@@ -8,8 +8,13 @@ end
 neorg.setup({
   load = {
     ["core.defaults"] = {},
-    ["core.norg.concealer"] = {},
-    ["core.norg.completion"] = {
+    ["core.keybinds"] = {
+      config = {
+        neorg_leader = " ",
+      },
+    },
+    ["core.concealer"] = {},
+    ["core.completion"] = {
       config = {
         engine = "nvim-cmp",
       },
@@ -22,7 +27,8 @@ neorg.setup({
     ["core.export"] = {
       config = {},
     },
-    ["core.norg.dirman"] = {
+    ["core.export.markdown"] = {},
+    ["core.dirman"] = {
       config = {
         workspaces = {
           work = "~/Desktop/My-Neorg/work",
