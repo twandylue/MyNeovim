@@ -40,6 +40,7 @@ oil.setup({
     ["`"] = "actions.cd",
     ["~"] = "actions.tcd",
     ["g."] = "actions.toggle_hidden",
+    ["gy"] = "actions.copy_entry_path",
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
