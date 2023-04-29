@@ -69,7 +69,8 @@ In Windows
 ```plain
 :pwd       " Present working directory
 :cd [path] " cd to specific file path
-:cd %:p:h  " Change to the directory of the currently open file
+:cd %:h    " Change to the directory of the currently open file -1
+:cd %:p:h  " Change to the directory of the currently open file -2
 :lcd %:p:h " Change the directory only for the current window
 ```
 
@@ -104,6 +105,12 @@ or
 
 ## Keys Map
 
+### [Splitting](https://stackoverflow.com/a/7982215)
+
+```console
+ctrl-w_H/J/K/L  " move the current window to the far left, bottom, top or right side
+```
+
 ### Jumping
 
 ```plain
@@ -118,14 +125,14 @@ ctrl + i:  " Jump forward to cursor location.
 
 In `*.http`
 
-```http
+```plain
 GET https://reqres.in/api/users?page=5
 Cookie: session_token="test"
 ```
 
 or
 
-```http
+```plain
 GET https://reqres.in/api/users?page=5
 Authentication: Bearer <token>
 ```
