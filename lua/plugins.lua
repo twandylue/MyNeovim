@@ -513,9 +513,6 @@ local plugins = {
     enabled = false,
   },
 
-  -- sqls command, coorperate with nvim_lsp.sqls in lspconfig
-  "nanotee/sqls.nvim",
-
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -523,21 +520,6 @@ local plugins = {
       require("plugin-config.nvim-null-ls")
     end,
     dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
-  {
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("plugin-config.nvim-chatGPT")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    enabled = function()
-      return jit.os == "OSX"
-    end,
   },
 
   -- fzf in lua
