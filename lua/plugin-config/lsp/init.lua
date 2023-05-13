@@ -25,8 +25,8 @@ if not status then
 end
 
 local function check_if_active_client_in_current_buf()
-  local bufnr = vim.fn.bufnr();
-  local active_client = vim.lsp.get_active_clients({bufnr = bufnr})
+  local bufnr = vim.fn.bufnr()
+  local active_client = vim.lsp.get_active_clients({ bufnr = bufnr })
   return next(active_client) ~= nil
 end
 
@@ -64,7 +64,7 @@ pyright(on_attach)
 dockerls(on_attach)
 clangd(on_attach)
 
--- IMPORTANT: make sure to setup lua-dev BEFORE lspconfig
+-- NOTE: (IMPORTANT)make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})
 lua_ls(on_attach)
 
