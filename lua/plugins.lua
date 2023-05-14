@@ -280,7 +280,8 @@ local plugins = {
     end,
   },
 
-  -- vim-autotag(work with treesitter) TODO: set dependencies?
+  -- TODO: set dependencies?
+  -- vim-autotag(work with treesitter)
   "windwp/nvim-ts-autotag",
 
   "mg979/vim-visual-multi",
@@ -420,7 +421,8 @@ local plugins = {
 
   "rust-lang/rust.vim",
 
-  -- Debugging(TODO: studying...)
+  -- TODO: studying...
+  -- Debugging
   "nvim-lua/plenary.nvim",
 
   "mfussenegger/nvim-dap",
