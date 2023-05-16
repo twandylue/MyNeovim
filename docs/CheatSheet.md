@@ -103,6 +103,14 @@ or
 :%!jq . " format all file with jq
 ```
 
+### Substitute in visual selection
+
+```plain
+:s/\%V[word1]/[word_after]/g
+```
+
+[Learn more](https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection)
+
 ## Keys Map
 
 ### [Splitting](https://stackoverflow.com/a/7982215)
