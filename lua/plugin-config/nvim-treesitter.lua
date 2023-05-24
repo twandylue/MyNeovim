@@ -34,7 +34,6 @@ ts.setup({
     "css",
     "html",
     "http",
-    "help",
     "norg",
     "norg_meta",
     "graphql",
