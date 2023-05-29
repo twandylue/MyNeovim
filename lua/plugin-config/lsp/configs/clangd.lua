@@ -14,6 +14,10 @@ local clangd = function(on_attach)
       ".git"
     ),
     single_file_support = true,
+    cmd = {
+      "clangd",
+      "--offset-encoding=utf-16",
+    },
   })
 end
 
