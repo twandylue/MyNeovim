@@ -103,6 +103,12 @@ or
 :%!jq . " format all file with jq
 ```
 
+### Exit insert mode with :normal command
+
+To add a literal \<ESC\> to your command, while in insert mode, press CTRL-V then \<ESC\>
+
+[Learn more](https://stackoverflow.com/questions/4010890/vim-exit-insert-mode-with-normal-command)
+
 ### Substitute in visual selection
 
 ```plain

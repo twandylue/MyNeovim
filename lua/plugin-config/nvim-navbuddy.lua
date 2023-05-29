@@ -4,8 +4,6 @@ if not status then
   return
 end
 
-local actions = require("nvim-navbuddy.actions")
-
 navbuddy.setup({
   window = {
     border = "solid", -- "single", "rounded", "double", "solid", "none"
