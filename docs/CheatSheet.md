@@ -50,7 +50,7 @@ In Linux or Unix
 :grep <word> <file>
 
 :grep test ./src/main.rs
-:grep test ** " grep from all file under the current directory(pwd)
+:grep test -r * " recursively grep from all file under the current directory(pwd)
 ```
 
 In Windows
@@ -59,7 +59,7 @@ In Windows
 :vimgrep <word> <file>
 
 :vimgrep test ./src/main.rs
-:vimgrep test ** " grep from all file under the current directory(pwd)
+:vimgrep test ** " recursively grep from all file under the current directory(pwd)
 ```
 
 [Learn more](https://zhuanlan.zhihu.com/p/148280898)
