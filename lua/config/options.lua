@@ -65,10 +65,10 @@ vim.g.completeopt = "menu,menuone,noselect,noinsert"
 -- 样式
 vim.o.termguicolors = true
 vim.opt.termguicolors = true
--- 是否显示不可见字符
-vim.o.list = false
--- 不可见字符的显示，这里只把空格显示为一个点
-vim.o.listchars = "space:·,tab:··"
+-- highlight trailing whitespace
+-- vim.fn.matchadd("errorMsg", [[\s\+$]])
+vim.opt.list = true
+vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~", space = ".", precedes = "<", extends = ">" }
 -- 补全增强
 vim.o.wildmenu = true
 -- Don't pass messages to |ins-completin menu|
@@ -90,6 +90,11 @@ vim.o.history = 150
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
+-- native package used for quickfix in vim
+vim.cmd([[
+  packadd cfilter
+]])
+
 vim.cmd([[
   " set global status line
   set laststatus=3
@@ -103,8 +108,3 @@ vim.cmd([[
   " let g:netrw_localrmdir = '!rm -rf'
   let g:netrw_localcopydircmd = 'cp -r'
 ]])
-
--- highlight trailing whitespace
--- vim.fn.matchadd("errorMsg", [[\s\+$]])
-vim.opt.list = true
-vim.opt.listchars = { trail = ".", eol = "↵", tab = ">~", space = ".", precedes = "<", extends = ">" }
