@@ -64,6 +64,21 @@ In Windows
 
 [Learn more](https://zhuanlan.zhihu.com/p/148280898)
 
+#### Use ripgrep instead of native grep
+
+In .vimrc
+
+```vimrc
+" use rg instead of native grep
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+  set grepformat=%f:%l:%c:%m
+endif
+```
+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [Learn more](https://phelipetls.github.io/posts/extending-vim-with-ripgrep/)
+
 ### [The working directory](https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file)
 
 ```plain
@@ -117,7 +132,7 @@ To add a literal \<ESC\> to your command, while in insert mode, press CTRL-V the
 
 [Learn more](https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection)
 
-## Keys Map
+## Key Map
 
 ### [Splitting](https://stackoverflow.com/a/7982215)
 
@@ -128,9 +143,18 @@ ctrl-w_H/J/K/L  " move the current window to the far left, bottom, top or right 
 ### Jumping
 
 ```plain
-.`:        " Jump to last change.
-ctrl + o:  " Jump backward to cursor location.
-ctrl + i:  " Jump forward to cursor location.
+ctrl_o   " Jump backward to cursor location.
+ctrl_i   " Jump forward to cursor location.
+g;       " Jump to the older change.
+g.       " Jump to the newer change.
+```
+
+### Get the Current File Name
+
+In `insert mode`
+
+```plain
+ctrl_r %
 ```
 
 ## Plugins
