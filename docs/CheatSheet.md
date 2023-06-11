@@ -118,6 +118,16 @@ or
 :%!jq . " format all file with jq
 ```
 
+### Remove Lines Matching a Pattern
+
+```plain
+:g/pattern/d  " Remove lines matching pattern
+:g!/pattern/d " Remove lines that do NOT match the pattern
+:v/pattern/d  " Also removes lines that do not match the pattern
+```
+
+[Learn more](https://vimtricks.com/p/remove-lines-matching-a-pattern-in-vim/)
+
 ### Exit insert mode with :normal command
 
 To add a literal \<ESC\> to your command, while in insert mode, press CTRL-V then \<ESC\>
@@ -131,6 +141,14 @@ To add a literal \<ESC\> to your command, while in insert mode, press CTRL-V the
 ```
 
 [Learn more](https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection)
+
+### Substitute words in QuickFix
+
+```plain
+:cdo s/foo/bar/g | update
+```
+
+[Learn more](https://chrisarcand.com/vims-new-cdo-command/)
 
 ## Key Map
 
