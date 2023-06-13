@@ -17,18 +17,15 @@ local opts = {
 }
 
 map("n", "<ESC>", ":nohlsearch<CR>", opts)
-map("n", "<leader>fs", ":w | :e<CR>", opts)
 map("n", "<leader>s", ":w<CR>", opts)
 map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>m", "`", opts)
-map("n", "H", "^", opts)
-map("n", "L", "$", opts)
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "Q", "<nop>", opts)
-map("i", "<C-o>", "<C-o>a", opts)
+map("i", "<C-f>", "<C-o>a", opts)
 map("i", "<C-a>", "<Home>", opts)
 map("i", "<C-e>", "<End>", opts)
 map("i", "<C-d>", "<Delete>", opts)
@@ -37,7 +34,7 @@ map("x", "<leader>p", '"_dP', opts)
 map("n", "gj", "gT", { noremap = false })
 map("n", "gk", "gt", { noremap = false })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
-
+map("n", "*", "*<C-o>", opts)
 map("", "<leader>w", "<C-W>", opts)
 
 if vim.fn.has("mac") == 1 then
@@ -64,8 +61,6 @@ else
   map("n", "<A-=>", ":vertical res +3<Enter>", opts)
   map("n", "<A-right>", ":vertical res -3<Enter>", opts)
 end
-
-map("i", "jj", "<Esc>", { noremap = false })
 
 -- With Plugins
 -- nvim-tree
@@ -98,7 +93,6 @@ map("n", "<leader>gD", '<cmd>Gitsigns diffthis "~"<CR>', opts)
 map("n", "<leader>g/", "<Plug>(easymotion-sn)", opts)
 
 -- Telescope
--- map('n', '<leader>.', "<cmd>lua require('telescope.builtin').find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview = true})<CR>", opts)
 map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts)
 map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
@@ -175,5 +169,5 @@ vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
--- Rest(httpclient) (TODO: should consider filetype)
-map("n", "<leader>cc", "<Plug>RestNvim", opts)
+-- Rest(httpclient) ( TODO: should consider filetype)
+-- map("n", "<leader>cc", "<Plug>RestNvim", opts)
