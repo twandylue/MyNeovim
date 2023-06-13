@@ -44,10 +44,10 @@ if vim.fn.has("mac") == 1 then
   map("v", "<M-j>", ":m '>+1<CR>gv", opts)
   map("v", "<M-k>", ":m '<-2<CR>gv", opts)
   -- -- resize window
-  map("n", "<M-->", ":vertical res -3<Enter>", opts)
-  map("n", "<M-left>", ":vertical res +3<Enter>", opts)
-  map("n", "<M-=>", ":vertical res +3<Enter>", opts)
-  map("n", "<M-right>", ":vertical res -3<Enter>", opts)
+  map("n", "<M-Down>", ":resize -1<Enter>", opts)
+  map("n", "<M-Up>", ":resize +1<Enter>", opts)
+  map("n", "<M-Left>", ":vertical resize +1<Enter>", opts)
+  map("n", "<M-Right>", ":vertical resize -1<Enter>", opts)
 else
   -- in win
   -- move entire lines
