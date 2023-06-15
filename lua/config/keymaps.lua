@@ -34,7 +34,7 @@ map("x", "<leader>p", '"_dP', opts)
 map("n", "gj", "gT", { noremap = false })
 map("n", "gk", "gt", { noremap = false })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
-map("n", "*", "*<C-o>", opts)
+-- map("n", "*", "*<C-o>", opts)
 map("", "<leader>w", "<C-W>", opts)
 
 if vim.fn.has("mac") == 1 then

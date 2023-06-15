@@ -1,5 +1,5 @@
 -- 右侧参考线，超过表示代码太长了，考虑换行
-vim.wo.colorcolumn = "140"
+-- vim.wo.colorcolumn = "140"
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
