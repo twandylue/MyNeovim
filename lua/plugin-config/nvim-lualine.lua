@@ -45,7 +45,7 @@ line.setup({
     lualine_c = {},
     lualine_x = {},
     lualine_y = { "lsp_progress" },
-    lualine_z = { "tabs" }
+    lualine_z = { "tabs" },
   },
   winbar = {},
   inactive_winbar = {},
