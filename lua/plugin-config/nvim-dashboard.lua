@@ -38,15 +38,6 @@ db.setup({
         action = "Telescope project",
       },
       {
-        icon = "ﮧ  ",
-        icon_hl = "Title",
-        desc = "Terminal",
-        desc_hl = "String",
-        key = ":term",
-        key_hl = "Number",
-        action = ":terminal",
-      },
-      {
         icon = "  ",
         icon_hl = "Title",
         desc = "File Explorer",
@@ -65,7 +56,7 @@ db.setup({
         action = "Telescope oldfiles",
       },
       {
-        icon = "  ",
+        icon = "  ",
         icon_hl = "Title",
         desc = "Find File",
         desc_hl = "String",
@@ -74,7 +65,7 @@ db.setup({
         action = "Telescope find_files find_command=rg,--hidden,--files",
       },
       {
-        icon = "  ",
+        icon = "  ",
         icon_hl = "Title",
         desc = "Find Text",
         desc_hl = "String",

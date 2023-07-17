@@ -6,7 +6,7 @@ end
 
 navbuddy.setup({
   window = {
-    border = "solid", -- "single", "rounded", "double", "solid", "none"
+    border = "double", -- "single", "rounded", "double", "solid", "none"
     size = "90%",
     position = "50%",
   },
