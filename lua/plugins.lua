@@ -484,7 +484,7 @@ local plugins = {
     -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
     -- ref: https://github.com/nvim-neorg/neorg
     build = ":Neorg sync-parsers", -- This is the important bit!
-    dependencies = { { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" } },
+    dependencies = { { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" }, { "nvim-neorg/neorg-telescope" } },
   },
 
   {

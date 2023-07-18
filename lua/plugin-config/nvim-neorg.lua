@@ -7,6 +7,7 @@ end
 
 neorg.setup({
   load = {
+    ["core.integrations.telescope"] = {},
     ["core.defaults"] = {},
     ["core.keybinds"] = {
       config = {
