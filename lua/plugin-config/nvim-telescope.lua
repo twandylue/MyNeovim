@@ -4,15 +4,12 @@ if not status then
   return
 end
 
-telescope.load_extension("file_browser")
-local fb_actions = require("telescope").extensions.file_browser.actions
 telescope.load_extension("project")
 telescope.load_extension("notify")
 telescope.load_extension("live_grep_args")
 
 local actions = require("telescope.actions")
 local icons = require("plugin-config.icons")
--- local trouble = require "trouble.providers.telescope"
 local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup({
@@ -30,9 +27,9 @@ telescope.setup({
       "%.sqlite3",
       "%.ipynb",
       "node_modules/*",
-      -- "%.jpg",
-      -- "%.jpeg",
-      -- "%.png",
+      "%.jpg",
+      "%.jpeg",
+      "%.png",
       "%.svg",
       "%.otf",
       "%.ttf",
@@ -75,8 +72,10 @@ telescope.setup({
     },
     mappings = {
       i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
+        -- ["<C-n>"] = actions.cycle_history_next,
+        -- ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
@@ -97,8 +96,6 @@ telescope.setup({
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
 
-        -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<Tab>"] = actions.complete_tag,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -108,7 +105,6 @@ telescope.setup({
         ["<C-s>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
-        -- ["<C-t>"] = trouble.smart_open_with_trouble,
         ["<C-b>"] = actions.results_scrolling_up,
         ["<C-f>"] = actions.results_scrolling_down,
         ["<C-u>"] = actions.preview_scrolling_up,
@@ -119,6 +115,8 @@ telescope.setup({
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
         ["j"] = actions.move_selection_next,
         ["k"] = actions.move_selection_previous,
         ["H"] = actions.move_to_top,
@@ -169,17 +167,41 @@ telescope.setup({
     colorscheme = {
       enable_preview = true,
     },
+    lsp_implementations = {
+      layout_strategy = "vertical",
+      layout_config = {
+        width = 0.9,
+        height = 0.9,
+        preview_cutoff = 1,
+        mirror = false,
+      },
+    },
     lsp_references = {
-      theme = "ivy",
-      initial_mode = "normal",
+      layout_strategy = "vertical",
+      layout_config = {
+        width = 0.9,
+        height = 0.9,
+        preview_cutoff = 1,
+        mirror = false,
+      },
     },
     lsp_definitions = {
-      theme = "ivy",
-      initial_mode = "normal",
+      layout_strategy = "vertical",
+      layout_config = {
+        width = 0.9,
+        height = 0.9,
+        preview_cutoff = 1,
+        mirror = false,
+      },
     },
-    lsp_implementations = {
-      theme = "ivy",
-      initial_mode = "normal",
+    lsp_diagnostics = {
+      layout_strategy = "vertical",
+      layout_config = {
+        width = 0.9,
+        height = 0.9,
+        preview_cutoff = 1,
+        mirror = false,
+      },
     },
     lsp_declarations = {
       theme = "dropdown",
@@ -198,29 +220,6 @@ telescope.setup({
         },
       },
     },
-    file_browser = {
-      theme = "dropdown",
-      hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-          ["<C-w>"] = function()
-            vim.cmd("normal vbd")
-          end,
-        },
-        ["n"] = {
-          ["N"] = fb_actions.create,
-          ["h"] = fb_actions.goto_parent_dir,
-          ["/"] = function()
-            vim.cmd("startinsert")
-          end,
-        },
-      },
-    },
-    project = {
-      -- base_dirs = {},
-      -- hidden_files = false, -- default: false
-      -- theme = "dropdown",
-      -- order_by = "asc"
-    },
+    project = {},
   },
 })
