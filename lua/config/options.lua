@@ -95,6 +95,14 @@ vim.cmd([[
   packadd cfilter
 ]])
 
+-- use rg instead of native grep
+vim.cmd([[
+  if executable("rg")
+    set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
+    set grepformat=%f:%l:%c:%m
+  endif
+]])
+
 vim.cmd([[
   " set global status line
   set laststatus=3
