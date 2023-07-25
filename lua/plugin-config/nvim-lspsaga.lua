@@ -29,10 +29,9 @@ saga.setup({
   border_style = "rounded",
   finder = {
     keys = {
-      expand_or_jump = "<CR>",
       vsplit = "<C-v>",
       split = "<C-s>",
-      tabe = "<C-t>",
+      tabnew = "<C-t>",
       quit = { "q", "<ESC>" },
     },
   },

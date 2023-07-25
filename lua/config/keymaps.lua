@@ -119,10 +119,9 @@ map("n", "<leader>t", "<Cmd>Lspsaga outline<cr>", opts)
 map("n", "]e", "<Cmd>Lspsaga diagnostic_jump_next<cr>", opts)
 map("n", "[e", "<Cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 map("n", "<tab>h", "<Cmd>Lspsaga hover_doc<cr>", opts)
-map("n", "<tab>f", "<Cmd>Lspsaga lsp_finder<cr>", opts)
+map("n", "<tab>f", "<Cmd>Lspsaga finder<cr>", opts)
 map("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
 map("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
--- map("n", "<tab>d", "<cmd>Lspsaga goto_definition<CR>", opts)
 
 -- basic lsp api
 -- map("n", "<tab>d", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)

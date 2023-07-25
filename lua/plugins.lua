@@ -420,7 +420,6 @@ local plugins = {
   -- for Debug
   {
     "mfussenegger/nvim-dap",
-    enabled = false,
   },
 
   -- Mason lsp server installer and manager
