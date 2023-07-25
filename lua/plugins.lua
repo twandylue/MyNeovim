@@ -91,9 +91,15 @@ local plugins = {
   },
 
   -- colorscheme: base16
-  "RRethy/nvim-base16",
+  {
+    "RRethy/nvim-base16",
+    enabled = false,
+  },
 
-  "tpope/vim-vinegar",
+  {
+    "tpope/vim-vinegar",
+    enabled = false,
+  },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -101,7 +107,7 @@ local plugins = {
       require("plugin-config.nvim-tree")
     end,
     dependencies = {
-      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+      "nvim-tree/nvim-web-devicons",
     },
     enabled = false,
   },
@@ -129,10 +135,6 @@ local plugins = {
   -- nvim-telescope extensions
   {
     "nvim-telescope/telescope-live-grep-args.nvim",
-    dependencies = "nvim-telescope/telescope.nvim",
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
   },
   {
@@ -171,7 +173,10 @@ local plugins = {
   },
 
   -- lualine-lsp-progress
-  "arkav/lualine-lsp-progress",
+  {
+    "arkav/lualine-lsp-progress",
+    dependencies = "nvim-lualine/lualine.nvim",
+  },
 
   "easymotion/vim-easymotion",
 
@@ -271,10 +276,6 @@ local plugins = {
       require("plugin-config.nvim-treesitter-context")
     end,
   },
-
-  -- TODO: set dependencies?
-  -- vim-autotag(work with treesitter)
-  "windwp/nvim-ts-autotag",
 
   "mg979/vim-visual-multi",
 
@@ -413,11 +414,14 @@ local plugins = {
 
   "rust-lang/rust.vim",
 
-  -- TODO: studying...
-  -- Debugging
   "nvim-lua/plenary.nvim",
 
-  "mfussenegger/nvim-dap",
+  -- TODO: still in studying...
+  -- for Debug
+  {
+    "mfussenegger/nvim-dap",
+    enabled = false,
+  },
 
   -- Mason lsp server installer and manager
   { "williamboman/mason.nvim" },
@@ -446,6 +450,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-luasnip")
     end,
+    enabled = false,
   },
 
   -- File icons
