@@ -512,6 +512,7 @@ local plugins = {
     enabled = false,
   },
 
+  -- TODO: need to be removed
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
