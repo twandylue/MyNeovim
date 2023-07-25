@@ -163,14 +163,6 @@ local plugins = {
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   {
-    "feline-nvim/feline.nvim",
-    config = function()
-      require("plugin-config.nvim-feline")
-    end,
-    enabled = false,
-  },
-
-  {
     "nvim-lualine/lualine.nvim",
     config = function()
       require("plugin-config.nvim-lualine")
