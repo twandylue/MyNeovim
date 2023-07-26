@@ -449,7 +449,6 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-luasnip")
     end,
-    enabled = false,
   },
 
   -- File icons
