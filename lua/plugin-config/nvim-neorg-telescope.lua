@@ -11,8 +11,10 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
   -- NOTE: Map all the below keybinds only when the "norg" mode is active
   keybinds.map_event_to_mode("norg", {
     n = {
-      { "[g", "core.integrations.telescope.find_linkable" },
-      { "[i", "core.integrations.telescope.insert_link" },
+      { "[l", "core.integrations.telescope.find_linkable" },
+      { "[h", "core.integrations.telescope.search_headings" },
+      { "[il", "core.integrations.telescope.insert_link" },
+      { "[if", "core.integrations.telescope.insert_file_link" },
       { "<leader>.", "core.integrations.telescope.find_norg_files" },
     },
   }, {
