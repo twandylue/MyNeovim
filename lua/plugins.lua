@@ -475,6 +475,7 @@ local plugins = {
     "nvim-neorg/neorg",
     config = function()
       require("plugin-config.nvim-neorg")
+      require("plugin-config.nvim-neorg-telescope")
     end,
     -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
     -- ref: https://github.com/nvim-neorg/neorg
