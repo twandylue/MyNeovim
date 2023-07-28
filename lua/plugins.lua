@@ -519,8 +519,17 @@ local plugins = {
       require("plugin-config.nvim-null-ls")
     end,
     dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-  -- formatter in lua
+  -- lint
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require("plugin-config.nvim-lint")
+    end,
+  },
+
+  -- formatter
   {
     "mhartington/formatter.nvim",
     config = function()

@@ -5,6 +5,8 @@ if not status then
 end
 
 local util = require("formatter.util")
+
+-- NOTE: Use the formatter in lsp: c, rust, python
 formatter.setup({
   logging = true,
   log_level = vim.log.levels.WARN,
