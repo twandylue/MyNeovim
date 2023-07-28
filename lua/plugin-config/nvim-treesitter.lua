@@ -14,8 +14,12 @@ if vim.fn.has("win32") == 1 then
 end
 
 ts.setup({
+  auto_install = true,
+  ignore_install = {},
+  modules = {},
   ensure_installed = {
     "bash",
+    "c",
     "c_sharp",
     "python",
     "rust",
