@@ -96,12 +96,10 @@ vim.cmd([[
 ]])
 
 -- use rg instead of native grep
-vim.cmd([[
-  if executable("rg")
-    set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
-    set grepformat=%f:%l:%c:%m
-  endif
-]])
+if vim.fn.executable("rg") == 1 then
+  vim.o.grepprg = "rg --vimgrep --smart-case --hidden --glob '!.git'"
+  vim.o.grepformat = "%f:%l:%c:%m"
+end
 
 vim.cmd([[
   " set global status line

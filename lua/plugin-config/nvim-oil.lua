@@ -1,7 +1,7 @@
 local status, oil = pcall(require, "oil")
 if not status then
   vim.notify("oil-nvim is not installed", vim.log.levels.ERROR)
-  print("null-ls is not installed")
+  print("oil-nvim is not installed")
   return
 end
 
