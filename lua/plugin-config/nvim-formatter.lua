@@ -6,7 +6,7 @@ end
 
 local util = require("formatter.util")
 
--- NOTE: Use the formatter in lsp: c, rust, python
+-- NOTE: Use the formatter in lsp: c, rust
 formatter.setup({
   logging = true,
   log_level = vim.log.levels.WARN,
@@ -42,6 +42,9 @@ formatter.setup({
           stdin = false,
         }
       end,
+    },
+    python = {
+      require("formatter.filetypes.python").black,
     },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
