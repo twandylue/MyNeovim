@@ -162,5 +162,5 @@ vim.keymap.set("n", "<C-\\>", [[<Cmd>ToggleTerm<CR>]], opts) -- open terminal on
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
--- Rest(httpclient) ( TODO: should consider filetype)
--- map("n", "<leader>cc", "<Plug>RestNvim", opts)
+-- Only available in *.http
+map("n", "<leader>cc", "<Plug>RestNvim", opts)

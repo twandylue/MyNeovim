@@ -552,6 +552,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-rest")
     end,
+    ft = { "http" },
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
