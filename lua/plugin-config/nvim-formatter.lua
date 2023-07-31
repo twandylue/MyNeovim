@@ -53,3 +53,11 @@ formatter.setup({
     },
   },
 })
+
+-- NOTE: format on save
+vim.cmd([[
+  augroup FormatAutogroup
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+  augroup END
+]])

@@ -8,7 +8,6 @@ end
 lsp_signature.setup({
   bind = true,
   handler_opts = { border = "rounded" },
-  hint_prefix = " ",
-  -- hi_parameter = "IncSearch",
+  hint_prefix = " ",
   hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
 })
