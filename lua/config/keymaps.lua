@@ -164,3 +164,32 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 -- Only available in *.http
 map("n", "<leader>cc", "<Plug>RestNvim", opts)
+
+-- NOTE: Setting for Neovide
+if vim.g.neovide then
+  local keymap = vim.keymap.set
+
+  local function neovideScale(amount)
+    local temp = vim.g.neovide_scale_factor + amount
+
+    if temp < 0.5 then
+      return
+    end
+
+    vim.g.neovide_scale_factor = temp
+  end
+
+  keymap("n", "<D-=>", function()
+    neovideScale(0.1)
+  end)
+  keymap("n", "<C-=>", function()
+    neovideScale(0.1)
+  end)
+
+  keymap("n", "<D-->", function()
+    neovideScale(-0.1)
+  end)
+  keymap("n", "<C-->", function()
+    neovideScale(-0.1)
+  end)
+end
