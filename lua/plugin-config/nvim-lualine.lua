@@ -40,8 +40,8 @@ line.setup({
     lualine_z = {},
   },
   tabline = {
-    lualine_a = { "windows" },
-    lualine_b = {},
+    lualine_a = { "buffers" },
+    lualine_b = { "filename" },
     lualine_c = {},
     lualine_x = {},
     lualine_y = { "lsp_progress" },
@@ -49,5 +49,5 @@ line.setup({
   },
   winbar = {},
   inactive_winbar = {},
-  extensions = { "quickfix", "toggleterm", "fugitive" },
+  extensions = { "quickfix", "toggleterm", "fugitive", "lazy", "man", "trouble" },
 })
