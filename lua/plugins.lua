@@ -15,7 +15,7 @@ local plugins = {
       vim.api.nvim_command("highlight Cursor guibg=red")
       -- vim.api.nvim_command("hi! LineNr guibg=#2e2d2d ctermbg=none")
     end,
-    enabled = true,
+    enabled = false,
   },
 
   -- colorscheme: gruvbox
@@ -27,7 +27,7 @@ local plugins = {
     config = function()
       require("colorschemes.gruvbox")
     end,
-    enabled = false,
+    enabled = true,
   },
 
   -- colorscheme: gruvbox-baby
