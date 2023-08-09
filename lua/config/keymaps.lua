@@ -192,4 +192,9 @@ if vim.g.neovide then
   keymap("n", "<C-->", function()
     neovideScale(-0.1)
   end)
+
+  keymap("n", "<D-j>", ":m .+1<CR>", opts)
+  keymap("n", "<D-k>", ":m .-2<CR>", opts)
+  keymap("v", "<D-j>", ":m '>+1<CR>gv", opts)
+  keymap("v", "<D-k>", ":m '<-2<CR>gv", opts)
 end
