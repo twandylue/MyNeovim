@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "gitcommit", "markdown" },
+  pattern = { "gitcommit", "markdown", "norg" },
   callback = function()
     vim.opt_local.wrap = true
     -- Get the break at a word boundary

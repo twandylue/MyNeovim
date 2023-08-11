@@ -193,6 +193,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-comment")
     end,
+    lazy = false,
   },
 
   {

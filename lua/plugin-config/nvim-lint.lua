@@ -4,7 +4,7 @@ if not status then
   return
 end
 
--- NOTE: use the linter in lsp: sh, yaml,
+-- NOTE: use the linter in LSP: sh, yaml,
 lint.linters_by_ft = {
   markdown = { "markdownlint" },
 }

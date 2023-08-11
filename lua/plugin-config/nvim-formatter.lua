@@ -6,7 +6,7 @@ end
 
 local util = require("formatter.util")
 
--- NOTE: Use the formatter in lsp: c, rust
+-- NOTE: Use the formatter in LSP: c, rust
 formatter.setup({
   logging = true,
   log_level = vim.log.levels.WARN,
