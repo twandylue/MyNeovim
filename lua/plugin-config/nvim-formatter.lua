@@ -6,7 +6,6 @@ end
 
 local util = require("formatter.util")
 
--- NOTE: Use the formatter in LSP: c, rust
 formatter.setup({
   logging = true,
   log_level = vim.log.levels.WARN,
@@ -55,9 +54,15 @@ formatter.setup({
 })
 
 -- NOTE: format on save
-vim.cmd([[
-  augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePost * FormatWrite
-  augroup END
-]])
+vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  group = "FormatAutogroup",
+  callback = function()
+    local ft = vim.bo.filetype
+    -- NOTE: Use the formatter in LSP: c, cpp, rust and don't format in markdown, norg
+    if (ft ~= "c") and (ft ~= "cpp") and (ft ~= "rust") and (ft ~= "markdown") and (ft ~= "norg") then
+      vim.cmd("FormatWrite")
+    end
+  end,
+})
