@@ -24,32 +24,37 @@ if not status then
   return
 end
 
-local function check_if_active_client_in_current_buf()
-  local bufnr = vim.fn.bufnr()
-  local active_client = vim.lsp.get_active_clients({ bufnr = bufnr })
-  return next(active_client) ~= nil
-end
-
 local on_attach_rust_tool = function(client, bufnr)
   navbuddy.attach(client, bufnr)
-  -- formatting with rust tool
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command([[augroup Format]])
-    vim.api.nvim_command([[autocmd! * <buffer>]])
-    vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-    vim.api.nvim_command([[augroup END]])
+    -- NOTE: ref: https://neovim.discourse.group/t/vimscript-autocmd-to-lua/2932/4
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function()
+        local current_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+        if #current_clients >= 1 then
+          vim.lsp.buf.format()
+        end
+      end,
+      group = vim.api.nvim_create_augroup("lsp_document_format", { clear = true }),
+    })
   end
 end
 
 local on_attach = function(client, bufnr)
   navbuddy.attach(client, bufnr)
   inlay_hinter.on_attach(client, bufnr)
-  -- formatting with default formatter in lsp
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command([[augroup Format]])
-    vim.api.nvim_command([[autocmd! * <buffer>]])
-    vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
-    vim.api.nvim_command([[augroup END]])
+    -- formatting with default formatter in lsp
+    -- NOTE: ref: https://neovim.discourse.group/t/vimscript-autocmd-to-lua/2932/4
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function()
+        local current_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+        if #current_clients >= 1 then
+          vim.lsp.buf.format()
+        end
+      end,
+      group = vim.api.nvim_create_augroup("lsp_document_format", { clear = true }),
+    })
   end
 end
 
@@ -69,7 +74,6 @@ lua_dev.setup({})
 lua_ls(on_attach)
 
 local M = {
-  on_attach_rust_tool = nil,
+  on_attach_rust_tool = on_attach_rust_tool,
 }
-M.on_attach_rust_tool = on_attach_rust_tool
 return M
