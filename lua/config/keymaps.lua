@@ -198,4 +198,6 @@ if vim.g.neovide then
   keymap("n", "<D-k>", ":m .-2<CR>", opts)
   keymap("v", "<D-j>", ":m '>+1<CR>gv", opts)
   keymap("v", "<D-k>", ":m '<-2<CR>gv", opts)
+
+  keymap("n", "<D-.>", "<Cmd>Lspsaga code_action<cr>", opts)
 end
