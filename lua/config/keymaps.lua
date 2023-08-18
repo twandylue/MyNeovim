@@ -97,6 +97,7 @@ map("n", "<leader>.", "<cmd>lua require('telescope.builtin').find_files({preview
 map("n", "<leader>g.", "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>", opts)
 map("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
 map("n", "[fg", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+map("n", "[fh", "<cmd>lua require('telescope.builtin').find_files({preview = true, hidden = true})<CR>", opts)
 map("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts)
 map("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
 map("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)

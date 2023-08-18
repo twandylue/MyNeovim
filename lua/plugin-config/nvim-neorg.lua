@@ -34,7 +34,8 @@ neorg.setup({
         workspaces = {
           work = "~/Desktop/My-Neorg/work",
           life = "~/Desktop/My-Neorg/life",
-          my_ws = "~/Desktop/MyWorkNotes/neorg", -- Format: <name_of_workspace> = <path_to_workspace_root>
+          mines = "~/Desktop/My-Neorg/mines",
+          my_ws = "~/Desktop/My-Neorg/neorg",
         },
         autochdir = true, -- Automatically change the directory to the current workspace's root every time
         index = "index.norg", -- The name of the main (root) .norg file

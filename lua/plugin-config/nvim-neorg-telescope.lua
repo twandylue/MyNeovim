@@ -13,6 +13,8 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
     n = {
       { "[l", "core.integrations.telescope.find_linkable" },
       { "[h", "core.integrations.telescope.search_headings" },
+      { "[m", "core.integrations.treesitter.previous.heading" },
+      { "]m", "core.integrations.treesitter.next.heading" },
       { "[il", "core.integrations.telescope.insert_link" },
       { "[if", "core.integrations.telescope.insert_file_link" },
       { "<leader>.", "core.integrations.telescope.find_norg_files" },
