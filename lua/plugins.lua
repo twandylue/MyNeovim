@@ -27,6 +27,16 @@ local plugins = {
     config = function()
       require("colorschemes.gruvbox")
     end,
+    enabled = false,
+  },
+
+  {
+    "dotsilas/darcubox-nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme darcubox")
+    end,
     enabled = true,
   },
 
