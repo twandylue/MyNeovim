@@ -6,9 +6,10 @@ vim.g.copilot_filetypes = {
   ["rust"] = true,
   ["c"] = true,
   ["c#"] = true,
-  ["c++"] = true,
+  ["cpp"] = true,
   ["go"] = true,
   ["python"] = true,
+  ["sh"] = true,
 }
 
 -- vim.api.nvim_command([[highlight CopilotSuggestion guifg=#555555 ctermfg=8]])
