@@ -260,6 +260,11 @@ local plugins = {
   "dstein64/nvim-scrollview",
 
   {
+    "lervag/vimtex",
+    ft = { "tex" },
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
     config = function()
@@ -363,6 +368,7 @@ local plugins = {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
+      "kdheepak/cmp-latex-symbols",
     },
     config = function()
       require("plugin-config.nvim-cmp")

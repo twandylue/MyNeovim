@@ -9,6 +9,7 @@ local rust = require("plugin-config.lsp.configs.rust")
 local lua_ls = require("plugin-config.lsp.configs.lua_ls")
 local tsserver = require("plugin-config.lsp.configs.tsserver")
 local yamlls = require("plugin-config.lsp.configs.yamlls")
+local latexls = require("plugin-config.lsp.configs.latex")
 
 local inlay_hinter = require("inlay-hints")
 
@@ -68,6 +69,7 @@ pyright(on_attach)
 -- sqls(on_attach)
 dockerls(on_attach)
 clangd(on_attach)
+latexls(on_attach)
 
 -- NOTE: (IMPORTANT)make sure to setup lua-dev BEFORE lspconfig
 lua_dev.setup({})

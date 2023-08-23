@@ -29,6 +29,12 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "neorg" },
+    {
+      name = "latex_symbols",
+      option = {
+        strategy = 0, -- mixed
+      },
+    },
   }),
   formatting = {
     format = lspkind.cmp_format({
