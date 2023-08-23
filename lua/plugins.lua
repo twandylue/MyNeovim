@@ -27,7 +27,7 @@ local plugins = {
     config = function()
       require("colorschemes.gruvbox")
     end,
-    enabled = false,
+    enabled = true,
   },
 
   {
@@ -37,7 +37,7 @@ local plugins = {
     config = function()
       vim.cmd("colorscheme darcubox")
     end,
-    enabled = true,
+    enabled = false,
   },
 
   -- colorscheme: gruvbox-baby
