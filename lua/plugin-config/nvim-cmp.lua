@@ -26,6 +26,7 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
+    { name = "luasnip", option = { use_show_condition = false } },
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "neorg" },

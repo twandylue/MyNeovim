@@ -261,6 +261,11 @@ local plugins = {
 
   {
     "lervag/vimtex",
+    config = function()
+      vim.cmd([[
+        let g:vimtex_view_method = 'skim'
+      ]])
+    end,
     ft = { "tex" },
   },
 
@@ -463,9 +468,23 @@ local plugins = {
 
   {
     "L3MON4D3/LuaSnip",
+    version = "2.*",
     config = function()
       require("plugin-config.nvim-luasnip")
     end,
+    build = "make install_jsregexp",
+    dependencies = { "rafamadriz/friendly-snippets", "saadparwaiz1/cmp_luasnip" },
+  },
+
+  {
+    "iurimateus/luasnip-latex-snippets.nvim",
+    -- vimtex isn't required if using treesitter
+    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+    config = function()
+      -- require("luasnip-latex-snippets").setup()
+      require("luasnip-latex-snippets").setup({ use_treesitter = true })
+    end,
+    -- enabled = false,
   },
 
   -- File icons
