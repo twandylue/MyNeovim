@@ -21,7 +21,7 @@ cmp.setup({
       select = true,
     }),
     ["<TAB>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
+      behavior = cmp.ConfirmBehavior.insert,
       select = true,
     }),
   }),
@@ -32,7 +32,7 @@ cmp.setup({
     {
       name = "latex_symbols",
       option = {
-        strategy = 0, -- mixed
+        strategy = 2,
       },
     },
   }),
