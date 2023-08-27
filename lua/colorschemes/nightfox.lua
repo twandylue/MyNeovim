@@ -21,7 +21,6 @@ local options = {
     types = "NONE",
     variables = "NONE",
   },
-  -- TODO: How to enable modules...?
   modules = {
     telescope = true,
     hop = true,

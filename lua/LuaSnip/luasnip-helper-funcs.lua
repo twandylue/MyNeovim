@@ -1,3 +1,6 @@
+-- NOTE:
+-- Ref: https://www.ejmastnak.com/tutorials/vim-latex/intro/
+
 local M = {}
 
 local ls = require("luasnip")

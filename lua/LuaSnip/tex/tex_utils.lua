@@ -2,6 +2,7 @@
 
 -- TODO: Not work very well.
 local tex_utils = {}
+
 tex_utils.in_mathzone = function() -- math context detection
   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
