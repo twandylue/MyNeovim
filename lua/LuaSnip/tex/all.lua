@@ -31,9 +31,9 @@ M = {
     })
   ),
   s(
-    { trig = "h1", dscr = "Top-level section" },
+    { trig = "h1", dscr = "Top-level section", snippetType = "autosnippet" },
     fmta([[\section{<>}]], { i(1) }),
-    { condition = line_begin } -- set condition in the `opts` table
+    { condition = line_begin }
   ),
 
   s(
@@ -49,8 +49,7 @@ M = {
         i(2),
         rep(1),
       }
-    ),
-    { condition = line_begin }
+    )
   ),
 }
 

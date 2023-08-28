@@ -1,30 +1,87 @@
--- Some LaTeX-specific conditional expansion functions (requires VimTeX)
+-- This Lua module provides utility functions using nvim-treesitter to check the
+-- node position in the AST.
+-- https://github.com/frankroeder/dotfiles/blob/657a5dc559e9ff526facc2e74f9cc07a1875cac6/nvim/lua/tsutils.lua#L59
 
--- TODO: Not work very well.
-local tex_utils = {}
+local has_treesitter, ts = pcall(require, "vim.treesitter")
 
-tex_utils.in_mathzone = function() -- math context detection
-  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
-end
-tex_utils.in_text = function()
-  return not tex_utils.in_mathzone()
-end
-tex_utils.in_comment = function() -- comment detection
-  return vim.fn["vimtex#syntax#in_comment"]() == 1
-end
-tex_utils.in_env = function(name) -- generic environment detection
-  local is_inside = vim.fn["vimtex#env#is_inside"](name)
-  return (is_inside[1] > 0 and is_inside[2] > 0)
-end
--- A few concrete environments---adapt as needed
-tex_utils.in_equation = function() -- equation environment detection
-  return tex_utils.in_env("equation")
-end
-tex_utils.in_itemize = function() -- itemize environment detection
-  return tex_utils.in_env("itemize")
-end
-tex_utils.in_tikz = function() -- TikZ picture environment detection
-  return tex_utils.in_env("tikzpicture")
+local M = {}
+
+local MATH_ENVIRONMENTS = {
+  displaymath = true,
+  equation = true,
+  eqnarray = true,
+  align = true,
+  math = true,
+  array = true,
+}
+local MATH_NODES = {
+  displayed_equation = true,
+  inline_formula = true,
+}
+
+local function get_node_at_cursor()
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  local cursor_range = { cursor[1] - 1, cursor[2] }
+  local buf = vim.api.nvim_get_current_buf()
+  local ok, parser = pcall(ts.get_parser, buf, "latex")
+  if not ok or not parser then
+    return
+  end
+  local root_tree = parser:parse()[1]
+  local root = root_tree and root_tree:root()
+
+  if not root then
+    return
+  end
+
+  return root:named_descendant_for_range(cursor_range[1], cursor_range[2], cursor_range[1], cursor_range[2])
 end
 
-return tex_utils
+function M.in_comment()
+  if has_treesitter then
+    local node = get_node_at_cursor()
+    while node do
+      if node:type() == "comment" then
+        return true
+      end
+      node = node:parent()
+    end
+    return false
+  end
+end
+
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/1184#issuecomment-830388856
+function M.in_mathzone()
+  if has_treesitter then
+    local buf = vim.api.nvim_get_current_buf()
+    local node = get_node_at_cursor()
+    while node do
+      if MATH_NODES[node:type()] then
+        return true
+      elseif node:type() == "math_environment" or node:type() == "generic_environment" then
+        local begin = node:child(0)
+        local names = begin and begin:field("name")
+        if names and names[1] and MATH_ENVIRONMENTS[ts.get_node_text(names[1], buf):match("[A-Za-z]+")] then
+          return true
+        end
+      end
+      node = node:parent()
+    end
+    return false
+  end
+end
+
+function M.not_in_mathzone()
+  if has_treesitter then
+    local node = get_node_at_cursor()
+    while node do
+      if node:type() == "math_environment" then
+        return false
+      end
+      node = node:parent()
+    end
+    return true
+  end
+end
+
+return M

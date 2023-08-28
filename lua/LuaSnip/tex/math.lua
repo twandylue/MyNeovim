@@ -19,8 +19,7 @@ local rep = require("luasnip.extras").rep
 local helpers = require("LuaSnip.luasnip-helper-funcs")
 local get_visual = helpers.get_visual
 
--- TODO: Not work very well
--- local tex_utils = require("LuaSnip.tex.tex_utils")
+local tex_utils = require("LuaSnip.tex.tex_utils")
 
 M = {
   s(
@@ -39,6 +38,14 @@ M = {
     fmta("$<>$", {
       d(1, get_visual),
     })
+  ),
+  s(
+    { name = "Fraction", trig = "ff", snippetType = "autosnippet" },
+    fmta("\\frac{<>}{<>}", {
+      d(1, get_visual),
+      i(2),
+    }),
+    { condition = tex_utils.in_mathzone }
   ),
 }
 
