@@ -35,7 +35,6 @@ M = {
     fmta([[\section{<>}]], { i(1) }),
     { condition = line_begin }
   ),
-
   s(
     { trig = "new", dscr = "A generic new environmennt" },
     fmta(
@@ -49,6 +48,24 @@ M = {
         i(2),
         rep(1),
       }
+    )
+  ),
+  s(
+    { name = "Table", trig = "ta", dscr = "A generic table" },
+    fmta(
+      [[
+      \begin{center}
+      \begin{tabular}{|c|c|c|}
+      \hline
+        A & B & C \\
+      \hline
+        A & B & C \\
+        A & B & C \\
+      \hline
+      \end{tabular}
+      \end{center}
+    ]],
+      {}
     )
   ),
 }

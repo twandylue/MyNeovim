@@ -26,6 +26,24 @@ M = {
       d(1, get_visual),
     })
   ),
+  s(
+    { trig = "tbb", dscr = "Expands 'ttt' into LaTeX's textbf{} command." },
+    fmta("\\textbf{<>}", {
+      d(1, get_visual),
+    })
+  ),
+  s(
+    { trig = "tuu", dscr = "Expands 'ttt' into LaTeX's underline{} command." },
+    fmta("\\underline{<>}", {
+      d(1, get_visual),
+    })
+  ),
+  s(
+    { trig = "ttt", dscr = "Expands 'ttt' into LaTeX's texttt{} command." },
+    fmta("\\texttt{<>}", {
+      d(1, get_visual),
+    })
+  ),
 }
 
 return M

@@ -23,7 +23,7 @@ local tex_utils = require("LuaSnip.tex.tex_utils")
 
 M = {
   s(
-    { trig = "eq", dscr = "Expands 'eq' into an equation environment" },
+    { name = "Equation", trig = "eq", dscr = "Expands 'eq' into an equation environment" },
     fmta(
       [[
        \begin{equation}
@@ -34,7 +34,7 @@ M = {
     )
   ),
   s(
-    { trig = "mm", dscr = "Add $ $" },
+    { name = "Environment", trig = "mm", dscr = "Add $ $" },
     fmta("$<>$", {
       d(1, get_visual),
     })
@@ -44,6 +44,34 @@ M = {
     fmta("\\frac{<>}{<>}", {
       d(1, get_visual),
       i(2),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { name = "Or", trig = "lor", snippetType = "autosnippet" },
+    fmta("\\lor <>", {
+      d(1, get_visual),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { name = "And", trig = "and", snippetType = "autosnippet" },
+    fmta("\\land <>", {
+      d(1, get_visual),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { name = "Implies", trig = "impl", snippetType = "autosnippet" },
+    fmta("\\implies <>", {
+      d(1, get_visual),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { name = "Equivalent", trig = "equi", snippetType = "autosnippet" },
+    fmta("\\equiv <>", {
+      d(1, get_visual),
     }),
     { condition = tex_utils.in_mathzone }
   ),
