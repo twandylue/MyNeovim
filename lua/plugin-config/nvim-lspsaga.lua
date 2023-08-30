@@ -60,3 +60,25 @@ saga.setup({
     in_select = true,
   },
 })
+
+local opts = {
+  noremap = true,
+  silent = true,
+}
+
+-- lspsaga
+vim.api.nvim_set_keymap("n", "<tab>l", "<Cmd>Lspsaga show_line_diagnostics<cr>", opts)
+vim.api.nvim_set_keymap("n", "<tab>e", "<Cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tl", "<Cmd>Lspsaga outline<cr>", opts)
+vim.api.nvim_set_keymap("n", "]e", "<Cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+vim.api.nvim_set_keymap("n", "[e", "<Cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
+vim.api.nvim_set_keymap("n", "<tab>h", "<Cmd>Lspsaga hover_doc<cr>", opts)
+vim.api.nvim_set_keymap("n", "<tab>f", "<Cmd>Lspsaga finder<cr>", opts)
+vim.api.nvim_set_keymap("n", "<tab>p", "<Cmd>Lspsaga peek_definition<cr>", opts)
+vim.api.nvim_set_keymap("n", "<tab>r", "<Cmd>Lspsaga rename<cr>", opts)
+
+if vim.fn.has("mac") == 1 then
+  vim.api.nvim_set_keymap("n", "<M-.>", "<Cmd>Lspsaga code_action<cr>", opts)
+else
+  vim.api.nvim_set_keymap("n", "<A-.>", "<Cmd>Lspsaga code_action<cr>", opts)
+end

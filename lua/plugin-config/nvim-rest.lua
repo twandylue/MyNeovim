@@ -39,3 +39,10 @@ rest.setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
+
+local opts = {
+  noremap = true,
+  silent = true,
+}
+
+vim.keymap.set("n", "<leader>cc", "<Plug>RestNvim", opts)
