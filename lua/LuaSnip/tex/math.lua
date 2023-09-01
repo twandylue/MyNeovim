@@ -48,7 +48,7 @@ M = {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { name = "Or", trig = "lor", snippetType = "autosnippet" },
+    { name = "Or", trig = "or", snippetType = "autosnippet" },
     fmta("\\lor <>", {
       d(1, get_visual),
     }),
@@ -62,14 +62,21 @@ M = {
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { name = "Implies", trig = "impl", snippetType = "autosnippet" },
+    { name = "Implies", trig = "ip", snippetType = "autosnippet" },
     fmta("\\implies <>", {
       d(1, get_visual),
     }),
     { condition = tex_utils.in_mathzone }
   ),
   s(
-    { name = "Equivalent", trig = "equi", snippetType = "autosnippet" },
+    { name = "Not", trig = "not", snippetType = "autosnippet" },
+    fmta("\\neg <>", {
+      d(1, get_visual),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    { name = "Equivalent", trig = "ei", snippetType = "autosnippet" },
     fmta("\\equiv <>", {
       d(1, get_visual),
     }),

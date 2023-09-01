@@ -68,6 +68,24 @@ M = {
       {}
     )
   ),
+  s(
+    { name = "vertical space", trig = "vs", dscr = "Insert \\vspace{}" },
+    fmta(
+      [[
+      \vspace{<>}
+    ]],
+      { i(1, "5mm") }
+    )
+  ),
+  s(
+    { name = "horizontal space", trig = "hs", dscr = "Insert \\hspace{}" },
+    fmta(
+      [[
+      \hspace{<>}
+    ]],
+      { i(1, "5mm") }
+    )
+  ),
 }
 
 return M
