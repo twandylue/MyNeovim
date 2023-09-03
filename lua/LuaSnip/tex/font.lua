@@ -27,13 +27,13 @@ M = {
     })
   ),
   s(
-    { trig = "tbb", dscr = "Expands 'ttt' into LaTeX's textbf{} command." },
+    { trig = "tbb", dscr = "Expands 'tbb' into LaTeX's textbf{} command." },
     fmta("\\textbf{<>}", {
       d(1, get_visual),
     })
   ),
   s(
-    { trig = "tuu", dscr = "Expands 'ttt' into LaTeX's underline{} command." },
+    { trig = "tuu", dscr = "Expands 'tuu' into LaTeX's underline{} command." },
     fmta("\\underline{<>}", {
       d(1, get_visual),
     })
@@ -42,6 +42,13 @@ M = {
     { trig = "ttt", dscr = "Expands 'ttt' into LaTeX's texttt{} command." },
     fmta("\\texttt{<>}", {
       d(1, get_visual),
+    })
+  ),
+  s(
+    { trig = "tcc", dscr = "Expands 'tcc' into LaTeX's textcolor{}{} command." },
+    fmta([[\textcolor{<>}{<>}]], {
+      i(1, "blue"),
+      i(2, "text"),
     })
   ),
 }
