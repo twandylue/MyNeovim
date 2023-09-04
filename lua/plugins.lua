@@ -482,6 +482,7 @@ local plugins = {
     config = function()
       require("luasnip-latex-snippets").setup({ use_treesitter = true })
     end,
+    ft = { "tex" },
   },
 
   -- File icons
