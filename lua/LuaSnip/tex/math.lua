@@ -27,7 +27,7 @@ M = {
     fmta(
       [[
        \begin{equation}
-           <>
+         <>
        \end{equation}
      ]],
       { i(1) }
