@@ -374,6 +374,7 @@ local plugins = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "kdheepak/cmp-latex-symbols",
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       require("plugin-config.nvim-cmp")
@@ -473,7 +474,7 @@ local plugins = {
       require("plugin-config.nvim-luasnip")
     end,
     build = "make install_jsregexp",
-    dependencies = { "rafamadriz/friendly-snippets", "saadparwaiz1/cmp_luasnip" },
+    dependencies = { "rafamadriz/friendly-snippets" },
   },
 
   {

@@ -15,7 +15,7 @@ cmp.setup({
     ["<C-y>"] = cmp.mapping.scroll_docs(-4),
     ["<C-e>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete({}),
-    -- ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-c>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -26,8 +26,8 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
-    { name = "luasnip", option = { use_show_condition = false } },
     { name = "nvim_lsp" },
+    { name = "luasnip", option = { use_show_condition = false } },
     { name = "buffer" },
     { name = "neorg" },
     {
