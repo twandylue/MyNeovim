@@ -34,10 +34,11 @@ M = {
     )
   ),
   s(
-    { name = "Environment", trig = "mm", dscr = "Add $ $" },
+    { name = "Environment", trig = "mm", dscr = "Add $ $", snippetType = "autosnippet" },
     fmta("$<>$", {
       d(1, get_visual),
-    })
+    }),
+    { condition = tex_utils.not_in_mathzone }
   ),
   s(
     { name = "Fraction", trig = "ff", snippetType = "autosnippet" },
