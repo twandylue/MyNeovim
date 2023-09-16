@@ -602,6 +602,7 @@ local plugins = {
       require("plugin-config.nvim-copilot")
     end,
   },
+  { "vim-scripts/DoxygenToolkit.vim" },
 }
 
 return plugins
