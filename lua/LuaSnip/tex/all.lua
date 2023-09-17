@@ -86,6 +86,12 @@ M = {
       { i(1, "5mm") }
     )
   ),
+  s(
+    { name = "no indent", trig = "noi", dscr = "Insert \\hspace{}" },
+    fmta("\\noindent <>", {
+      d(1, get_visual),
+    })
+  ),
 }
 
 return M
