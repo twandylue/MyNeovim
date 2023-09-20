@@ -465,6 +465,7 @@ local plugins = {
     config = function()
       require("plugin-config.nvim-mason-null-ls")
     end,
+    enabled = false,
   },
 
   {
@@ -554,6 +555,7 @@ local plugins = {
       require("plugin-config.nvim-null-ls")
     end,
     dependencies = { "nvim-lua/plenary.nvim" },
+    enabled = false,
   },
 
   -- lint
@@ -579,6 +581,7 @@ local plugins = {
       require("plugin-config.nvim-fzf-lua")
     end,
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    enabled = false,
   },
 
   -- rest.nvim(http client)
