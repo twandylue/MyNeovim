@@ -36,7 +36,7 @@ map("n", "gj", "gT", { noremap = false })
 map("n", "gk", "gt", { noremap = false })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
 -- map("n", "*", "*<C-o>", opts)
-map("", "<leader>w", "<C-W>", opts)
+map("n", "<leader>w", "<C-W>", opts)
 
 if vim.fn.has("mac") == 1 then
   -- move entire lines
