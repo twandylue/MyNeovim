@@ -30,6 +30,7 @@ map("i", "<C-f>", "<C-o>a", opts)
 map("i", "<C-a>", "<Home>", opts)
 map("i", "<C-e>", "<End>", opts)
 map("i", "<C-d>", "<Delete>", opts)
+map("i", "<M-d>", "<C-o>dw", opts)
 -- keep copy text object in register
 map("x", "<leader>p", '"_dP', opts)
 map("n", "gj", "gT", { noremap = false })
@@ -102,6 +103,7 @@ if vim.g.neovide then
     neovideScale(-0.1)
   end)
 
+  keymap("i", "<D-d>", "<C-o>dw", opts)
   keymap("n", "<D-j>", ":m .+1<CR>", opts)
   keymap("n", "<D-k>", ":m .-2<CR>", opts)
   keymap("v", "<D-j>", ":m '>+1<CR>gv", opts)
