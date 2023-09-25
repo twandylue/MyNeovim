@@ -16,11 +16,30 @@ local opts = {
   silent = true,
 }
 
+local function toggle_qf()
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["quickfix"] == 1 then
+      qf_exists = true
+      break
+    end
+  end
+  if qf_exists == true then
+    vim.cmd("cclose")
+    return
+  end
+  if not vim.tbl_isempty(vim.fn.getqflist()) then
+    vim.cmd("copen")
+  end
+end
+
 map("n", "<ESC>", ":nohlsearch<CR>", opts)
 map("n", "<leader>s", ":w<CR>", opts)
 map("n", "<leader>q", ":q<CR>", opts)
 map("n", "<leader>m", "`", opts)
-map("n", "<leader>f", ":cw<CR>", opts)
+map("n", "<leader>f", function()
+  toggle_qf()
+end, opts)
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
