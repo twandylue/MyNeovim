@@ -83,6 +83,13 @@ M = {
     }),
     { condition = tex_utils.in_mathzone }
   ),
+  s(
+    { name = "Determinants", trig = "vmat", snippetType = "autosnippet" },
+    fmta(" \\begin{vmatrix} <> \\end{vmatrix}", {
+      d(1, get_visual),
+    }),
+    { condition = tex_utils.in_mathzone }
+  ),
 }
 
 return M
