@@ -266,7 +266,6 @@ local plugins = {
         let g:vimtex_view_method = 'skim'
       ]])
     end,
-    ft = { "tex" },
   },
 
   {
