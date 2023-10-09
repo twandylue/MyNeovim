@@ -51,20 +51,21 @@ M = {
     )
   ),
   s(
-    { name = "Table", trig = "ta", dscr = "A generic table" },
+    { name = "Table", trig = "ta", dscr = "A generic table. \\usepackage{array}" },
     fmta(
       [[
       \begin{center}
-      \begin{tabular}{|c|c|c|}
-      \hline
-        A & B & C \\
-      \hline
-        A & B & C \\
-        A & B & C \\
-      \hline
-      \end{tabular}
+        \begin{tabular}{ | m{3cm} | m{3cm} | m{3cm} | }
+          \hline
+          A1 & B1 & C1 \\
+          \hline
+          A2 & B2 & C2 \\
+          \hline
+          A3 & B3 & C3 \\
+          \hline
+        \end{tabular}
       \end{center}
-    ]],
+      ]],
       {}
     )
   ),
