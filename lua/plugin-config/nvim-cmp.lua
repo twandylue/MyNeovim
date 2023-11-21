@@ -27,6 +27,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "vimtex" },
     { name = "luasnip", option = { use_show_condition = false } },
     { name = "buffer" },
     { name = "neorg" },

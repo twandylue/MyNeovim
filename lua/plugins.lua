@@ -373,6 +373,7 @@ local plugins = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "kdheepak/cmp-latex-symbols",
+      "micangl/cmp-vimtex",
       "saadparwaiz1/cmp_luasnip",
     },
     config = function()
@@ -604,7 +605,19 @@ local plugins = {
       require("plugin-config.nvim-copilot")
     end,
   },
+
+  -- Comment in header file in c++
   { "vim-scripts/DoxygenToolkit.vim" },
+
+  -- Stop useless LSP
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {
+      -- your options here
+    },
+  },
 }
 
 return plugins
