@@ -10,6 +10,15 @@
 :bd!
 ```
 
+### Move tabs
+
+```plain
+: tabm
+: tabm 0
+: tabm +1
+: tabm 3
+```
+
 ### Show trail
 
 ```plain
