@@ -618,6 +618,11 @@ local plugins = {
       -- your options here
     },
   },
+
+  -- Open big files
+  {
+    "LunarVim/bigfile.nvim",
+  },
 }
 
 return plugins
