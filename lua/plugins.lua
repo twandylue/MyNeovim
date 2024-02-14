@@ -623,6 +623,13 @@ local plugins = {
   {
     "LunarVim/bigfile.nvim",
   },
+
+  -- typst
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+    lazy = false,
+  },
 }
 
 return plugins
