@@ -44,6 +44,7 @@ ts.setup({
     "gitcommit",
     "gitignore",
     "vim",
+    "typst",
   },
   sync_install = false,
   highlight = {
