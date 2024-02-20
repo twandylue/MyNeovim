@@ -283,6 +283,17 @@ local plugins = {
   },
 
   {
+    "chomosuke/typst-preview.nvim",
+    ft = "typst",
+    -- lazy = false, -- or ft = 'typst'
+    version = "0.1.*",
+    dependencies = { { "kaarmu/typst.vim" } },
+    build = function()
+      require("typst-preview").update()
+    end,
+  },
+
+  {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
     config = function()
