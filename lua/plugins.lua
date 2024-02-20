@@ -259,6 +259,7 @@ local plugins = {
 
   "dstein64/nvim-scrollview",
 
+  -- latex
   {
     "lervag/vimtex",
     config = function()
@@ -266,6 +267,19 @@ local plugins = {
         let g:vimtex_view_method = 'skim'
       ]])
     end,
+  },
+
+  -- typst
+  {
+    "kaarmu/typst.vim",
+    config = function()
+      vim.cmd([[
+        let g:typst_pdf_viewer = 'skim'
+        let g:typst_embedded_languages = ['cpp', 'python', 'rust']
+      ]])
+    end,
+    ft = "typst",
+    lazy = false,
   },
 
   {
@@ -622,13 +636,6 @@ local plugins = {
   -- Open big files
   {
     "LunarVim/bigfile.nvim",
-  },
-
-  -- typst
-  {
-    "kaarmu/typst.vim",
-    ft = "typst",
-    lazy = false,
   },
 }
 
