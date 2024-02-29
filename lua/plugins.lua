@@ -624,6 +624,13 @@ local plugins = {
     enabled = true,
   },
 
+  -- another formatter
+  {
+    "stevearc/conform.nvim",
+    config = function()
+      require("plugin-config.nvim-conform")
+    end,
+    enabled = false,
   },
 
   -- fzf in lua
