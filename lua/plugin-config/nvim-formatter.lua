@@ -45,6 +45,15 @@ formatter.setup({
     python = {
       require("formatter.filetypes.python").black,
     },
+    typst = {
+      function()
+        return {
+          exe = "typstfmt",
+          args = {},
+          stdin = true,
+        }
+      end,
+    },
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
@@ -61,7 +70,14 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     local ft = vim.bo.filetype
     -- NOTE: Use the formatter in LSP: c, cpp, rust and don't format in markdown, norg
-    if (ft ~= "c") and (ft ~= "cpp") and (ft ~= "rust") and (ft ~= "markdown") and (ft ~= "norg") and (ft ~= "tex") then
+    if
+      (ft ~= "c")
+      and (ft ~= "cpp")
+      and (ft ~= "rust")
+      and (ft ~= "markdown")
+      and (ft ~= "norg")
+      and (ft ~= "tex")
+    then
       vim.cmd("FormatWrite")
     end
   end,
