@@ -272,14 +272,13 @@ local plugins = {
   -- typst
   {
     "kaarmu/typst.vim",
+    ft = "typst",
     config = function()
       vim.cmd([[
         let g:typst_pdf_viewer = 'skim'
         let g:typst_embedded_languages = ['cpp', 'python', 'rust']
       ]])
     end,
-    ft = "typst",
-    lazy = false,
   },
 
   {
@@ -295,11 +294,11 @@ local plugins = {
 
   {
     "iamcco/markdown-preview.nvim",
+    ft = "markdown",
     build = "cd app && npm install",
     config = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
-    ft = { "markdown" },
   },
 
   "dhruvasagar/vim-table-mode",
@@ -559,13 +558,16 @@ local plugins = {
       require("plugin-config.nvim-neorg")
       require("plugin-config.nvim-neorg-telescope")
     end,
-    -- important: export the CC(support for c++14, variable in general: export CC=/path/to/newer/compiler
-    -- ref: https://github.com/nvim-neorg/neorg
-    build = ":Neorg sync-parsers", -- This is the important bit!
     dependencies = {
-      { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
-      { "nvim-neorg/neorg-telescope" },
+      {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "nvim-neorg/neorg-telescope",
+        "luarocks.nvim",
+      },
     },
+    lazy = false,
+    version = "*", -- Pin Neorg to the latest stable release
   },
 
   {
@@ -643,6 +645,13 @@ local plugins = {
     enabled = false,
   },
 
+  -- for neorg and rest.vnim
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+  },
+
   -- rest.nvim(http client)
   {
     "rest-nvim/rest.nvim",
@@ -650,7 +659,7 @@ local plugins = {
       require("plugin-config.nvim-rest")
     end,
     ft = { "http" },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "luarocks.nvim" },
   },
 
   -- vim sugar
