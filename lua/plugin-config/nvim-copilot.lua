@@ -10,7 +10,7 @@ vim.g.copilot_filetypes = {
   ["go"] = true,
   ["python"] = true,
   ["sh"] = true,
-  ["md"] = true,
+  ["markdown"] = true,
   ["typst"] = true,
 }
 
