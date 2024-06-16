@@ -241,7 +241,12 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('telescope.builtin').git_files({preview = true})<CR>",
   opts
 )
-vim.api.nvim_set_keymap("n", "[g", '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>', opts)
+vim.api.nvim_set_keymap(
+  "n",
+  "[g",
+  '<cmd>lua require("telescope.builtin").live_grep({preview = true})<CR>',
+  opts
+)
 vim.api.nvim_set_keymap(
   "n",
   "[fg",
@@ -254,12 +259,27 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('telescope.builtin').find_files({preview = true, hidden = true})<CR>",
   opts
 )
-vim.api.nvim_set_keymap("n", "[s", '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader>,", '<cmd>lua require("telescope.builtin").buffers()<CR>', opts)
+vim.api.nvim_set_keymap(
+  "n",
+  "[s",
+  '<cmd>lua require("telescope.builtin").grep_string({preview = true})<CR>',
+  opts
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>,",
+  '<cmd>lua require("telescope.builtin").buffers()<CR>',
+  opts
+)
 vim.api.nvim_set_keymap("n", "[t", '<cmd>lua require("telescope.builtin").help_tags()<CR>', opts)
 vim.api.nvim_set_keymap("n", "[r", '<cmd>lua require("telescope.builtin").resume()<CR>', opts)
 vim.api.nvim_set_keymap("n", "[d", '<cmd>lua require("telescope.builtin").diagnostics()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-p>",
+  ":lua require'telescope'.extensions.project.project{}<CR>",
+  opts
+)
 vim.api.nvim_set_keymap("n", "<tab>d", "<cmd>Telescope lsp_definitions<cr>", opts)
 vim.api.nvim_set_keymap("n", "<tab>i", "<cmd>Telescope lsp_implementations<cr>", opts)
 vim.api.nvim_set_keymap("n", "<tab>u", "<cmd>Telescope lsp_references<cr>", opts)
