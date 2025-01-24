@@ -15,8 +15,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("config.options")
 require("config.autocmds")
-require("config.cmds")
 require("config.keymaps")
-local plugins = require("plugins")
-require("lazy").setup(plugins)
-require("plugin-config.lsp.init")
+
+if vim.g.vscode then
+  -- VSCode Neovim
+  local vs_plugins = require("vscode-plugins")
+  require("lazy").setup(vs_plugins)
+else
+  require("config.cmds")
+  local plugins = require("plugins")
+  require("lazy").setup(plugins)
+  require("plugin-config.lsp.init")
+end
