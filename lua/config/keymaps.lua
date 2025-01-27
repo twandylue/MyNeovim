@@ -54,6 +54,10 @@ map("i", "<M-d>", "<C-o>dw", opts)
 map("x", "<leader>p", '"_dP', opts)
 map("n", "gj", "gT", { noremap = false })
 map("n", "gk", "gt", { noremap = false })
+if vim.g.vscode then
+  map("n", "gj", "<Cmd>Tabprevious<CR>", { noremap = false })
+  map("n", "gk", "<Cmd>Tabnext<CR>", { noremap = false })
+end
 map("n", "<leader>bd", "<cmd>bdelete<CR>", opts)
 -- map("n", "*", "*<C-o>", opts)
 map("n", "<leader>w", "<C-W>", opts)
