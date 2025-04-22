@@ -124,6 +124,9 @@ local plugins = {
 
   {
     "stevearc/oil.nvim",
+    -- keys = {
+    --   { "<space>e", "<cmd>Oil<cr>", desc = "Oil" },
+    -- },
     config = function()
       require("plugin-config.nvim-oil")
     end,
